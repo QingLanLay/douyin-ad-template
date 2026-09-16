@@ -1,0 +1,15 @@
+2026-09-10 14:04:09.253 [info] Started local extension host with pid 2108.
+2026-09-10 14:04:09.580 [info] [Webview f27ce53e-d282-475a-8966-217af74bc9aa] encoded origin: 1889vohcssq54o4en5bjnv1ce1ppkbauugf3jfq762dcihl0nv1d
+2026-09-10 14:04:09.757 [info] [LocalProcessExtensionHost] Socket server listening on: \\.\pipe\vscode-ipc-b769076e-18c0-485d-b1c5-449cfdba5f56-sock
+2026-09-10 14:04:10.290 [error] 没有注册配置 beautify.config，因此无法写入 用户设置。: CodeExpectedError: 没有注册配置 beautify.config，因此无法写入 用户设置。
+    at $fCc.z (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:7074)
+    at $fCc.F (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:9829)
+    at $fCc.o (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:4045)
+    at Object.factory (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:3945)
+    at $Vh.j (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:251:77179)
+    at vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:251:77091
+    at new Promise (<anonymous>)
+    at $Vh.queue (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:251:77033)
+    at $fCc.writeConfiguration (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:3914)
+    at $mCc.Hb (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:44245)
+2026-09-10 14:04:12.837 [info] [perf] Render performance baseline is 17ms

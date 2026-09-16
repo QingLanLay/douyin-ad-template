@@ -1,0 +1,37 @@
+[2026-09-10 14:16:36.179] [debug] 请求 settings 使用的 device_id: 1272588016036457
+[2026-09-10 14:16:36.183] [info]  [request start] https://developer.toutiao.com/service/settings/v3/
+[2026-09-10 14:16:36.200] [debug] 请求 settings 使用的 device_id: 1272588016036457
+[2026-09-10 14:16:36.203] [info]  [request start] https://developer.toutiao.com/service/settings/v3/
+[2026-09-10 14:16:36.306] [info]  [request start] https://developer.open-douyin.com//bff_api_v2/message/openPlatformUserMsgService/MGetMessages
+[2026-09-10 14:16:36.307] [info]  [request start] https://developer.open-douyin.com//bff_api_v2/message/openPlatformUserMsgService/MGetMessages
+[2026-09-10 14:16:36.308] [info]  [request start] https://developer.open-douyin.com//bff_api_v2/message/openPlatformUserMsgService/MGetMessages
+[2026-09-10 14:16:36.309] [info]  [request start] https://developer.open-douyin.com//bff_api_v2/message/openPlatformUserMsgService/MGetMessages
+[2026-09-10 14:16:36.309] [info]  [request start] https://developer.open-douyin.com//bff_api_v2/message/openPlatformUserMsgService/MGetMessages
+[2026-09-10 14:16:36.332] [info]  [request start] https://developer.open-douyin.com//bff_api_v2/message/openPlatformUserMsgService/MGetMessages
+[2026-09-10 14:16:36.333] [info]  [request start] https://developer.open-douyin.com//bff_api_v2/message/openPlatformUserMsgService/MGetMessages
+[2026-09-10 14:16:36.333] [info]  [request start] https://developer.open-douyin.com//bff_api_v2/message/openPlatformUserMsgService/MGetMessages
+[2026-09-10 14:16:36.334] [info]  [request start] https://developer.open-douyin.com//bff_api_v2/message/openPlatformUserMsgService/MGetMessages
+[2026-09-10 14:16:36.334] [info]  [request start] https://developer.open-douyin.com//bff_api_v2/message/openPlatformUserMsgService/MGetMessages
+[2026-09-10 14:16:36.370] [info]  [request start] https://developer.open-douyin.com/bff_api/app/setting/v2/tt7f36098be151798b07/microappinfoservice/getMicroappInfo
+[2026-09-10 14:16:36.400] [info]  [request start] https://developer.open-douyin.com/bff_api/app/setting/v2/tt7f36098be151798b07/microappinfoservice/getMicroappInfo
+[2026-09-10 14:16:36.407] [info]  [request start] https://developer.open-douyin.com/bff_api_game/v1/common/permissions?appId=tt7f36098be151798b07
+[2026-09-10 14:16:36.420] [info]  [request start] https://developer.open-douyin.com/bff_api_game/v1/common/permissions?appId=tt7f36098be151798b07
+[2026-09-10 14:16:36.520] [info]  [request start] https://developer.open-douyin.com/bff_api/app/setting/v2/tt7f36098be151798b07/microappinfoservice/getMicroappInfo
+[2026-09-10 14:16:36.520] [info]  [request start] https://developer.open-douyin.com/bff_api/app/setting/v2/tt7f36098be151798b07/microappinfoservice/getMicroappInfo
+[2026-09-10 14:16:36.521] [info]  [request start] https://developer.open-douyin.com/bff_api_game/v1/common/permissions?appId=tt7f36098be151798b07
+[2026-09-10 14:16:36.521] [info]  [request start] https://developer.open-douyin.com/bff_api_game/v1/common/permissions?appId=tt7f36098be151798b07
+[2026-09-10 14:16:36.907] [info]  [request start] https://microapp.bytedance.com/api/developer/ide/v1/microapp/get_user_source
+[2026-09-10 14:16:36.912] [info]  [request start] https://microapp.bytedance.com/api/developer/ide/v1/microapp/get_user_source
+[2026-09-10 14:16:36.923] [info]  [request start] https://developer.toutiao.com/api/apps/v3/meta?appid=tt7f36098be151798b07&aid=13&version=current&ttcode=OVCNW/U0UREwv0sHdY9Rm16vBgGrCQIBOWurUCmJ1H6d/2XHLKeOYTYfEJIEeC0AOCwBZAR2j34C4tFN7Nqfq9tHVEpM4OuJM2b8qz0INtUs1qLhKFOtnGa9/Ey0WW86GGocJk074eP72MMhzNmePzaTQzXwn/eqEq4GHwyF2Tg=&aid=1365
+[2026-09-10 14:16:36.932] [info]  [request start] https://developer.toutiao.com/api/apps/v3/meta?appid=tt7f36098be151798b07&aid=13&version=current&ttcode=OVCNW/U0UREwv0sHdY9Rm16vBgGrCQIBOWurUCmJ1H6d/2XHLKeOYTYfEJIEeC0AOCwBZAR2j34C4tFN7Nqfq9tHVEpM4OuJM2b8qz0INtUs1qLhKFOtnGa9/Ey0WW86GGocJk074eP72MMhzNmePzaTQzXwn/eqEq4GHwyF2Tg=&aid=1365
+[2026-09-10 14:16:37.022] [info]  [request start] https://developer.toutiao.com/api/v1/app/tt7f36098be151798b07/meta
+[2026-09-10 14:16:37.206] [info]  [request start] https://developer.toutiao.com/api/v1/app/tt7f36098be151798b07/meta
+[2026-09-10 14:16:37.894] [info]  [request start] https://developer.toutiao.com/service/settings/v3/
+[2026-09-10 14:16:38.426] [info]  [request start] https://developer.toutiao.com/service/settings/v3/
+[2026-09-10 14:16:39.106] [info]  [request start] https://developer.toutiao.com/api/developer/ide/microgame/v1/performance_standard_line
+[2026-09-10 14:16:39.629] [info]  [request start] https://developer.toutiao.com/api/developer/ide/microgame/v1/performance_standard_line
+[2026-09-10 14:16:40.876] [info]  [request start] https://developer.toutiao.com/api/developer/ide/microgame/v1/performance_standard_line
+[2026-09-10 14:16:40.988] [info]  [request start] https://developer.toutiao.com/api/developer/ide/microgame/v1/performance_standard_line
+[2026-09-10 14:16:42.271] [info]  [request start] https://developer.toutiao.com/api/developer/ide/v1/basic_version_stats?host_name=douyin
+[2026-09-10 14:17:00.648] [info]  [request start] https://developer.open-douyin.com/bff_api_v2/platform/search/OpenPlatformSearch/GetSearchCard
+[2026-09-10 14:17:00.704] [info]  [request start] https://developer.open-douyin.com/bff_api_v2/platform/helpCenter/OpenPlatformSchoolService/getQuestionList

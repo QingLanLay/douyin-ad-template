@@ -1,0 +1,43 @@
+2026-09-10 12:46:53.126 [info] Extension host with pid 34812 started
+2026-09-10 12:46:53.126 [info] Skipping acquiring lock for c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81.
+2026-09-10 12:46:53.145 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-09-10 12:46:53.166 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:json'
+2026-09-10 12:46:53.177 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+2026-09-10 12:46:53.244 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onLanguage:json'
+2026-09-10 12:46:53.472 [info] Extension host with pid 1664 started
+2026-09-10 12:46:53.472 [error] Error: EEXIST: file already exists, open 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81\vscode.lock'
+2026-09-10 12:46:53.472 [info] Lock 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81\vscode.lock': Could not acquire lock, checking if the file is stale.
+2026-09-10 12:46:53.472 [info] Lock 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81\vscode.lock': The lock does not look stale, elapsed: 96 ms, giving up.
+2026-09-10 12:46:53.540 [warning] [douyinide.workbench] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[css]', provide the URI of a resource or 'null' for any resource.
+2026-09-10 12:46:53.540 [warning] [douyinide.workbench] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[ttml]', provide the URI of a resource or 'null' for any resource.
+2026-09-10 12:46:53.546 [info] Lock 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81-1\vscode.lock': Lock acquired.
+2026-09-10 12:46:53.557 [error] CodeExpectedError: 没有注册配置 beautify.config，因此无法写入 用户设置。
+    at $fCc.z (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:7074)
+    at $fCc.F (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:9829)
+    at $fCc.o (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:4045)
+    at Object.factory (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:3945)
+    at $Vh.j (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:251:77179)
+    at vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:251:77091
+    at new Promise (<anonymous>)
+    at $Vh.queue (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:251:77033)
+    at $fCc.writeConfiguration (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:3914)
+    at $mCc.Hb (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:44245)
+2026-09-10 12:46:53.633 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2026-09-10 12:46:53.637 [info] Eager extensions activated
+2026-09-10 12:46:53.640 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-09-10 12:46:55.169 [info] ExtensionService#_doActivateExtension christian-kohler.path-intellisense, startup: false, activationEvent: '*'
+2026-09-10 12:46:55.187 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: '*'
+2026-09-10 12:46:55.247 [info] ExtensionService#_doActivateExtension HookyQR.beautify, startup: false, activationEvent: '*'
+2026-09-10 12:46:55.287 [info] ExtensionService#_doActivateExtension vscode.css-language-features, startup: false, activationEvent: 'onStartupFinished', root cause: bytedance-microapp.microapp
+2026-09-10 12:46:55.328 [info] ExtensionService#_doActivateExtension bytedance-microapp.tila-helper, startup: false, activationEvent: 'onStartupFinished'
+2026-09-10 12:46:55.713 [info] ExtensionService#_doActivateExtension bytedance-microapp.microapp, startup: false, activationEvent: 'onStartupFinished'
+2026-09-10 12:47:24.601 [error] Error: ENOENT: no such file or directory, open 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81-1\vscode.lock'
+    at async open (node:internal/fs/promises:633:25)
+    at async Object.readFile (node:internal/fs/promises:1237:14)
+    at async readLockfileContents (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/api/node/extensionHostProcess.js:466:6393)
+    at async file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/api/node/extensionHostProcess.js:466:5276
+2026-09-10 12:47:24.602 [info] Lock 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81-1\vscode.lock': The lock was lost unexpectedly.
+2026-09-10 12:47:24.602 [error] Error: ENOENT: no such file or directory, utime 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81-1\vscode.lock'
+    at async Object.utimes (node:internal/fs/promises:1127:10)
+    at async file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/api/node/extensionHostProcess.js:466:5412
+2026-09-10 12:47:24.602 [info] Lock 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81-1\vscode.lock': Could not update mtime.

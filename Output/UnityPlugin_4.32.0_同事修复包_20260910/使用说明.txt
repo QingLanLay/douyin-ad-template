@@ -1,0 +1,18 @@
+抖音 UnityPlugin 4.32.0 缓存备份
+插件 ID：tt674511f8f84ea91612
+来源：本机抖音开发者工具插件缓存。包含原始 index.js、许可证、配置和签名。
+
+Windows 使用步骤：
+1. 完全退出抖音开发者工具。
+2. 在资源管理器地址栏粘贴：
+   %APPDATA%\@byted\vela\tempFile\pc-sdk\micro-plugin-packages
+3. 如果目录不存在，先确认使用相同版本的抖音开发者工具；此路径是来源机器的缓存布局，不保证所有版本通用。
+4. 若已有 tt674511f8f84ea91612 文件夹，先复制到其他位置备份。
+5. 将本压缩包中的 tt674511f8f84ea91612 文件夹复制到上述目录。最终应存在：
+   %APPDATA%\@byted\vela\tempFile\pc-sdk\micro-plugin-packages\tt674511f8f84ea91612\online\index.js
+6. 重新启动工具并编译原小游戏项目。此次不要先清缓存，否则刚复制的文件可能被清除。
+7. 出现 plugin tt674511f8f84ea91612 inject success! 和 UnityManager.version = 4.32.0 表示加载成功。
+
+这是缓存恢复尝试，未经接收方环境验证，并非官方离线安装程序。
+不用放进 Unity Assets 或小游戏导出目录，也不用修改 game.js/game.json。
+若仍失败，请保留新的完整日志，检查开发者工具版本与插件下载网络。

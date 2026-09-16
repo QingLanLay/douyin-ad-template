@@ -1,0 +1,23 @@
+2026-09-10 13:31:49.700 [info] [main] Log level: Info
+2026-09-10 13:31:49.700 [info] [main] Validating found git in: "C:\Program Files\Git\cmd\git.exe"
+2026-09-10 13:31:49.784 [info] [main] Using git "2.54.0.windows.1" from "C:\Program Files\Git\cmd\git.exe"
+2026-09-10 13:31:49.784 [info] [Model][doInitialScan] Initial repository scan started
+2026-09-10 13:31:49.906 [info] > git rev-parse --show-toplevel [99ms]
+2026-09-10 13:31:49.906 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-09-10 13:31:50.415 [info] > git rev-parse --show-toplevel [503ms]
+2026-09-10 13:31:50.415 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-09-10 13:31:50.565 [info] > git rev-parse --show-toplevel [80ms]
+2026-09-10 13:31:50.566 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-09-10 13:31:50.666 [info] > git rev-parse --show-toplevel [96ms]
+2026-09-10 13:31:50.666 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-09-10 13:31:50.750 [info] > git rev-parse --show-toplevel [78ms]
+2026-09-10 13:31:50.750 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-09-10 13:31:50.831 [info] > git rev-parse --show-toplevel [76ms]
+2026-09-10 13:31:50.831 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-09-10 13:31:50.907 [info] > git rev-parse --show-toplevel [71ms]
+2026-09-10 13:31:50.907 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-09-10 13:31:50.908 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-09-10 13:31:51.061 [info] > git rev-parse --show-toplevel [76ms]
+2026-09-10 13:31:51.061 [info] fatal: not a git repository (or any of the parent directories): .git
+2026-09-10 13:31:51.845 [info] > git rev-parse --show-toplevel [67ms]
+2026-09-10 13:31:51.845 [info] fatal: not a git repository (or any of the parent directories): .git

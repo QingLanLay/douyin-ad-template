@@ -1,0 +1,43 @@
+2026-09-10 13:29:04.133 [info] [CSS_DEV] DONE, 1 css modules (42ms)
+2026-09-10 13:29:04.167 [info] update#setState disabled
+2026-09-10 13:29:04.167 [info] update#ctor - updates are disabled as there is no update URL
+2026-09-10 13:29:04.196 [error] Error: Error mutex already exists
+    at CodeApplication.S (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:346:19222)
+2026-09-10 13:29:05.765 [error] [uncaught exception in main]: Error: timeout
+2026-09-10 13:29:05.765 [error] Error: timeout
+    at Timeout._onTimeout (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:883253)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+2026-09-10 13:29:05.772 [error] [uncaught exception in main]: Error: timeout
+2026-09-10 13:29:05.772 [error] Error: timeout
+    at Timeout._onTimeout (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:883253)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+2026-09-10 13:29:07.250 [warning] RequestStore#acceptReply was called without receiving a matching request 1
+2026-09-10 13:29:07.251 [warning] RequestStore#acceptReply was called without receiving a matching request 2
+2026-09-10 13:29:07.251 [warning] RequestStore#acceptReply was called without receiving a matching request 3
+2026-09-10 13:29:07.251 [warning] RequestStore#acceptReply was called without receiving a matching request 4
+2026-09-10 13:29:07.252 [warning] RequestStore#acceptReply was called without receiving a matching request 5
+2026-09-10 13:29:07.252 [warning] RequestStore#acceptReply was called without receiving a matching request 6
+2026-09-10 13:29:07.252 [warning] RequestStore#acceptReply was called without receiving a matching request 7
+2026-09-10 13:29:07.420 [warning] RequestStore#acceptReply was called without receiving a matching request 8
+2026-09-10 13:29:07.421 [warning] RequestStore#acceptReply was called without receiving a matching request 9
+2026-09-10 13:29:07.421 [warning] RequestStore#acceptReply was called without receiving a matching request 10
+2026-09-10 13:29:07.421 [warning] RequestStore#acceptReply was called without receiving a matching request 11
+2026-09-10 13:29:07.422 [warning] RequestStore#acceptReply was called without receiving a matching request 12
+2026-09-10 13:29:07.422 [warning] RequestStore#acceptReply was called without receiving a matching request 13
+2026-09-10 13:29:07.422 [warning] RequestStore#acceptReply was called without receiving a matching request 14
+2026-09-10 13:29:09.227 [warning] RequestStore#acceptReply was called without receiving a matching request 15
+2026-09-10 13:29:09.230 [warning] RequestStore#acceptReply was called without receiving a matching request 16
+2026-09-10 13:29:09.233 [warning] RequestStore#acceptReply was called without receiving a matching request 17
+2026-09-10 13:29:09.233 [warning] RequestStore#acceptReply was called without receiving a matching request 18
+2026-09-10 13:29:09.233 [warning] RequestStore#acceptReply was called without receiving a matching request 19
+2026-09-10 13:29:09.233 [warning] RequestStore#acceptReply was called without receiving a matching request 20
+2026-09-10 13:29:09.233 [warning] RequestStore#acceptReply was called without receiving a matching request 21
+2026-09-10 13:31:06.849 [info] Extension host with pid 24848 exited with code: 0, signal: unknown.
+2026-09-10 13:31:30.206 [error] [uncaught exception in main]: Error: timeout
+2026-09-10 13:31:30.206 [error] Error: timeout
+    at Timeout._onTimeout (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:883253)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+2026-09-10 13:31:40.936 [info] Extension host with pid 7772 exited with code: 0, signal: unknown.

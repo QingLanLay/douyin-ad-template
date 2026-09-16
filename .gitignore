@@ -1,0 +1,42 @@
+# ============================================================
+# Unity 工程 .gitignore
+# ============================================================
+
+# ---------- 强制排除：Unity 自动生成 / 无法上传 ----------
+# Library/ 内含单文件 107MB
+#   (Library/PackageCache/com.unity.burst@1.6.6/.Runtime/hostmac/lld)
+# 超过 GitHub 单文件 100MB 硬限制，push 必被拒绝；
+# 且该目录 22000+ 文件均为 Unity 可自动重建的缓存，不含任何源资产。
+/Library/
+/Temp/
+/UserSettings/
+
+# ---------- 可选：构建产物（体积大，可按需收窄）----------
+# 想只保留纯源码时，取消下面任意一行注释即可
+# /Output/
+# /BuildPackages/
+# /obj/
+# /Logs/
+
+# ---------- 崩溃 / 性能采样 ----------
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+crashlytics-build.properties
+sysinfo.txt
+
+# ---------- IDE ----------
+.vs/
+.idea/
+.vscode/
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.opendb
+*.VC.db
+
+# ---------- 系统 ----------
+.DS_Store
+Thumbs.db
+desktop.ini

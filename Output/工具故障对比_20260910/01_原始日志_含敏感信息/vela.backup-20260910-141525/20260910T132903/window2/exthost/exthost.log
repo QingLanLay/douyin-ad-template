@@ -1,0 +1,43 @@
+2026-09-10 13:29:07.636 [info] Extension host with pid 7772 started
+2026-09-10 13:29:07.637 [info] Skipping acquiring lock for c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81.
+2026-09-10 13:29:07.664 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-09-10 13:29:07.699 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:json'
+2026-09-10 13:29:07.717 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+2026-09-10 13:29:07.800 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onLanguage:json'
+2026-09-10 13:29:08.112 [info] Extension host with pid 4716 started
+2026-09-10 13:29:08.113 [error] Error: EEXIST: file already exists, open 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81\vscode.lock'
+2026-09-10 13:29:08.113 [info] Lock 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81\vscode.lock': Could not acquire lock, checking if the file is stale.
+2026-09-10 13:29:08.113 [warning] [douyinide.workbench] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[css]', provide the URI of a resource or 'null' for any resource.
+2026-09-10 13:29:08.113 [warning] [douyinide.workbench] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[ttml]', provide the URI of a resource or 'null' for any resource.
+2026-09-10 13:29:08.117 [info] Lock 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81\vscode.lock': The lockfile is scheduled to have been released.
+2026-09-10 13:29:08.117 [info] Lock 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81\vscode.lock': Deleting a stale lock.
+2026-09-10 13:29:08.117 [info] Lock 'c:\Users\linuo\AppData\Roaming\@byted\vela\User\workspaceStorage\a1f227edc8605c631ff08747e74d0b81\vscode.lock': Lock acquired.
+2026-09-10 13:29:08.123 [error] CodeExpectedError: 没有注册配置 beautify.config，因此无法写入 用户设置。
+    at $fCc.z (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:7074)
+    at $fCc.F (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:9829)
+    at $fCc.o (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:4045)
+    at Object.factory (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:3945)
+    at $Vh.j (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:251:77179)
+    at vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:251:77091
+    at new Promise (<anonymous>)
+    at $Vh.queue (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:251:77033)
+    at $fCc.writeConfiguration (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:3914)
+    at $mCc.Hb (vscode-file://vscode-app/h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/workbench.desktop.main.js:3104:44245)
+2026-09-10 13:29:08.166 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2026-09-10 13:29:08.170 [info] Eager extensions activated
+2026-09-10 13:29:08.175 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-09-10 13:31:31.924 [info] ExtensionService#_doActivateExtension christian-kohler.path-intellisense, startup: false, activationEvent: '*'
+2026-09-10 13:31:31.949 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: '*'
+2026-09-10 13:31:32.001 [info] ExtensionService#_doActivateExtension HookyQR.beautify, startup: false, activationEvent: '*'
+2026-09-10 13:31:32.028 [info] ExtensionService#_doActivateExtension vscode.css-language-features, startup: false, activationEvent: 'onStartupFinished', root cause: bytedance-microapp.microapp
+2026-09-10 13:31:32.061 [info] ExtensionService#_doActivateExtension bytedance-microapp.tila-helper, startup: false, activationEvent: 'onStartupFinished'
+2026-09-10 13:31:32.359 [info] ExtensionService#_doActivateExtension bytedance-microapp.microapp, startup: false, activationEvent: 'onStartupFinished'
+2026-09-10 13:31:40.865 [info] Extension host terminating: renderer closed the MessagePort
+2026-09-10 13:31:40.871 [info] Extension host with pid 7772 exiting with code 0
+2026-09-10 13:31:40.878 [error] Error: Channel has been closed
+	at r (file:///h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/api/node/extensionHostProcess.js:340:2999)
+	at Object.info (file:///h:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/vs/workbench/api/node/extensionHostProcess.js:340:3346)
+	at T.info (h:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\node_modules\@byted-tila\vscode\out\extensions\json-language-features\client\dist\node\jsonClientMain.js:2:45257)
+	at ChildProcess.<anonymous> (h:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\node_modules\@byted-tila\vscode\out\extensions\json-language-features\client\dist\node\jsonClientMain.js:2:599801)
+	at ChildProcess.emit (node:events:518:28)
+	at ChildProcess._handle.onexit (node:internal/child_process:293:12)

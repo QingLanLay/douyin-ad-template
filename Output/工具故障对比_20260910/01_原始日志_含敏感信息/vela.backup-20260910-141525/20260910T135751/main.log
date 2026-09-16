@@ -1,0 +1,38 @@
+2026-09-10 13:57:51.562 [info] [CSS_DEV] DONE, 1 css modules (47ms)
+2026-09-10 13:57:51.597 [info] update#setState disabled
+2026-09-10 13:57:51.598 [info] update#ctor - updates are disabled as there is no update URL
+2026-09-10 13:57:51.625 [error] Error: Error mutex already exists
+    at CodeApplication.S (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:346:19222)
+2026-09-10 13:57:53.278 [error] [uncaught exception in main]: Error: timeout
+2026-09-10 13:57:53.278 [error] Error: timeout
+    at Timeout._onTimeout (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:883253)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+2026-09-10 13:57:53.292 [error] [uncaught exception in main]: Error: timeout
+2026-09-10 13:57:53.292 [error] Error: timeout
+    at Timeout._onTimeout (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:883253)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+2026-09-10 13:57:54.773 [warning] RequestStore#acceptReply was called without receiving a matching request 1
+2026-09-10 13:57:54.773 [warning] RequestStore#acceptReply was called without receiving a matching request 2
+2026-09-10 13:57:54.773 [warning] RequestStore#acceptReply was called without receiving a matching request 3
+2026-09-10 13:57:54.774 [warning] RequestStore#acceptReply was called without receiving a matching request 4
+2026-09-10 13:57:54.774 [warning] RequestStore#acceptReply was called without receiving a matching request 5
+2026-09-10 13:57:54.774 [warning] RequestStore#acceptReply was called without receiving a matching request 6
+2026-09-10 13:57:54.774 [warning] RequestStore#acceptReply was called without receiving a matching request 7
+2026-09-10 13:57:54.787 [warning] RequestStore#acceptReply was called without receiving a matching request 8
+2026-09-10 13:57:54.788 [warning] RequestStore#acceptReply was called without receiving a matching request 9
+2026-09-10 13:57:54.788 [warning] RequestStore#acceptReply was called without receiving a matching request 10
+2026-09-10 13:57:54.788 [warning] RequestStore#acceptReply was called without receiving a matching request 11
+2026-09-10 13:57:54.788 [warning] RequestStore#acceptReply was called without receiving a matching request 12
+2026-09-10 13:57:54.788 [warning] RequestStore#acceptReply was called without receiving a matching request 13
+2026-09-10 13:57:54.789 [warning] RequestStore#acceptReply was called without receiving a matching request 14
+2026-09-10 13:57:56.773 [warning] RequestStore#acceptReply was called without receiving a matching request 15
+2026-09-10 13:57:56.780 [warning] RequestStore#acceptReply was called without receiving a matching request 16
+2026-09-10 13:57:56.780 [warning] RequestStore#acceptReply was called without receiving a matching request 17
+2026-09-10 13:57:56.780 [warning] RequestStore#acceptReply was called without receiving a matching request 18
+2026-09-10 13:57:56.780 [warning] RequestStore#acceptReply was called without receiving a matching request 19
+2026-09-10 13:57:56.780 [warning] RequestStore#acceptReply was called without receiving a matching request 20
+2026-09-10 13:57:56.780 [warning] RequestStore#acceptReply was called without receiving a matching request 21
+2026-09-10 13:58:21.275 [info] Extension host with pid 25772 exited with code: 0, signal: unknown.
+2026-09-10 13:58:24.583 [info] Extension host with pid 12216 exited with code: 0, signal: unknown.

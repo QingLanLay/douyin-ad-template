@@ -1,0 +1,23 @@
+{
+  "appid": "tt7b1e0da3e404a97c07",
+  "projectname": "抖音广告模板",
+  "unity": {
+    "build": {
+      "webgl": "D:\\UnityProj\\抖音广告模板\\Output\\webgl_package-20260616_091420.zip",
+      "native": {
+        "il2cpp": "",
+        "apk": "",
+        "fullApk": ""
+      },
+      "instantGame": ""
+    },
+    "publishType": "2",
+    "starkSdkVersion": "Without StarkSDK",
+    "unityToolsVersion": null,
+    "unityEngineVersion": "2021.3.15f1c1",
+    "arch": "both"
+  },
+  "setting": {
+    "urlCheck": true
+  }
+}

@@ -1,0 +1,37 @@
+来源：用户在本任务提供的全部 Console 信息；非浏览器直接导出。
+格式整理：将聊天转义的下划线及 @ 标记恢复为普通文本，不改变错误内容。
+
+[TMG] use engine: helium
+tmg-core.js:2 [TMG] plugin tt674511f8f84ea91612 inject success!
+tmg-core.js:1 [TMG] Error: Can't find module __plugin__tt674511f8f84ea91612/index.js
+at ?(:7044/miniapp/USER_RESOLVE_MODULE_ERROR: Can't find module __plugin__tt674511f8f84ea91612/index.js)
+at resolve(tmg-core.js:2)
+at a(tmg-core.js:2)
+at i(tmg-core.js:2)
+at Ez(tmg-core.js:2)
+at Object.Eve(tmg-core.js:2)
+at main(game.js? [sm]:45)
+at ?(eval (game.js? [sm]:159)
+at ?(tmg-core.js:2)
+at a(tmg-core.js:2)
+at i(tmg-core.js:2)
+console.error @ tmg-core.js:1
+(anonymous) @ tmg-core.js:2
+(anonymous) @ tmg-core.js:2
+_c.emit @ tmg-core.js:2
+up @ tmg-core.js:2
+cp @ tmg-core.js:2
+onerror @ tmg-core.js:2
+(anonymous) @ fc1e4817-905e-4793-a05d-26db25fd4242:2
+loadScriptSync @ d83f1f46-7915-402a-855c-8fecc302b66b:1
+(anonymous) @ d83f1f46-7915-402a-855c-8fecc302b66b:1
+(anonymous) @ d83f1f46-7915-402a-855c-8fecc302b66b:1
+(anonymous) @ d83f1f46-7915-402a-855c-8fecc302b66b:1
+(anonymous) @ d83f1f46-7915-402a-855c-8fecc302b66b:1
+
+此前另一次运行出现的错误（不得当成同一次启动的连续日志）：
+Uncaught ReferenceError: afterLoadGameJS is not defined
+ at _afterLoadGameJS (VM324 a7af52a2-87e4-4e09-8602-88c925787060:54)
+ at HTMLScriptElement.onload (VM327 a7af52a2-87e4-4e09-8602-88c925787060:57)
+_afterLoadGameJS @ VM324 a7af52a2-87e4-4e09-8602-88c925787060:54
+onload @ VM327 a7af52a2-87e4-4e09-8602-88c925787060:57

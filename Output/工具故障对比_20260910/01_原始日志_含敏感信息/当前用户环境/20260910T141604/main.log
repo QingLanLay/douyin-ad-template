@@ -1,0 +1,10 @@
+2026-09-10 14:16:06.985 [error] [uncaught exception in main]: Error: timeout
+2026-09-10 14:16:06.985 [error] Error: timeout
+    at Timeout._onTimeout (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:883253)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+2026-09-10 14:16:06.987 [error] [uncaught exception in main]: Error: timeout
+2026-09-10 14:16:06.987 [error] Error: timeout
+    at Timeout._onTimeout (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:883253)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)

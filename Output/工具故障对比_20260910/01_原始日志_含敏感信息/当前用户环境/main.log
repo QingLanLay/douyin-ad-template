@@ -1,0 +1,2077 @@
+[2026-09-10 14:15:26.154] [info]  [start loader] null
+[2026-09-10 14:15:26.158] [info]  [getUpdateInfo]start check updateInfo
+[2026-09-10 14:15:27.499] [debug] 请求 settings 使用的 device_id: 180005566901357
+[2026-09-10 14:15:27.500] [info]  [request start] https://developer.toutiao.com/service/settings/v3/
+[2026-09-10 14:15:27.588] [info]  [request start] https://ma.zijieapi.com/ide/build/razor_config
+[2026-09-10 14:15:27.597] [info]  [IDE INSPECT PORT] 8165
+[2026-09-10 14:15:27.955] [info]  [fetch update settings] undefined
+[2026-09-10 14:15:27.955] [info]  [clean update task temp]
+[2026-09-10 14:15:27.960] [info]  [check zip]
+[2026-09-10 14:15:27.962] [info]  [start check update task] 3600000
+[2026-09-10 14:15:28.241] [info]  当前版本获取不到更新信息
+[2026-09-10 14:16:03.300] [info]  [start loader] null
+[2026-09-10 14:16:03.304] [info]  [getUpdateInfo]start check updateInfo
+[2026-09-10 14:16:04.496] [debug] 请求 settings 使用的 device_id: 180005566901357
+[2026-09-10 14:16:04.497] [info]  [request start] https://developer.toutiao.com/service/settings/v3/
+[2026-09-10 14:16:04.586] [info]  [request start] https://ma.zijieapi.com/ide/build/razor_config
+[2026-09-10 14:16:04.594] [info]  [IDE INSPECT PORT] 8316
+[2026-09-10 14:16:04.646] [info]  [fetch update settings] undefined
+[2026-09-10 14:16:04.647] [info]  [clean update task temp]
+[2026-09-10 14:16:04.745] [info]  [check zip]
+[2026-09-10 14:16:04.746] [info]  [start check update task] 3600000
+[2026-09-10 14:16:05.028] [info]  当前版本获取不到更新信息
+[2026-09-10 14:16:06.986] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Error',
+      message: 'timeout',
+      stack: 'Error: timeout\n' +
+        '    at Timeout._onTimeout (H:\\抖音开发工具\\@bytedminiprogram-ide\\resources\\app\\app.content\\dist\\index.js:2:883253)\n' +
+        '    at listOnTimeout (node:internal/timers:588:17)\n' +
+        '    at process.processTimers (node:internal/timers:523:7)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020964464',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: 'a68a85ab-6dc6-4d53-8152-5bf8e1318d5b',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020966986,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '',
+      name: '',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:32.530] [info]  [start loader] null
+[2026-09-10 14:16:32.535] [info]  [getUpdateInfo]start check updateInfo
+[2026-09-10 14:16:33.685] [debug] 请求 settings 使用的 device_id: 180005566901357
+[2026-09-10 14:16:33.686] [info]  [request start] https://developer.toutiao.com/service/settings/v3/
+[2026-09-10 14:16:33.772] [info]  [request start] https://ma.zijieapi.com/ide/build/razor_config
+[2026-09-10 14:16:33.779] [info]  [IDE INSPECT PORT] 8390
+[2026-09-10 14:16:33.827] [debug] 请求 settings 使用的 device_id: 1272588016036457
+[2026-09-10 14:16:33.828] [info]  [request start] https://developer.toutiao.com/service/settings/v3/
+[2026-09-10 14:16:34.256] [info]  [fetch update settings] {
+  platformPatchDisabled: [],
+  forceFullUpdateVersions: [],
+  featureDisabled: true,
+  checkInterval: 3600000,
+  patchDisabled: true
+}
+[2026-09-10 14:16:34.257] [info]  [clean update task temp]
+[2026-09-10 14:16:34.259] [info]  [check zip]
+[2026-09-10 14:16:34.260] [info]  [start check update task] 3600000
+[2026-09-10 14:16:34.628] [info]  当前版本获取不到更新信息
+[2026-09-10 14:16:36.197] [info]  [request start] https://cloud.douyin.com/api/account/get_open_app_list
+[2026-09-10 14:16:36.199] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Error',
+      message: 'timeout',
+      stack: 'Error: timeout\n' +
+        '    at Timeout._onTimeout (H:\\抖音开发工具\\@bytedminiprogram-ide\\resources\\app\\app.content\\dist\\index.js:2:883253)\n' +
+        '    at listOnTimeout (node:internal/timers:588:17)\n' +
+        '    at process.processTimers (node:internal/timers:523:7)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020996199,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:36.216] [info]  [request start] https://cloud.douyin.com/api/account/get_open_app_list
+[2026-09-10 14:16:36.909] [info]  [request start] https://developer.toutiao.com/api/developer/ide/microgame/v1/get_app_list
+[2026-09-10 14:16:36.913] [info]  [request start] https://developer.toutiao.com/api/developer/ide/microgame/v1/get_app_list
+[2026-09-10 14:16:37.086] [info]  [request start] https://cloud.douyin.com/api/account/get_app_info
+[2026-09-10 14:16:37.176] [info]  [request start] https://cloud.douyin.com/api/account/get_app_info
+[2026-09-10 14:16:37.942] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020997942,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:37.943] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020997943,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:37.945] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020997945,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:37.946] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020997946,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:37.947] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020997947,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:37.949] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020997949,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:38.819] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020998819,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:38.820] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020998820,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:38.821] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020998821,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:38.822] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020998822,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:38.824] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020998824,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:38.826] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020998826,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:39.924] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020999924,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:39.926] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020999926,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:39.928] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020999928,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:39.930] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020999930,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:39.931] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020999931,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:39.932] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789020999932,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:16:43.286] [debug] 请求 settings 使用的 device_id: 1272588016036457
+[2026-09-10 14:16:43.286] [info]  [request start] https://developer.toutiao.com/service/settings/v3/
+[2026-09-10 14:17:51.906] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789021071906,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:17:51.907] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789021071907,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:17:51.909] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789021071909,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:17:51.909] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789021071909,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:17:51.910] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789021071910,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}
+[2026-09-10 14:17:51.911] [debug] [filter duplicate js_error] {
+  ev_type: 'js_error',
+  payload: {
+    error: {
+      name: 'Canceled',
+      message: 'Canceled',
+      stack: 'Canceled: Canceled\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:81008)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at MutableToken.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5356)\n' +
+        '    at $rf.cancel (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:5801)\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129146\n' +
+        '    at file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14352\n' +
+        '    at Object.dispose (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:1178)\n' +
+        '    at $rd (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:232:14015)\n' +
+        '    at $AA.acceptReply (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:306:129219)\n' +
+        '    at $TA.acceptPtyHostResolvedVariables (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:314:8475)\n' +
+        '    at Object.call (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:4708)\n' +
+        '    at $Jm.s (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16690)\n' +
+        '    at $Jm.q (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:16170)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:252:15522)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.D (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2733)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2963)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5510)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at UniqueContainer.value (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:5684)\n' +
+        '    at $ff.C (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2663)\n' +
+        '    at $ff.fire (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:251:2894)\n' +
+        '    at _ (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:249:7884)\n' +
+        '    at IpcMainImpl.t (file:///H:/%E6%8A%96%E9%9F%B3%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/@bytedminiprogram-ide/resources/app/app.content/node_modules/@byted-tila/vscode/out/out/main.js:254:23592)\n' +
+        '    at IpcMainImpl.emit (node:events:530:35)\n' +
+        '    at Session.<anonymous> (node:electron/js2c/browser_init:2:121200)\n' +
+        '    at Session.emit (node:events:518:28)'
+    },
+    breadcrumbs: []
+  },
+  common: {
+    bid: 'electron_12345',
+    pid: 'main',
+    view_id: '_1789020993653',
+    user_id: 'unknown',
+    device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+    session_id: '00253bbf-f1d7-4f52-b608-5c96bd47861a',
+    release: 'win32-4.5.6-478346290-x64',
+    env: 'production',
+    timestamp: 1789021071911,
+    sdk_version: '3.2.45',
+    sdk_name: 'SDK_SLARDAR_ELECTRON',
+    context: {
+      user_id: '1272588016036457',
+      name: 'Halyn',
+      device_id: 'a3b6cfdf-6c6d-4f32-9027-836acad39f2e',
+      ide_version: '4.5.6',
+      os_version: '10.0.19045',
+      os_platform: 'win32',
+      dev_app_id: '',
+      ext_app_id: '',
+      tech_type: '',
+      ide_version_number: '40506',
+      ide_env: '',
+      branch: 'master',
+      build_id: '478346290',
+      buildId: '478346290',
+      arch: 'x64',
+      ide_version_int: '40506',
+      is_sandbox: '0',
+      frameworkType: '',
+      workbench_mode: '',
+      e2e_scene: '',
+      cpu_model: '12th-Gen-Intel(R)-Core(TM)-i5-12490F',
+      system_memory: '32',
+      is_mixed: '0',
+      is_go_dot: '0'
+    },
+    sample_rate: 1
+  }
+}

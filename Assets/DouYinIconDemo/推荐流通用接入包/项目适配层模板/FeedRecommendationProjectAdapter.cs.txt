@@ -1,0 +1,105 @@
+using UnityEngine;
+
+// 将文件复制到目标项目后改名为 .cs，并把 TODO 替换为当前游戏的真实逻辑。
+/// <summary>
+/// 推荐流项目适配层示例。资源准备、卡片可见和进入完整游戏是三个不同阶段。
+/// </summary>
+public static class MyGameFeedAdapter
+{
+    private static bool registered;
+    private static FeedVideoPlayerController video;
+
+    public static void Register()
+    {
+        if (registered) return;
+        registered = true;
+
+        FeedRecommendationManager manager = FeedRecommendationManager.Instance;
+        manager.SchemePrepared += OnPrepared;
+        manager.CardShown += OnCardShown;
+        manager.CardHidden += OnCardHidden;
+        manager.FeedEntered += OnFeedEntered;
+        manager.SchemeEntered += OnFirstEntered;
+        manager.FeedExited += OnFeedExited;
+        manager.ConfigurationFailed += OnConfigurationFailed;
+    }
+
+    private static void OnPrepared(FeedLaunchContext context)
+    {
+        // 这里只加载场景、关卡、UI、输入、AudioClip 和视频首帧。
+        // 禁止启动 AI、配音、字幕、倒计时、存档和奖励。
+        switch (context.Scheme)
+        {
+            case FeedExperienceScheme.Video:
+                PrepareVideo(context.Payload);
+                break;
+            case FeedExperienceScheme.TrialLevel:
+                // TODO：预加载 context.Payload 指定的试玩关卡。
+                // 可玩画面渲染完成后调用 ReportSceneReady()。
+                break;
+            case FeedExperienceScheme.NewPlayerGuide:
+                // TODO：预加载 context.Payload 指定的新手引导。
+                // 可玩画面渲染完成后调用 ReportSceneReady()。
+                break;
+        }
+    }
+
+    private static void OnCardShown(FeedLaunchContext context)
+    {
+        if (video != null) video.SetCardVisible(true);
+
+        // TODO：从这里开始或恢复卡片 AI、动画和试玩计时。
+        // 配音 Play、字幕时钟清零和首条字幕必须在这个方法的同一帧放行。
+        // 不要从 SchemePrepared、资源加载完成、ReportScene 或 FeedEnter 启动卡片配音。
+    }
+
+    private static void OnCardHidden(FeedLaunchContext context)
+    {
+        if (video != null) video.SetCardVisible(false);
+        // TODO：暂停卡片 AI、配音、字幕和试玩计时，保留当前位置供下次 OnShow 恢复。
+    }
+
+    private static void OnFeedEntered(FeedLaunchContext context)
+    {
+        // 每次从推荐流进入完整小游戏都会触发；用于恢复完整游戏。
+        // TODO：恢复目标游戏自己的暂停系统，不要从头重播卡片配音。
+    }
+
+    private static void OnFirstEntered(FeedLaunchContext context)
+    {
+        // 整个推荐流会话只触发一次；用于登录、active、正式存档和完整游戏承接。
+        if (video != null)
+        {
+            video.Close();
+            video = null;
+        }
+        // TODO：执行目标游戏第一次正式进入逻辑。
+    }
+
+    private static void OnFeedExited(FeedLaunchContext context)
+    {
+        // TODO：暂停完整小游戏；等待后续真实 OnShow 再恢复卡片体验。
+    }
+
+    private static void PrepareVideo(string url)
+    {
+        video = FeedVideoPlayerController.Create();
+        video.Ready += () => FeedRecommendationManager.Instance.ReportSceneReady();
+        video.Failed += message =>
+        {
+            Debug.LogWarning("[推荐流适配] 视频失败，加载安全兜底页面：" + message);
+            if (video != null) video.Close();
+            video = null;
+            // TODO：加载首页或安全页面，完成后调用 ReportFallbackSceneReady()。
+        };
+        // 隐藏阶段静音准备首帧，只有 CardShown 才正式有声播放。
+        video.PrepareAndPlay(url);
+    }
+
+    private static void OnConfigurationFailed(string reason)
+    {
+        Debug.LogError("[推荐流适配] 配置失败，加载安全兜底页面：" + reason);
+        // TODO：加载安全兜底页面，完成后调用：
+        // FeedRecommendationManager.Instance.ReportFallbackSceneReady();
+    }
+}

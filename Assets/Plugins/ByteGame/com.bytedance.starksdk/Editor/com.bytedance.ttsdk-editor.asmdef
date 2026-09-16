@@ -1,0 +1,19 @@
+{
+    "name": "com.bytedance.ttsdk-editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f726b99c8f0c1fe448884ca0ad4a2bf7",
+        "GUID:540c48bab5f74e5409c797a7c63ed86e"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,16 @@
+2026-09-10 13:44:16.907 [error] [uncaught exception in main]: NoPermissions (FileSystemError): Error: EPERM: operation not permitted, rename 'C:\Users\linuo\AppData\Roaming\@byted\vela\User\settings.json.1732061901' -> 'C:\Users\linuo\AppData\Roaming\@byted\vela\User\settings.json'
+2026-09-10 13:44:16.907 [error] NoPermissions (FileSystemError): Error: EPERM: operation not permitted, rename 'C:\Users\linuo\AppData\Roaming\@byted\vela\User\settings.json.1732061901' -> 'C:\Users\linuo\AppData\Roaming\@byted\vela\User\settings.json'
+    at s.create (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:845077)
+    at e.toFileSystemProviderError (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:841446)
+    at e.<anonymous> (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:840466)
+    at Generator.throw (<anonymous>)
+    at s (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:836948)
+2026-09-10 13:44:17.172 [info] [CSS_DEV] DONE, 1 css modules (45ms)
+2026-09-10 13:44:17.194 [info] update#setState disabled
+2026-09-10 13:44:17.194 [info] update#ctor - updates are disabled as there is no update URL
+2026-09-10 13:44:18.922 [error] [uncaught exception in main]: Error: timeout
+2026-09-10 13:44:18.922 [error] Error: timeout
+    at Timeout._onTimeout (H:\抖音开发工具\@bytedminiprogram-ide\resources\app\app.content\dist\index.js:2:883253)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+2026-09-10 13:45:11.708 [info] Extension host with pid 16464 exited with code: 0, signal: unknown.
