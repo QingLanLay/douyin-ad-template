@@ -4,6 +4,7 @@
   "enableWebGL2":$ENABLEWEBGL2,
   "enableIOSHighPerformanceMode": true,
   "enableIOSHighPerformanceModePlus": $ENABLEIOSHIGHERPERFORMANCEPLUS,
+  "enableAndroidPipelineMode": $ENABLE_ANDROID_PIPELINE_MODE,
   "subpackages": [
     $STREAM_ASSET_DIR
     {
@@ -17,7 +18,7 @@
   ],
   "plugins": {
     "UnityPlugin": {
-      "version": "4.32.0",
+      "version": "4.43.0",
       "provider": "tt674511f8f84ea91612"
     }
   },

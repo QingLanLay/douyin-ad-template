@@ -60,12 +60,20 @@ namespace TTSDK.Tool
                 EditorGUILayout.BeginVertical("frameBox", GUILayout.ExpandWidth(true));
                 
                 CreateBoolean("needCompress", "压缩首包资源");
+                if (!_editingBooleanData["needCompress"])
+                {
+                    EditorGUILayout.HelpBox("请确保线上包勾选此选项以进行br压缩", MessageType.Warning);
+                }
                 
                 var isOldFormat = ReadProperty<bool>(miniGameProperty, "isOldBuildFormat");
                 if (!isOldFormat)
                 {
                     CreateEnumPopup("dataLoadType", "首包资源加载方式", new[] {"CDN","Package"}, new[] { 0, 1 },
                         "Package代表data资源随游戏包体一起发布，CDN代表data资源在游戏包外，需额外部署在CDN上");
+                    if (_editingEnumData["dataLoadType"] == (int)DataLoadType.CDN)
+                    {
+                        EditorGUILayout.HelpBox("启用Data CDN会导致首包状态下fp耗时劣化", MessageType.Warning);
+                    }
                 }
 
                 CreateInput("dataFileSubPrefix","首包资源加载前缀","首包资源访问路径拼接规则:DATA_CDN + dataFileSubPrefix + datafilename");
@@ -116,12 +124,13 @@ namespace TTSDK.Tool
                         EditorGUILayout.LabelField(string.Empty, GUILayout.Width(_snapPadding));
                         if (GUILayout.Button("什么是高性能+模式?", EditorStyles.linkLabel))
                         {
-                            //Application.OpenURL("https://developer.open-douyin.com/docs/resource/zh-CN/mini-game/develop/guide/performance-optimization/high-performance-plus-mode");
+                            Application.OpenURL("https://developer.open-douyin.com/docs/resource/zh-CN/mini-game/develop/guide/performance-optimization/high-performance-plus-mode");
                         }
                         EditorGUILayout.LabelField(string.Empty, GUILayout.Width(_snapPadding));
                     });
                 CreateBoolean("profiling", "显示性能面板");
                 CreateBoolean("isOldBuildFormat", "是否采用旧格式打包");
+                CreateBoolean("enableEmscriptenGlx", "是否启用EmscriptenGLX");
 
                 EditorGUILayout.EndVertical();
             }
@@ -254,6 +263,7 @@ namespace TTSDK.Tool
             _editingEnumData["orientation"] = ReadProperty<int>(miniGameProperty, "orientation");
 
             _editingBooleanData["isOldBuildFormat"] = ReadProperty<bool>(miniGameProperty, "isOldBuildFormat");
+            _editingBooleanData["enableEmscriptenGlx"] = ReadProperty<bool>(miniGameProperty, "enableEmscriptenGlx");
             
         }
         
@@ -281,6 +291,8 @@ namespace TTSDK.Tool
             SaveProperty(miniGameProperty, "orientation", _editingEnumData["orientation"]);
 
             SaveProperty(miniGameProperty, "isOldBuildFormat", _editingBooleanData["isOldBuildFormat"]);
+
+            SaveProperty(miniGameProperty, "enableEmscriptenGlx", _editingBooleanData["enableEmscriptenGlx"]);
 
             SaveProperty(miniGameProperty, "dataLoadType", _editingEnumData["dataLoadType"]);
             SaveProperty(miniGameProperty, "dataFileSubPrefix", _editingInputData["dataFileSubPrefix"]);

@@ -26,11 +26,16 @@ mergeInto(LibraryManager.library, {
         var _id = UTF8ToString(id);
         var _callback = function(code, message) {
 
-            var len = lengthBytesUTF8(_id) + 1;
-            var idPtr = _malloc(len);
-            stringToUTF8(_id, idPtr, len);
-            
-            dynCall("viii", callback, [idPtr, code, 0]);
+            var idPtr = 0;
+            try {
+                var len = lengthBytesUTF8(_id) + 1;
+                idPtr = _malloc(len);
+                stringToUTF8(_id, idPtr, len);
+
+                dynCall("viii", callback, [idPtr, code, 0]);
+            } finally {
+                if (idPtr) _free(idPtr);
+            }
         }
         window.StarkSDK.abfs.fetchBundleFromXHR(_url, _id, _callback, needRetry);
     }

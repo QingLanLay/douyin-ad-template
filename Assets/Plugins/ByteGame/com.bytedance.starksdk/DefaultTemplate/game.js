@@ -9,6 +9,7 @@ require('./plugin-config.js');
 
 const managerConfig = {
      DATA_CDN: "$DEPLOY_URL",
+     resourceCdnUrl: "$RESOURCE_CDN_URL",
      DATA_FILE_MD5: "$DATA_MD5", 
      CODE_FILE_MD5: "$CODE_MD5",
      GAME_NAME: "$GAME_NAME",
@@ -48,19 +49,6 @@ function main() {
   const canvas = tt.createCanvas();
   canvas.width = info.screenWidth;
   canvas.height = info.screenHeight;
-
-  function focusUnityCanvas() {
-    if (canvas && typeof canvas.focus === 'function') {
-      canvas.focus();
-    }
-  }
-
-  if (canvas && typeof canvas.addEventListener === 'function') {
-    ['pointerdown', 'touchstart', 'mousedown'].forEach((eventName) => {
-      canvas.addEventListener(eventName, focusUnityCanvas, { passive: true });
-    });
-  }
-  focusUnityCanvas();
 
   Object.assign(managerConfig, {
     // callmain结束后立即隐藏封面视频

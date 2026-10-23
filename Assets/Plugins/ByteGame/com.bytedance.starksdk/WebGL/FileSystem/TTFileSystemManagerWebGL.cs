@@ -820,7 +820,8 @@ namespace TTSDK
         public override byte[] ReadFileSync(string filePath)
         {
             if (Application.platform == RuntimePlatform.WebGLPlayer ||
-                (Application.unityVersion.Contains("t") && (int)Application.platform == 0x00000032))
+                (Application.unityVersion.Contains("t") && (int)Application.platform == 0x00000032) ||
+                (Application.unityVersion.Contains("t") && (int)Application.platform == 0x00000038))
             {
                 filePath = FixFilePath(filePath);
                 var length = StarkReadBinFileSync(filePath);
