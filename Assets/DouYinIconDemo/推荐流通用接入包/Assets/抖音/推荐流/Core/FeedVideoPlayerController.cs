@@ -94,7 +94,12 @@ public sealed class FeedVideoPlayerController : MonoBehaviour
     {
         completed = true;
         if (player != null) player.Stop();
-        if (texture != null) texture.Release();
+        if (texture != null)
+        {
+            texture.Release();
+            Destroy(texture);
+            texture = null;
+        }
         Destroy(gameObject);
     }
 

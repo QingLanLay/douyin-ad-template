@@ -40,8 +40,8 @@
 4. 在 `DouyinAdSystem` 上填写目标应用自己的激励广告位、插屏广告位和推荐流 content_id。
 5. 发布前关闭 `AdManager.isTest`；包内保留模板当前的测试模式，避免导入后误请求真实广告。
 6. 原子按钮可以直接放到任意 Canvas。体力状态入口会查找当前已加载场景中的 `EnergyPanelView`，体力面板可以放在同一场景的任意 Canvas 下。
-7. `SiderBarPanel.prefab` 可以直接放到任意 Canvas。`DouyinSidebarButton.prefab` 点击后只激活该面板，不会直接调用平台 API；真正的侧边栏 API 仅由面板内部的“进入侧边栏”按钮调用。侧边栏奖励按本地自然日记录，每天最多领取一次。
-8. `DouyinAddDesktopButton.prefab` 和 `DouyinSidebarButton.prefab` 不会再根据已添加或已领取状态隐藏自身；业务层可通过各自的 UnityEvent 显示提示。
+7. `SiderBarPanel.prefab` 可以直接放到任意 Canvas。`02_侧边栏.prefab` 点击后只激活该面板，不会直接调用平台 API；真正的侧边栏 API 仅由面板内部的“进入侧边栏”按钮调用。侧边栏奖励按本地自然日记录，每天最多领取一次。
+8. `01_添加桌面.prefab` 和 `02_侧边栏.prefab` 不会再根据已添加或已领取状态隐藏自身；业务层可通过各自的 UnityEvent 显示提示。
 9. 推荐流源码位于 `Assets/DouYinIconDemo/推荐流通用接入包`。导入后先阅读其中的 `README.md`，
    保证目标项目只有一个 `TT.InitSDK` 和一个 Feed 监听所有者，再填写
    `Resources/FeedRecommendationConfig.asset` 中的 ContentID 或远程 JSON 地址。

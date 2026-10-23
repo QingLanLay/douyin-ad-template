@@ -22,10 +22,14 @@ public static class MyGameFeedAdapter
         manager.SchemeEntered += OnFirstEntered;
         manager.FeedExited += OnFeedExited;
         manager.ConfigurationFailed += OnConfigurationFailed;
+        manager.FullGameHidden += OnFullGameHidden;
+        manager.FullGameShown += OnFullGameShown;
+        manager.SessionEnded += OnSessionEnded;
     }
 
     private static void OnPrepared(FeedLaunchContext context)
     {
+        CloseVideo();
         // 这里只加载场景、关卡、UI、输入、AudioClip 和视频首帧。
         // 禁止启动 AI、配音、字幕、倒计时、存档和奖励。
         switch (context.Scheme)
@@ -73,6 +77,8 @@ public static class MyGameFeedAdapter
             video.Close();
             video = null;
         }
+        // 编辑器预览不登录、不写正式存档、不发业务奖励。
+        if (FeedRecommendationManager.Instance.IsEditorPreview) return;
         // TODO：执行目标游戏第一次正式进入逻辑。
     }
 
@@ -81,19 +87,49 @@ public static class MyGameFeedAdapter
         // TODO：暂停完整小游戏；等待后续真实 OnShow 再恢复卡片体验。
     }
 
+    private static void OnFullGameHidden(FeedLaunchContext context)
+    {
+        // TODO：用项目暂停系统暂停完整游戏的声音、输入和计时。
+    }
+
+    private static void OnFullGameShown(FeedLaunchContext context)
+    {
+        // TODO：恢复完整游戏，不重做登录、初始化或首次进入奖励。
+    }
+
+    private static void CloseVideo()
+    {
+        if (video == null) return;
+        FeedVideoPlayerController previous = video;
+        video = null;
+        previous.Close();
+    }
+
+    private static void OnSessionEnded(FeedLaunchContext context)
+    {
+        CloseVideo();
+        // TODO：取消本会话的异步加载、配音、字幕和临时暂停占用。
+    }
+
     private static void PrepareVideo(string url)
     {
-        video = FeedVideoPlayerController.Create();
-        video.Ready += () => FeedRecommendationManager.Instance.ReportSceneReady();
-        video.Failed += message =>
+        CloseVideo();
+        FeedRecommendationManager manager = FeedRecommendationManager.Instance;
+        int version = manager.LaunchVersion;
+        FeedVideoPlayerController current = FeedVideoPlayerController.Create();
+        video = current;
+        current.Ready += () =>
         {
-            Debug.LogWarning("[推荐流适配] 视频失败，加载安全兜底页面：" + message);
-            if (video != null) video.Close();
-            video = null;
-            // TODO：加载首页或安全页面，完成后调用 ReportFallbackSceneReady()。
+            if (manager.IsCurrentSession(version) && video == current) manager.ReportSceneReady();
         };
-        // 隐藏阶段静音准备首帧，只有 CardShown 才正式有声播放。
-        video.PrepareAndPlay(url);
+        current.Failed += message =>
+        {
+            if (!manager.IsCurrentSession(version) || video != current) return;
+            Debug.LogWarning("[推荐流适配] 视频失败，加载安全兜底页面：" + message);
+            CloseVideo();
+            // TODO：加载首页，完成后仅在 manager.IsCurrentSession(version) 时上报就绪。
+        };
+        current.PrepareAndPlay(url);
     }
 
     private static void OnConfigurationFailed(string reason)

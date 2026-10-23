@@ -34,6 +34,20 @@ public sealed class FeedRecommendationManager : MonoBehaviour
     private bool returnScenesReadyReportedThisSession;
     private bool returnScenesReadyRequestInProgress;
     private float launchStartedAt;
+    private int launchVersion;
+    private bool isAppVisible;
+    private bool configurationResolving;
+    private bool resourcesReadyObserved;
+    private UnityWebRequest activeLaunchRequest;
+    private readonly List<FeedLifecycleRecord> lifecycleHistory = new List<FeedLifecycleRecord>();
+#if UNITY_EDITOR
+    private bool editorPreview;
+    private bool debugAutoSceneReady = true;
+    private bool debugReadinessPending;
+    private int debugPendingSceneId = 7001;
+    private FeedRecommendationConfig debugConfig;
+    private bool debugUseRemote;
+#endif
     private OnFeedStatusChangeCallback feedStatusCallback;
     private TTAppLifeCycle appLifeCycle;
     private TTAppLifeCycle.OnShowEventWithDict appShowCallback;
@@ -77,36 +91,97 @@ public sealed class FeedRecommendationManager : MonoBehaviour
 
     /// <summary>当前已解析的推荐流启动上下文；尚未解析完成时为 null。</summary>
     public FeedLaunchContext CurrentContext => context;
+    public static FeedRecommendationManager ExistingInstance => instance;
+    public int LaunchVersion => launchVersion;
+    public bool IsDirectPlay => isDirectPlay;
+    public bool IsCardVisible => cardShowDispatched;
+    public bool IsInFullGame => isInFullGame;
+    public bool IsAppVisible => isAppVisible;
+    public bool IsSceneReady => readyReported;
+    public bool IsResolvingConfiguration => configurationResolving;
+    public FeedLifecycleStage LifecycleStage { get; private set; }
+    public string LastConfigurationFailure { get; private set; }
+    public IReadOnlyList<FeedLifecycleRecord> LifecycleHistory => lifecycleHistory;
+    public event Action<FeedLifecycleRecord> LifecycleChanged;
+    /// <summary>完整游戏进入后台，与卡片 OnHide 分开。</summary>
+    public event Action<FeedLaunchContext> FullGameHidden;
+    /// <summary>完整游戏从后台恢复，不重复触发首次进入。</summary>
+    public event Action<FeedLaunchContext> FullGameShown;
+    /// <summary>当前内容结束；切换 ID 时释放视频并恢复该体验占用的暂停状态。</summary>
+    public event Action<FeedLaunchContext> SessionEnded;
+    public bool IsEditorPreview
+    {
+        get
+        {
+#if UNITY_EDITOR
+            return editorPreview;
+#else
+            return false;
+#endif
+        }
+    }
+
+    public bool IsCurrentSession(int version) => isDirectPlay && version == launchVersion;
+
+    private void RecordLifecycle(FeedLifecycleStage stage, string detail)
+    {
+        LifecycleStage = stage;
+        var record = new FeedLifecycleRecord(stage, detail, context, launchVersion);
+        if (lifecycleHistory.Count >= 120) lifecycleHistory.RemoveAt(0);
+        lifecycleHistory.Add(record);
+        LifecycleChanged?.Invoke(record);
+    }
 
 #if UNITY_EDITOR
-    /// <summary>仅供推荐流编辑器调试器使用：按配置模拟一次推荐流启动。</summary>
+    /// <summary>兼容原调试入口，保留正式远程优先解析。</summary>
     public void DebugSimulateLaunch(FeedUserChannel channel, string contentId, int sceneId)
     {
         ResetState();
+        editorPreview = true;
         isDirectPlay = true;
         launchStartedAt = Time.realtimeSinceStartup;
-        StartCoroutine(ResolveConfig(channel, contentId, sceneId));
+        RecordLifecycle(FeedLifecycleStage.LaunchStarted, "编辑器模拟启动");
+        StartCoroutine(ResolveConfig(channel, contentId, sceneId, launchVersion));
     }
 
-    public void DebugSimulateShow()
+    /// <summary>精确预览所选配置。默认仅使用所选本地资产，不受服务器旧配置覆盖。</summary>
+    public void DebugPreviewContent(FeedRecommendationConfig asset, FeedContentConfig item,
+        bool useRemote = false, bool showCard = true, bool autoReady = true)
     {
-        HandleAppShow(null);
+        if (asset == null || !FeedPreviewSequence.IsValid(item)) return;
+        ResetState();
+        editorPreview = true;
+        debugConfig = asset;
+        debugUseRemote = useRemote;
+        debugAutoSceneReady = autoReady;
+        isDirectPlay = true;
+        launchStartedAt = Time.realtimeSinceStartup;
+        RecordLifecycle(FeedLifecycleStage.LaunchStarted, "编辑器内容：" + item.contentId);
+        StartCoroutine(ResolveConfig(item.channel, item.contentId, item.returnSceneId, launchVersion));
+        if (showCard) HandleAppShow(null);
     }
 
-    public void DebugSimulateHide()
+    public bool DebugReadinessPending => debugReadinessPending;
+    public void DebugSimulateSceneReady()
     {
-        HandleAppHide();
+        if (!isDirectPlay || context == null || readyReported) return;
+        if (!debugReadinessPending)
+        {
+            Debug.LogWarning("[推荐流调试] 资源或视频首帧尚未就绪，不能提前上报 7001。");
+            return;
+        }
+        debugAutoSceneReady = true;
+        ReportSceneReadyInternal(debugPendingSceneId);
     }
-
-    public void DebugSimulateEnter()
+    public void DebugSimulateShow() => HandleAppShow(null);
+    public void DebugSimulateHide() => HandleAppHide();
+    public void DebugSimulateEnter() => HandleFeedEnterSignal();
+    public void DebugSimulateExit() => HandleFeedExitSignal();
+    public void DebugEndPreview()
     {
-        HandleFeedEnterSignal();
+        if (editorPreview) ResetState();
     }
-
-    public void DebugSimulateExit()
-    {
-        HandleFeedExitSignal();
-    }
+    public void DebugClearLifecycleHistory() => lifecycleHistory.Clear();
 #endif
 
     /// <summary>仅供玩家主动点击时调用；每次运行最多尝试拉起一次订阅弹窗。</summary>
@@ -402,7 +477,13 @@ public sealed class FeedRecommendationManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (instance == this) instance = null;
+        if (instance == this)
+        {
+            if (activeLaunchRequest != null) AbortNativeRequest(activeLaunchRequest);
+            activeLaunchRequest = null;
+            if (isDirectPlay) SessionEnded?.Invoke(context);
+            instance = null;
+        }
 
         if (listenerRegistered && feedStatusCallback != null)
         {
@@ -444,7 +525,8 @@ public sealed class FeedRecommendationManager : MonoBehaviour
         isDirectPlay = true;
         // 先监听卡片可见性和完整游戏进出，再异步解析配置，避免快速回调造成事件丢失。
         RegisterPlatformListeners();
-        StartCoroutine(ResolveConfig(channel, contentId, sceneId));
+        RecordLifecycle(FeedLifecycleStage.LaunchStarted, "平台推荐流启动");
+        StartCoroutine(ResolveConfig(channel, contentId, sceneId, launchVersion));
         return true;
     }
 
@@ -473,9 +555,26 @@ public sealed class FeedRecommendationManager : MonoBehaviour
 
     private void ReportSceneReadyInternal(int platformSceneId)
     {
+        if (!isDirectPlay || readyReported) return;
+        if (!resourcesReadyObserved)
+        {
+            resourcesReadyObserved = true;
+            RecordLifecycle(FeedLifecycleStage.ResourcesReady, "资源 / 可展示首帧已就绪");
+        }
+#if UNITY_EDITOR
+        if (editorPreview && !debugAutoSceneReady)
+        {
+            if (!debugReadinessPending) RecordLifecycle(FeedLifecycleStage.ResourcesReady, "资源/首帧就绪，等待手动上报 7001");
+            debugReadinessPending = true;
+            debugPendingSceneId = platformSceneId;
+            return;
+        }
+        debugReadinessPending = false;
+#endif
         // 7001 上报适用于平台开放的各宿主，不得增加 hostName/IsDouyin 前置拦截。
         // 在调用入口处统一防重，确保一次启动只上报一次场景就绪。
       readyReported = true;
+      RecordLifecycle(FeedLifecycleStage.SceneReady, "ReportScene(" + platformSceneId + ")，本次启动防重");
       int cost = Mathf.Max(1, Mathf.RoundToInt((Time.realtimeSinceStartup - launchStartedAt) * 1000f));
 #if UNITY_EDITOR
       Debug.Log($"[推荐流调试] 模拟 ReportScene：sceneId={platformSceneId}, costTime={cost}");
@@ -487,20 +586,36 @@ public sealed class FeedRecommendationManager : MonoBehaviour
           (code, message) => Debug.LogError($"[推荐流] ReportScene 失败：{code} {message}"),
           null);
 #endif
+        if (enterPending) DispatchEnter();
+        else DispatchCardShownIfReady();
   }
 
-    private IEnumerator ResolveConfig(FeedUserChannel channel, string contentId, int sceneId)
+    private IEnumerator ResolveConfig(FeedUserChannel channel, string contentId, int sceneId, int version)
     {
-        FeedRecommendationConfig local = LoadLocalConfig();
+        configurationResolving = true;
+        RecordLifecycle(FeedLifecycleStage.ResolvingConfiguration, "匹配 ContentID=" + contentId);
+        FeedRecommendationConfig local = null;
+        bool useRemote = true;
+#if UNITY_EDITOR
+        if (editorPreview && debugConfig != null)
+        {
+            local = debugConfig;
+            useRemote = debugUseRemote;
+        }
+#endif
+        if (local == null) local = LoadLocalConfig();
         FeedContentConfig selected = null;
 
         // 优先读取远程配置，便于不发版动态调整推荐内容。
-        if (local != null && !string.IsNullOrWhiteSpace(local.RemoteConfigUrl))
+        if (useRemote && local != null && !string.IsNullOrWhiteSpace(local.RemoteConfigUrl))
         {
             yield return RequestRemote(local.RemoteConfigUrl, local.RemoteTimeoutSeconds,
                 channel, contentId, value => selected = value);
         }
 
+        // 已切换 ID 的旧请求不能覆盖新预览，也不能补发旧生命周期。
+        if (!IsCurrentSession(version)) yield break;
+        configurationResolving = false;
         // 远程请求失败或没有命中时，再读取随包发布的本地兜底配置。
         if (selected == null && local != null)
         {
@@ -522,6 +637,10 @@ public sealed class FeedRecommendationManager : MonoBehaviour
         {
             string reason = $"远程和本地均无配置：channel={channel}, contentId={contentId}";
             Debug.LogError("[推荐流] " + reason);
+            LastConfigurationFailure = reason;
+            // 安全兜底也保留启动上下文，允许首帧就绪后正常接收 OnShow/FeedEnter。
+            context = new FeedLaunchContext(channel, contentId, sceneId, FeedExperienceScheme.TrialLevel, string.Empty);
+            RecordLifecycle(FeedLifecycleStage.ConfigurationFailed, reason);
             ConfigurationFailed?.Invoke(reason);
             yield break;
         }
@@ -542,7 +661,9 @@ public sealed class FeedRecommendationManager : MonoBehaviour
 
         context = new FeedLaunchContext(channel, contentId, effectiveSceneId, selected.scheme, selected.payload);
         Debug.Log("[推荐流] 已匹配 " + context);
+        RecordLifecycle(FeedLifecycleStage.SchemePrepared, "方案已匹配，进入隐藏预加载");
         SchemePrepared?.Invoke(context);
+        if (!IsCurrentSession(version)) yield break;
 
         // 平台事件可能早于异步配置返回，此处补发之前暂存的状态。
         if (exitPending)
@@ -565,8 +686,10 @@ public sealed class FeedRecommendationManager : MonoBehaviour
         using (UnityWebRequest request = UnityWebRequest.Get(url))
         {
             request.timeout = timeout;
+            activeLaunchRequest = request;
             Debug.Log("[推荐流] 请求远程配置：" + url);
             yield return request.SendWebRequest();
+            if (activeLaunchRequest == request) activeLaunchRequest = null;
 
             if (request.result != UnityWebRequest.Result.Success)
             {
@@ -614,15 +737,41 @@ public sealed class FeedRecommendationManager : MonoBehaviour
 
     private void HandleAppShow(Dictionary<string, object> args)
     {
-        if (!isDirectPlay || isInFullGame || isCardVisible) return;
+        if (!isDirectPlay) return;
+        bool wasVisible = isAppVisible;
+        isAppVisible = true;
+        if (isInFullGame)
+        {
+            if (!wasVisible && context != null && readyReported && !enterPending)
+            {
+                RecordLifecycle(FeedLifecycleStage.FullGameShown, "完整游戏前台恢复，不重复 SchemeEntered");
+                FullGameShown?.Invoke(context);
+            }
+            return;
+        }
+        if (isCardVisible) return;
         isCardVisible = true;
+        RecordLifecycle(FeedLifecycleStage.CardShowRequested, "收到 OnShow，等待配置与首帧就绪");
         DispatchCardShownIfReady();
     }
 
     private void HandleAppHide()
     {
-        if (!isDirectPlay || isInFullGame || !isCardVisible) return;
+        if (!isDirectPlay) return;
+        bool wasVisible = isAppVisible;
+        isAppVisible = false;
+        if (isInFullGame)
+        {
+            if (wasVisible && context != null)
+            {
+                RecordLifecycle(FeedLifecycleStage.FullGameHidden, enterPending ? "完整游戏尚在加载，保持后台等待" : "完整游戏进入后台");
+                if (!enterPending) FullGameHidden?.Invoke(context);
+            }
+            return;
+        }
+        if (!isCardVisible) return;
         isCardVisible = false;
+        RecordLifecycle(FeedLifecycleStage.CardHidden, "卡片划走 / 容器隐藏");
         if (!cardShowDispatched || context == null) return;
         cardShowDispatched = false;
         CardHidden?.Invoke(context);
@@ -630,49 +779,52 @@ public sealed class FeedRecommendationManager : MonoBehaviour
 
     private void DispatchCardShownIfReady()
     {
-        if (!isDirectPlay || isInFullGame || !isCardVisible || cardShowDispatched || context == null) return;
+        if (!isDirectPlay || isInFullGame || !isCardVisible || !readyReported || cardShowDispatched || context == null) return;
         cardShowDispatched = true;
+        RecordLifecycle(FeedLifecycleStage.CardShown, "卡片可见且就绪，开始/恢复体验与配音");
         CardShown?.Invoke(context);
     }
 
     private void HandleFeedEnterSignal()
     {
-        if (!isDirectPlay) return;
+        if (!isDirectPlay || isInFullGame) return;
+        if (cardShowDispatched && context != null) CardHidden?.Invoke(context);
         isInFullGame = true;
+        isAppVisible = true;
         isCardVisible = false;
         cardShowDispatched = false;
         exitPending = false;
-        if (context == null)
-        {
-            enterPending = true;
-            return;
-        }
-
+        enterPending = true;
+        RecordLifecycle(FeedLifecycleStage.FeedEnterRequested, "玩家进入完整游戏，未就绪时暂存");
         DispatchEnter();
     }
 
     private void HandleFeedExitSignal()
     {
-        if (!isDirectPlay) return;
+        if (!isDirectPlay || !isInFullGame) return;
         isInFullGame = false;
+        isAppVisible = false;
         isCardVisible = false;
         cardShowDispatched = false;
         enterPending = false;
         exitPending = true;
+        RecordLifecycle(FeedLifecycleStage.FeedExited, "退出完整游戏，等待卡片下一次 OnShow");
         if (context != null) FeedExited?.Invoke(context);
     }
 
     private void DispatchEnter()
     {
-        if (context == null) return;
+        if (context == null || !readyReported || !enterPending) return;
         enterPending = false;
+        RecordLifecycle(FeedLifecycleStage.FullGameEntered, enterHandled ? "再次进入完整游戏" : "首次进入完整游戏");
         FeedEntered?.Invoke(context);
-        // 首次真实进入只分发一次 SchemeEntered；重复 FeedEnter 只用于恢复完整游戏。
         if (!enterHandled)
         {
             enterHandled = true;
             SchemeEntered?.Invoke(context);
         }
+        // FeedEnter 在后台加载期间到达，随后 OnHide：不能在资源就绪时意外恢复声音。
+        if (!isAppVisible) FullGameHidden?.Invoke(context);
     }
 
     private FeedRecommendationConfig LoadLocalConfig()
@@ -694,8 +846,35 @@ public sealed class FeedRecommendationManager : MonoBehaviour
         return FeedUserChannel.Unknown;
     }
 
+    // 原生请求取消与纯托管状态转换分离；无引擎隔离检查不会执行此原生分支。
+    [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+    private static void AbortNativeRequest(UnityWebRequest request) => request.Abort();
+
     private void ResetState()
     {
+        if (activeLaunchRequest != null)
+        {
+            AbortNativeRequest(activeLaunchRequest);
+            activeLaunchRequest = null;
+        }
+        if (isDirectPlay)
+        {
+            RecordLifecycle(FeedLifecycleStage.SessionEnded, "结束旧内容，清理体验资源");
+            SessionEnded?.Invoke(context);
+        }
+        launchVersion++;
+        configurationResolving = false;
+        resourcesReadyObserved = false;
+        isAppVisible = false;
+        LastConfigurationFailure = null;
+#if UNITY_EDITOR
+        editorPreview = false;
+        debugConfig = null;
+        debugUseRemote = false;
+        debugAutoSceneReady = true;
+        debugReadinessPending = false;
+        debugPendingSceneId = 7001;
+#endif
         context = null;
         isDirectPlay = false;
         isCardVisible = false;

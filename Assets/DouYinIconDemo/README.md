@@ -35,10 +35,10 @@ DouYinIconDemo/
 
 `Prefabs/AtomicButtons` 提供四个可直接放入任意 Canvas、任意场景的按钮：
 
-- `DouyinShareButton.prefab`：分享
-- `DouyinAddDesktopButton.prefab`：添加桌面，完成后默认隐藏自身
-- `DouyinSidebarButton.prefab`：直接打开抖音侧边栏
-- `DouyinRankButton.prefab`：打开排行榜
+- `01_添加桌面.prefab`：添加桌面，完成后默认隐藏自身
+- `02_侧边栏.prefab`：直接打开抖音侧边栏
+- `03_分享.prefab`：分享
+- `04_排行榜.prefab`：打开排行榜
 
 也可以只把同名脚本添加到现有 `UnityEngine.UI.Button`。按钮在点击时调用
 常驻 `AdManager`，自身随场景销毁不会影响广告系统。按钮的成功、失败、返回

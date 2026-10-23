@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public static class ExportDouyinAdEnergyPackage
 {
-    private const string PackageName = "DouyinAdEnergySystem_v1.0.14_20260918";
+    private const string PackageName = "DouyinAdEnergySystem_v1.0.15_20261023";
 
     private static readonly string[] ExportRoots =
     {

@@ -32,10 +32,14 @@ public static class FeedRecommendationProjectAdapter
         manager.FeedEntered += OnFeedEntered;
         manager.FeedExited += OnExited;
         manager.ConfigurationFailed += OnConfigurationFailed;
+        manager.FullGameHidden += OnFullGameHidden;
+        manager.FullGameShown += OnFullGameShown;
+        manager.SessionEnded += OnSessionEnded;
     }
 
     private static void OnPrepared(FeedLaunchContext context)
     {
+        CloseVideo();
         Debug.Log("[推荐流适配] 预加载方案：" + context);
         PauseExperience(context, "隐藏预加载");
         if (context.Scheme == FeedExperienceScheme.Video)
@@ -51,8 +55,10 @@ public static class FeedRecommendationProjectAdapter
 
     private static IEnumerator ReportCurrentSceneAfterFrame()
     {
+        FeedRecommendationManager manager = FeedRecommendationManager.Instance;
+        int version = manager.LaunchVersion;
         yield return new WaitForEndOfFrame();
-        FeedRecommendationManager.Instance.ReportSceneReady();
+        if (manager.IsCurrentSession(version)) manager.ReportSceneReady();
     }
 
     private static void OnEntered(FeedLaunchContext context)
@@ -63,6 +69,12 @@ public static class FeedRecommendationProjectAdapter
             video = null;
         }
 
+        // 编辑器预览不会写每日存档，也不会启动正式 SDK 后置初始化。
+        if (FeedRecommendationManager.Instance.IsEditorPreview)
+        {
+            Debug.Log("[推荐流适配] 编辑器完整游戏模拟，不写业务存档");
+            return;
+        }
         AdManagerImpl.Instance?.BeginPostSdkInitialization();
 
         bool isNewDay = DayCheckManager.IsNewDay();
@@ -93,6 +105,23 @@ public static class FeedRecommendationProjectAdapter
         PauseExperience(context, "退出完整小游戏");
     }
 
+    private static void OnFullGameHidden(FeedLaunchContext context) => PauseExperience(context, "完整游戏后台");
+    private static void OnFullGameShown(FeedLaunchContext context) => ResumeExperience(context, "完整游戏前台恢复");
+
+    private static void CloseVideo()
+    {
+        if (video == null) return;
+        FeedVideoPlayerController previous = video;
+        video = null;
+        previous.Close();
+    }
+
+    private static void OnSessionEnded(FeedLaunchContext context)
+    {
+        CloseVideo();
+        ResumeExperience(context, "结束上一内容，释放该体验的暂停状态");
+    }
+
     private static void PauseExperience(FeedLaunchContext context, string reason)
     {
         if (!experiencePaused)
@@ -119,27 +148,37 @@ public static class FeedRecommendationProjectAdapter
 
     private static void PrepareVideo(string url)
     {
-        video = FeedVideoPlayerController.Create();
-        video.Ready += () => FeedRecommendationManager.Instance.ReportSceneReady();
-        video.Failed += message =>
+        CloseVideo();
+        FeedRecommendationManager manager = FeedRecommendationManager.Instance;
+        int version = manager.LaunchVersion;
+        FeedVideoPlayerController current = FeedVideoPlayerController.Create();
+        video = current;
+        current.Ready += () =>
         {
-            Debug.LogWarning("[推荐流适配] 视频准备失败，回退当前场景：" + message);
-            if (video != null) video.Close();
-            video = null;
-            FeedRecommendationManager.Instance.StartCoroutine(ReportFallbackAfterFrame());
+            if (manager.IsCurrentSession(version) && video == current) manager.ReportSceneReady();
         };
-        video.PrepareAndPlay(url);
+        current.Failed += message =>
+        {
+            if (!manager.IsCurrentSession(version) || video != current) return;
+            Debug.LogWarning("[推荐流适配] 视频准备失败，回退当前场景：" + message);
+            CloseVideo();
+            manager.StartCoroutine(ReportFallbackAfterFrame());
+        };
+        current.PrepareAndPlay(url);
     }
 
     private static void OnConfigurationFailed(string reason)
     {
+        PauseExperience(FeedRecommendationManager.Instance.CurrentContext, "安全兜底隐藏预加载");
         Debug.LogWarning("[推荐流适配] 配置未命中，使用当前场景兜底：" + reason);
         FeedRecommendationManager.Instance.StartCoroutine(ReportFallbackAfterFrame());
     }
 
     private static IEnumerator ReportFallbackAfterFrame()
     {
+        FeedRecommendationManager manager = FeedRecommendationManager.Instance;
+        int version = manager.LaunchVersion;
         yield return new WaitForEndOfFrame();
-        FeedRecommendationManager.Instance.ReportFallbackSceneReady();
+        if (manager.IsCurrentSession(version)) manager.ReportFallbackSceneReady();
     }
 }

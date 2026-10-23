@@ -14,4 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier:
   remoteConfigUrl:
   remoteTimeoutSeconds: 6
-  contents: []
+  contents:
+  - contentId: SIM_TEMPLATE_ACQ_HOME_01
+    channel: 2
+    returnSceneId: 0
+    scheme: 2
+    payload: home
+    description: "\u9996\u9875\u9884\u89c8 - SIM \u5360\u4f4d ID"
+  - contentId: SIM_TEMPLATE_ACQ_HOME_02
+    channel: 2
+    returnSceneId: 0
+    scheme: 2
+    payload: home
+    description: "\u9996\u9875\u9884\u89c8 - SIM \u5360\u4f4d ID"
+  - contentId: SIM_TEMPLATE_RETURN_S1_HOME
+    channel: 1
+    returnSceneId: 1
+    scheme: 2
+    payload: home
+    description: "\u9996\u9875\u9884\u89c8 - SIM \u5360\u4f4d ID"
+  - contentId: SIM_TEMPLATE_RETURN_S2_HOME
+    channel: 1
+    returnSceneId: 2
+    scheme: 2
+    payload: home
+    description: "\u9996\u9875\u9884\u89c8 - SIM \u5360\u4f4d ID"
+  - contentId: SIM_TEMPLATE_RETURN_S3_HOME
+    channel: 1
+    returnSceneId: 3
+    scheme: 2
+    payload: home
+    description: "\u9996\u9875\u9884\u89c8 - SIM \u5360\u4f4d ID"
