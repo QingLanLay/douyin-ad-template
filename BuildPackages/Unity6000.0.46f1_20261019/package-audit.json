@@ -1,0 +1,29 @@
+{
+  "packageName": "DouyinAdEnergySystem_v1.0.15_Unity6000.0.46f1_20261019",
+  "byteLength": 16247290,
+  "sizeMiB": 15.49,
+  "sha256": "7BE4FF2854FE7A95DFE7D8DF7DCA11352D2C9677FEC4ED67F3E56C664458613D",
+  "assetPathCount": 474,
+  "manifestPathCount": 474,
+  "prefabCount": 13,
+  "prefabs": [
+    "Assets/DouYinIconDemo/Prefabs/AtomicButtons/DouyinAddDesktopButton.prefab",
+    "Assets/DouYinIconDemo/Prefabs/AtomicEnergy/EnergyDeductButton.prefab",
+    "Assets/DouYinIconDemo/Prefabs/Tutorial/tutorialCanvas 1.prefab",
+    "Assets/DouYinIconDemo/Prefabs/AtomicRewards/TreasureChestRewardWidget.prefab",
+    "Assets/DouYinIconDemo/Prefabs/Tutorial/FingerTutorialMove.prefab",
+    "Assets/DouYinIconDemo/Prefabs/Systems/DouyinAdSystem.prefab",
+    "Assets/DouYinIconDemo/Prefabs/AtomicEnergy/EnergyStatusButton.prefab",
+    "Assets/DouYinIconDemo/Prefabs/AtomicButtons/DouyinSidebarButton.prefab",
+    "Assets/DouYinIconDemo/Prefabs/AtomicButtons/DouyinRankButton.prefab",
+    "Assets/DouYinIconDemo/Prefabs/Tutorial/FingerTutorialClick.prefab",
+    "Assets/DouYinIconDemo/Prefabs/AtomicButtons/DouyinShareButton.prefab",
+    "Assets/DouYinIconDemo/Prefabs/Panels/SiderBarPanel.prefab",
+    "Assets/DouYinIconDemo/Prefabs/AtomicEnergy/EnergyPanel.prefab"
+  ],
+  "sourceCsChanged": [],
+  "sourceGuidChanged": [],
+  "excludedLegacyExample": "Assets/DouYinIconDemo/Image/Share.prefab",
+  "excludedTmpDefaults": true,
+  "editorExitCode": 0
+}

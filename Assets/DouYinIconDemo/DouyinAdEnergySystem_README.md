@@ -1,5 +1,20 @@
 # 抖音广告与体力原子系统
 
+## v1.0.14（2026-09-18）
+
+- 包含添加桌面用户手势修复：按钮点击同步调用 AdManager → AdManagerImpl → TT.AddShortcut，不等待 TT.CheckShortcut。
+- 已检查且已添加时保留 onAlreadyAdded 回调；状态未知时直接调用添加接口。CheckShortcut 只用于初始化或状态刷新，不作为添加的异步前置条件。
+- 接入方自己的按钮也必须直接调用 AddToDesktop，不能放到异步回调、协程、定时器或 await 之后，否则仍可能出现 errNo:21500 / must be invoked by user gesture。
+- 更新旧项目时覆盖 ADSScripts 中对应脚本，检查自定义按钮的调用链，关闭 isTest 后在真机由真实点击验证。编辑器模拟不能验证平台用户手势权限。
+- cdp.cloud.unity3d.com 是 Unity 数据上报域名，其请求失败与添加桌面用户手势限制无关。
+- 继承 v1.0.13 的 Feed 多端适配，保留原有预制体和配置。
+
+## v1.0.13（2026-09-18）
+
+- Feed 直玩采用统一 3041 后缀识别方法，兼容已有及未来宿主前缀，不按抖音或极速版完整场景值设白名单。
+- 保持 7001 场景就绪上报不受宿主名限制，补充其他游戏接入时的外层限制排查与多端验收说明。
+- 本版保留原广告、体力、预制体和推荐流配置；导入与升级前请备份目标项目的自定义配置。
+
 ## 包含内容
 
 - 常驻 `DouyinAdSystem` Prefab：`AdManager`、`AdManagerImpl`、`EnergySystem` 位于同一个 GameObject。

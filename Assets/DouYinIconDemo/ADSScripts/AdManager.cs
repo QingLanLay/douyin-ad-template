@@ -119,7 +119,7 @@ public class AdManager : MonoBehaviour
         AdManagerImpl.Instance.Share(null, null);
     }
 
-    /// <summary>添加桌面（默认回调，不操作任何场景UI）</summary>
+    /// <summary>从用户点击同步添加桌面，不得经异步查询或延迟转发；不操作场景UI。</summary>
     public void AddToDesktop()
     {
         if (AdManagerImpl.Instance == null)
@@ -144,7 +144,7 @@ public class AdManager : MonoBehaviour
 
 #region 添加桌面（有参版，供代码调用）
 
-    /// <summary>添加桌面</summary>
+    /// <summary>必须从用户点击同步调用，不能在 CheckDesktopShortcut 回调中调用。</summary>
     public void AddToDesktop(Action<bool> onSuccess, Action<int, string> onFailed = null,
         Action onAlreadyAdded = null)
     {

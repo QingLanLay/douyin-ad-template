@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public static class ExportDouyinAdEnergyPackage
 {
-    private const string PackageName = "DouyinAdEnergySystem_v1.0.12_20260911";
+    private const string PackageName = "DouyinAdEnergySystem_v1.0.14_20260918";
 
     private static readonly string[] ExportRoots =
     {
@@ -26,6 +26,7 @@ public static class ExportDouyinAdEnergyPackage
     {
         try
         {
+            ValidateDirectPlayScenes();
             foreach (string root in ExportRoots)
             {
                 if (AssetDatabase.LoadMainAssetAtPath(root) == null && !AssetDatabase.IsValidFolder(root))
@@ -48,6 +49,20 @@ public static class ExportDouyinAdEnergyPackage
             if (Application.isBatchMode) EditorApplication.Exit(1);
             throw;
         }
+    }
+
+    private static void ValidateDirectPlayScenes()
+    {
+        // 未知宿主前缀仅用于测试，不表示平台已开放该宿主。
+        string[] accepted = { "3041", "023041", "103041", "993041" };
+        string[] rejected = { null, "", "023040", "103042", "30410", "1001" };
+        foreach (string scene in accepted)
+            if (!FeedRecommendationManager.IsDirectPlayScene(scene))
+                throw new InvalidOperationException("直玩场景应被识别：" + scene);
+        foreach (string scene in rejected)
+            if (FeedRecommendationManager.IsDirectPlayScene(scene))
+                throw new InvalidOperationException("普通场景不应被识别为直玩：" + scene);
+        Debug.Log("[导出检查] 多宿主直玩场景识别：10 项通过。");
     }
 
     private static string[] CollectManifestPaths()

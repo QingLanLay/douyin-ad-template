@@ -11,7 +11,7 @@ using UnityEngine.Networking;
 /// </summary>
 public sealed class FeedRecommendationManager : MonoBehaviour
 {
-    // 3041 是抖音推荐流直玩入口的场景值。
+    // 宿主前缀可能变化，只识别直玩场景后缀，禁止枚举宿主白名单。
     private const string FeedSceneCode = "3041";
     private const string ChannelKey = "feed_game_channel";
     private const string ContentIdKey = "feed_game_content_id";
@@ -428,8 +428,7 @@ public sealed class FeedRecommendationManager : MonoBehaviour
         launchStartedAt = Time.realtimeSinceStartup;
 
         // 非 3041 场景按普通游戏启动处理，不注册推荐流流程。
-        if (options == null || string.IsNullOrEmpty(options.Scene) ||
-            !options.Scene.EndsWith(FeedSceneCode, StringComparison.Ordinal)) return false;
+        if (options == null || !IsDirectPlayScene(options.Scene)) return false;
 
         string channelText = Query(options, ChannelKey);
         string contentId = Query(options, ContentIdKey);
@@ -465,8 +464,16 @@ public sealed class FeedRecommendationManager : MonoBehaviour
         ReportSceneReadyInternal(platformSceneId);
     }
 
+    /// <summary>按 3041 后缀识别各宿主的直玩入口，不限制宿主名称或前缀。</summary>
+    public static bool IsDirectPlayScene(string scene)
+    {
+        return !string.IsNullOrEmpty(scene) &&
+               scene.EndsWith(FeedSceneCode, StringComparison.Ordinal);
+    }
+
     private void ReportSceneReadyInternal(int platformSceneId)
     {
+        // 7001 上报适用于平台开放的各宿主，不得增加 hostName/IsDouyin 前置拦截。
         // 在调用入口处统一防重，确保一次启动只上报一次场景就绪。
       readyReported = true;
       int cost = Mathf.Max(1, Mathf.RoundToInt((Time.realtimeSinceStartup - launchStartedAt) * 1000f));

@@ -926,6 +926,10 @@ public class AdManagerImpl : MonoBehaviour
     // 添加桌面
     // ============================================================
 
+    /// <summary>
+    /// 必须从用户点击同步调用；禁止放入 CheckShortcut 回调、协程或延迟任务中。
+    /// 已添加状态只读取缓存，状态未知时直接请求平台，不等待异步检查。
+    /// </summary>
     public void AddToDesktop(Action<bool> onSuccess = null, Action<int, string> onFailed = null,
         Action onAlreadyAdded = null)
     {
@@ -978,6 +982,7 @@ public class AdManagerImpl : MonoBehaviour
 #endif
     }
 
+    /// <summary>异步查询仅用于初始化或刷新状态；回调中不得发起添加桌面。</summary>
     public void CheckDesktopShortcut(Action<bool> onResult)
     {
         if (isTest)
