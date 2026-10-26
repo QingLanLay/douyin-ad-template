@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public static class ExportDouyinAdEnergyPackage
 {
-    private const string PackageName = "DouyinAdEnergySystem_v1.0.15_20261023";
+    private const string PackageName = "DouyinAdEnergySystem_v1.0.16_20261026";
 
     private static readonly string[] ExportRoots =
     {
@@ -18,7 +18,11 @@ public static class ExportDouyinAdEnergyPackage
         "Assets/Font/DouyinSansBold SDF.asset",
         "Assets/Font/DouyinSansBold.otf",
         "Assets/Plugins/ByteGame",
-        "Assets/UniTask"
+        "Assets/UniTask",
+        // 随2022维护包交付，目标6000.0.46f1手动SDK构建后自动兼容；不固定SDK版本。
+        "Assets/Editor/DouyinUnity6000Compat",
+        "Assets/Plugins/WebGL/DouyinUnity6FileAccess.jslib",
+        "Assets/Plugins/WebGL/DouyinUnity6ImplicitExit.jslib"
     };
 
     [MenuItem("抖音/导出完整广告体力推荐流包")]

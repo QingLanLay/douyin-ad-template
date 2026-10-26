@@ -55,6 +55,7 @@ public class OceanEngineTracker : MonoBehaviour
 
     public void Init()
     {
+        if (AdManager.NoAdsEnabled) return;
         // 仅在字节小游戏平台执行
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
@@ -148,6 +149,7 @@ public class OceanEngineTracker : MonoBehaviour
     /// </summary>
     public void ReportActive()
     {
+        if (AdManager.NoAdsEnabled) return;
 #if UNITY_EDITOR
         Debug.Log("事件上报：激活（active）");
         return;
@@ -185,6 +187,7 @@ public class OceanEngineTracker : MonoBehaviour
     /// </summary>
     public void ReportGameAddiction()
     {
+        if (AdManager.NoAdsEnabled) return;
 #if UNITY_EDITOR
         Debug.Log("事件上报：关键行为（game_addiction");
         return;
@@ -218,6 +221,7 @@ public class OceanEngineTracker : MonoBehaviour
     /// <param name="revenue">当次广告预估收入（单位：元，必须>0）</param>
     public void ReportLtRoi(float revenue)
     {
+        if (AdManager.NoAdsEnabled) return;
 #if UNITY_EDITOR
         Debug.Log("事件上报：总变现ROI（lt_roi）- 修复版"+ revenue);
         return;
@@ -252,6 +256,7 @@ public class OceanEngineTracker : MonoBehaviour
     /// <param name="adType">0=激励视频 1=插屏 2=Banner</param>
     public void ReportAdByType(int adType)
     {
+        if (AdManager.NoAdsEnabled) return;
         float revenue = 0f;
         switch (adType)
         {
@@ -269,6 +274,7 @@ public class OceanEngineTracker : MonoBehaviour
     /// </summary>
     public void CheckAndReport7DayROI()
     {
+        if (AdManager.NoAdsEnabled) return;
         Check7DayLtv();
     }
 
@@ -336,6 +342,7 @@ public class OceanEngineTracker : MonoBehaviour
     /// </summary>
     private IEnumerator SendConversionRequest(string eventType, float revenue)
     {
+        if (AdManager.NoAdsEnabled) yield break;
         // 【最终防线】再次校验ClickID，防止code:103
         if (string.IsNullOrEmpty(CurrentClickId))
         {
@@ -420,8 +427,9 @@ public class OceanEngineTracker : MonoBehaviour
         Debug.LogError($"{LogPrefix}{message}");
     }
     #endregion
-    public void ReportGainResource()//看完激励上报
+    public void ReportGainResource()
     {
+        if (AdManager.NoAdsEnabled) return;
 #if UNITY_EDITOR
         Debug.Log("事件上报：看完激励上报gain_resource");
         return;

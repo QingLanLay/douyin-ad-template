@@ -12,8 +12,8 @@ public static class FeedRecommendationProjectAdapter
     private static bool audioPausedBeforePause;
     private static bool experiencePaused;
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private static void RegisterBeforeSceneLoad()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void RegisterAfterSceneLoad()
     {
         Register();
     }
@@ -21,6 +21,7 @@ public static class FeedRecommendationProjectAdapter
     /// <summary>注册当前项目的推荐流业务事件，重复调用安全。</summary>
     public static void Register()
     {
+        if (AdManager.NoAdsEnabled) return;
         if (registered) return;
         registered = true;
 

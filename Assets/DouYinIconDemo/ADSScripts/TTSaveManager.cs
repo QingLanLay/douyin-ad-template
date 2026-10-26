@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// 抖音存档管理器（基于 StarkFileSystemManager 同步文件存储）
 /// 替换旧版 TTSDK.PlayerPrefs（异步 IndexedDB），使用 TTFileSystemManager.WriteFileSync/ReadFileSync 实现真正的同步磁盘写入。
-/// 所有数据存储为单个 JSON 文件：{persistentDataPath}/gamedata.json
+/// 抖音模式存储为 gamedata.json；AdManager.noAds 模式标量走 Unity PlayerPrefs，JSON 走独立本地文件。
 /// </summary>
 public class TTSaveManager
 {
@@ -251,6 +251,7 @@ public class TTSaveManager
 
     public void SetInt(string key, int value)
     {
+        if (AdManager.NoAdsEnabled) { LocalNoAdsSaveStore.Instance.SetInt(key, value); return; }
         EnsureInitialized();
         _ints[key] = value;
         _dirty = true;
@@ -258,12 +259,14 @@ public class TTSaveManager
 
     public int GetInt(string key, int defaultValue = 0)
     {
+        if (AdManager.NoAdsEnabled) return UnityEngine.PlayerPrefs.GetInt(key, defaultValue);
         EnsureInitialized();
         return _ints.TryGetValue(key, out int val) ? val : defaultValue;
     }
 
     public void SetFloat(string key, float value)
     {
+        if (AdManager.NoAdsEnabled) { LocalNoAdsSaveStore.Instance.SetFloat(key, value); return; }
         EnsureInitialized();
         _floats[key] = value;
         _dirty = true;
@@ -271,12 +274,14 @@ public class TTSaveManager
 
     public float GetFloat(string key, float defaultValue = 0f)
     {
+        if (AdManager.NoAdsEnabled) return UnityEngine.PlayerPrefs.GetFloat(key, defaultValue);
         EnsureInitialized();
         return _floats.TryGetValue(key, out float val) ? val : defaultValue;
     }
 
     public void SetString(string key, string value)
     {
+        if (AdManager.NoAdsEnabled) { LocalNoAdsSaveStore.Instance.SetString(key, value); return; }
         EnsureInitialized();
         _strings[key] = value;
         _dirty = true;
@@ -284,6 +289,7 @@ public class TTSaveManager
 
     public string GetString(string key, string defaultValue = "")
     {
+        if (AdManager.NoAdsEnabled) return LocalNoAdsSaveStore.Instance.GetString(key, defaultValue);
         EnsureInitialized();
         return _strings.TryGetValue(key, out string val) ? val : defaultValue;
     }
@@ -300,12 +306,14 @@ public class TTSaveManager
 
     public bool HasKey(string key)
     {
+        if (AdManager.NoAdsEnabled) return LocalNoAdsSaveStore.Instance.HasKey(key);
         EnsureInitialized();
         return _ints.ContainsKey(key) || _floats.ContainsKey(key) || _strings.ContainsKey(key);
     }
 
     public void DeleteKey(string key)
     {
+        if (AdManager.NoAdsEnabled) { LocalNoAdsSaveStore.Instance.DeleteKey(key); return; }
         EnsureInitialized();
         _ints.Remove(key);
         _floats.Remove(key);
@@ -315,6 +323,7 @@ public class TTSaveManager
 
     public void DeleteAll()
     {
+        if (AdManager.NoAdsEnabled) { LocalNoAdsSaveStore.Instance.DeleteAll(); return; }
         EnsureInitialized();
         _ints.Clear();
         _floats.Clear();
@@ -327,6 +336,7 @@ public class TTSaveManager
     /// <summary> 保存：同步写入磁盘（不再是异步 PlayerPrefs.Save） </summary>
     public void Save()
     {
+        if (AdManager.NoAdsEnabled) { LocalNoAdsSaveStore.Instance.Save(); return; }
         EnsureInitialized();
         FlushToDisk();
     }
@@ -339,6 +349,7 @@ public class TTSaveManager
     {
         try
         {
+            if (AdManager.NoAdsEnabled) { LocalNoAdsSaveStore.Instance.SetJson(key, JsonUtility.ToJson(obj)); return; }
             string json = UnityEngine.JsonUtility.ToJson(obj);
             SetString(key, json);
         }
@@ -359,7 +370,7 @@ public class TTSaveManager
 
         try
         {
-            return UnityEngine.JsonUtility.FromJson<T>(json);
+            return UnityEngine.JsonUtility.FromJson<T>(json) ?? defaultValue;
         }
         catch (Exception e)
         {
@@ -372,6 +383,7 @@ public class TTSaveManager
     {
         try
         {
+            if (AdManager.NoAdsEnabled) { LocalNoAdsSaveStore.Instance.SetJson(key, JsonHelper.ToJson(array)); return; }
             string json = JsonHelper.ToJson(array);
             SetString(key, json);
         }
@@ -392,7 +404,7 @@ public class TTSaveManager
 
         try
         {
-            return JsonHelper.FromJson<T>(json);
+            return JsonHelper.FromJson<T>(json, defaultValue);
         }
         catch (Exception e)
         {
@@ -421,9 +433,9 @@ public static class JsonHelper
         return UnityEngine.JsonUtility.ToJson(wrapper);
     }
 
-    public static T[] FromJson<T>(string json)
+    public static T[] FromJson<T>(string json, T[] defaultValue = null)
     {
         Wrapper<T> wrapper = UnityEngine.JsonUtility.FromJson<Wrapper<T>>(json);
-        return wrapper?.items ?? new T[0];
+        return wrapper?.items ?? defaultValue ?? new T[0];
     }
 }

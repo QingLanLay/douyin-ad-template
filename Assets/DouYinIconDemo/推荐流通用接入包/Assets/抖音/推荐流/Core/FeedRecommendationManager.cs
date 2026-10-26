@@ -187,6 +187,7 @@ public sealed class FeedRecommendationManager : MonoBehaviour
     /// <summary>仅供玩家主动点击时调用；每次运行最多尝试拉起一次订阅弹窗。</summary>
     public void TryRequestFeedSubscribeAllSceneFromUserGesture()
     {
+        if (AdManager.NoAdsEnabled) return;
         if (subscriptionPromptAttemptedThisSession)
         {
             return;
@@ -209,6 +210,7 @@ public sealed class FeedRecommendationManager : MonoBehaviour
     /// <summary>查询用户是否已经完成推荐流全场景订阅。</summary>
     public void CheckFeedSubscribeStatus(Action<bool> completed)
     {
+        if (AdManager.NoAdsEnabled) { completed?.Invoke(false); return; }
 #if UNITY_EDITOR
         Debug.Log("[推荐流订阅] 编辑器中跳过全场景订阅状态查询");
         completed?.Invoke(true);
@@ -247,6 +249,7 @@ public sealed class FeedRecommendationManager : MonoBehaviour
     /// <summary>请求用户授权推荐流全场景订阅。</summary>
     public void RequestFeedSubscribeAllScene()
     {
+        if (AdManager.NoAdsEnabled) return;
         // 当前模板以全场景申请为主链：一旦发起申请，立即把 Scene 1/2/3 写为默认就绪。
         // 订阅回包与 StoreFeedData 回包分别记录，不用体力、离线收益或重要事件作前置判断。
         RefreshReturnSceneReadyData();
@@ -317,6 +320,7 @@ public sealed class FeedRecommendationManager : MonoBehaviour
     /// <summary>优先读取远程配置并上报全部复访 ContentID；远程失败时回退本地配置。</summary>
     public void RefreshReturnSceneReadyData()
     {
+        if (AdManager.NoAdsEnabled) return;
         if (returnScenesReadyReportedThisSession || returnScenesReadyRequestInProgress)
         {
             return;
@@ -505,6 +509,7 @@ public sealed class FeedRecommendationManager : MonoBehaviour
     /// <returns>属于有效推荐流启动时返回 true，否则返回 false。</returns>
     public bool HandleLaunchOptions(LaunchOption options)
     {
+        if (AdManager.NoAdsEnabled) return false;
         ResetState();
         launchStartedAt = Time.realtimeSinceStartup;
 
@@ -535,6 +540,7 @@ public sealed class FeedRecommendationManager : MonoBehaviour
     /// </summary>
     public void ReportSceneReady(int platformSceneId = 7001)
     {
+        if (AdManager.NoAdsEnabled) return;
         if (context == null || readyReported) return;
         ReportSceneReadyInternal(platformSceneId);
     }
@@ -542,6 +548,7 @@ public sealed class FeedRecommendationManager : MonoBehaviour
     /// <summary>远程和本地配置都失败时，项目安全兜底页面加载完成后调用。</summary>
     public void ReportFallbackSceneReady(int platformSceneId = 7001)
     {
+        if (AdManager.NoAdsEnabled) return;
         if (readyReported) return;
         ReportSceneReadyInternal(platformSceneId);
     }
@@ -715,6 +722,7 @@ public sealed class FeedRecommendationManager : MonoBehaviour
 
     private void RegisterPlatformListeners()
     {
+        if (AdManager.NoAdsEnabled) return;
         if (!listenerRegistered)
         {
             listenerRegistered = true;

@@ -29,6 +29,7 @@ public class SideBarManager : MonoBehaviour
 
     private void Awake()
     {
+        if (AdManager.NoAdsEnabled) { AdManager.HideNoAdsPlatformObject(gameObject); return; }
         Instance = this;
         // 初始化按钮状态：前置按钮显示，后置按钮隐藏
         RefreshButtonState();
@@ -46,6 +47,7 @@ public class SideBarManager : MonoBehaviour
     /// </summary>
     public static bool TryOpenAvailablePanel()
     {
+        if (AdManager.NoAdsEnabled) return false;
         if (Instance != null && Instance.gameObject.scene.IsValid() && Instance.gameObject.scene.isLoaded)
         {
             Instance.OpenSideBarPanel();
@@ -116,6 +118,7 @@ public class SideBarManager : MonoBehaviour
     /// </summary>
     public void OpenSideBarPanel()
     {
+        if (AdManager.NoAdsEnabled) return;
         if (sideBarPanel != null)
         {
             sideBarPanel.SetActive(true);

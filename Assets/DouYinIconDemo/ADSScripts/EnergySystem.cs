@@ -255,11 +255,22 @@ public class EnergySystem : MonoBehaviour
     /// <param name="onComplete">广告观看完成回调（体力已增加）</param>
     public void AddByAd(Action onComplete = null, Action onFailed = null)
     {
+        Action grantEnergy = () =>
+        {
+            _energy = Mathf.Min(_energy + adRewardEnergy, maxEnergy);
+            Save();
+            OnChanged?.Invoke();
+            onComplete?.Invoke();
+        };
+
+        // 所有构建平台均先判断 noAds，不依赖 Editor 宏、SDK 初始化或广告管理器就绪。
+        if (AdManager.NoAdsEnabled)
+        {
+            grantEnergy();
+            return;
+        }
 #if UNITY_EDITOR
-        _energy = Mathf.Min(_energy + adRewardEnergy, maxEnergy);
-        Save();
-        OnChanged?.Invoke();
-        onComplete?.Invoke();
+        grantEnergy();
         Debug.Log($"[Energy] Editor模式 - 跳过广告，直接+{adRewardEnergy}体力");
 #else
         if (AdManager.Instance == null)
@@ -269,13 +280,7 @@ public class EnergySystem : MonoBehaviour
             return;
         }
 
-        AdManager.Instance.ShowRewardVideoAd(() =>
-        {
-            _energy = Mathf.Min(_energy + adRewardEnergy, maxEnergy);
-            Save();
-            OnChanged?.Invoke();
-            onComplete?.Invoke();
-        }, onFailed);
+        AdManager.Instance.ShowRewardVideoAd(grantEnergy, onFailed);
 #endif
     }
 
@@ -305,6 +310,11 @@ public class EnergySystem : MonoBehaviour
             onComplete?.Invoke();
         };
 
+        if (AdManager.NoAdsEnabled)
+        {
+            recordCompletedAd.Invoke();
+            return;
+        }
 #if UNITY_EDITOR
         recordCompletedAd.Invoke();
 #else

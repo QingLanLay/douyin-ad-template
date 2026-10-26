@@ -28,6 +28,11 @@ public class AdManagerImpl : MonoBehaviour
     private bool isTest => AdManager.Instance != null && AdManager.Instance.isTest;
     private string reportConversionUrl => AdManager.Instance != null ? AdManager.Instance.reportConversionUrl : "";
 
+    [Header("测试广告生命周期")]
+    [SerializeField] private AdTestSimulator testSimulator;
+    private AdTestSimulator TestSimulator => testSimulator != null
+        ? testSimulator : (testSimulator = GetComponent<AdTestSimulator>());
+
     // 回调
     private Action _rewardCallback;
     private Action _rewardFailCallback;
@@ -71,6 +76,8 @@ public class AdManagerImpl : MonoBehaviour
     {
         get
         {
+            if (AdManager.NoAdsEnabled) return false;
+            if (isTest) return _isFromSideBar;
 #if USE_DY_AD
             return (TT.s_ContainerEnv != null &&
                     TT.s_ContainerEnv.GetLaunchFrom() == "homepage" &&
@@ -98,23 +105,11 @@ public class AdManagerImpl : MonoBehaviour
             return;
         }
 
+        if (AdManager.NoAdsEnabled) return;
+
         if (isTest)
         {
-            // 测试模式初始化：只记录平台状态，不持有或操作场景UI
-            Debug.Log("[AdManagerImpl] 测试模式初始化");
-
-            CheckDesktopShortcut((isAdded) =>
-            {
-                Debug.Log($"[AdManagerImpl] 桌面快捷方式状态: {isAdded}");
-            });
-
-            Debug.Log($"[AdManagerImpl] 【侧边栏初始化】isTest模式 - IsSideBarRewardClaimed={IsSideBarRewardClaimed}");
-            if (IsSideBarRewardClaimed)
-            {
-                Debug.Log("[AdManagerImpl] 【侧边栏初始化】测试模式 - 奖励已领取，调用 HideSideBarUI");
-                HideSideBarUI();
-            }
-
+            StartCoroutine(InitializeTestSdk());
             return;
         }
 
@@ -144,6 +139,7 @@ public class AdManagerImpl : MonoBehaviour
 
         TT.InitSDK((code, env) =>
         {
+            if (AdManager.NoAdsEnabled) return;
             _isSDKInitialized = true;
             Debug.Log($"[AdManagerImpl] SDK初始化完成 code:{code}");
 
@@ -176,13 +172,41 @@ public class AdManagerImpl : MonoBehaviour
         });
     }
 
+    private IEnumerator InitializeTestSdk()
+    {
+        Debug.Log("[AdTest] InitSDK：开始异步模拟初始化（不会请求平台）");
+        if (TestSimulator == null)
+        {
+            Debug.LogError("[AdTest] 缺少 AdTestSimulator，请使用已配置测试广告子预制体的 DouyinAdSystem。");
+            yield break;
+        }
+        yield return new WaitForSecondsRealtime(Mathf.Max(0f, TestSimulator.initializationSeconds));
+        _isSDKInitialized = true;
+        Debug.Log("[AdTest] InitSDK 回调成功 → 模拟普通启动/登录/激活 → 创建广告并预加载");
+        BeginPostSdkInitialization();
+        CreateRewardVideoAd();
+        CreateInterstitialAd();
+        InitOceanEngineTracker();
+        ReportLtvRoi7Day();
+    }
+
     /// <summary>
     /// 推荐流首次真实进入后补做普通平台初始化；多次调用只执行一次。
     /// </summary>
     public void BeginPostSdkInitialization()
     {
+        if (AdManager.NoAdsEnabled) return;
         if (_postSdkInitializationStarted) return;
         _postSdkInitializationStarted = true;
+        if (isTest)
+        {
+            Debug.Log("[AdTest] 模拟登录成功；读取桌面和侧边栏状态，不注册真实平台监听");
+            CheckDesktopShortcut(added => Debug.Log("[AdTest] 桌面状态：" + added));
+            CheckSideBarSupport();
+            ReportLaunchScene();
+            ReportActive();
+            return;
+        }
 
         Debug.Log("[AdManagerImpl] 【侧边栏初始化】开始 TTLogin");
         TTLogin(() =>
@@ -216,13 +240,14 @@ public class AdManagerImpl : MonoBehaviour
 
     private void Start()
     {
+        if (AdManager.NoAdsEnabled) return;
         if (!isTest && !_isSDKInitialized)
         {
             CreateRewardVideoAd();
             CreateInterstitialAd();
         }
 
-        ReportLtvRoi7Day();
+        if (!isTest) ReportLtvRoi7Day();
     }
 
     // ============================================================
@@ -235,6 +260,7 @@ public class AdManagerImpl : MonoBehaviour
     /// </summary>
     private void TTLogin(Action loginOk)
     {
+        if (AdManager.NoAdsEnabled) return;
 #if UNITY_EDITOR
         Debug.Log("[AdManagerImpl] TTLogin 编辑器模式");
         loginOk?.Invoke();
@@ -256,6 +282,14 @@ public class AdManagerImpl : MonoBehaviour
 
     public void ShowRewardVideoAd(Action onComplete, Action onFailed = null)
     {
+        if (AdManager.NoAdsEnabled) { onComplete?.Invoke(); return; }
+        // 模拟广告期间拒绝并发请求，不能覆盖正在播放的那次奖励回调。
+        if (isTest && (!_isSDKInitialized || TestSimulator == null || TestSimulator.IsBusy))
+        {
+            Debug.Log("[AdTest] 激励请求失败：SDK 未就绪、未配置预制体或已有全屏广告");
+            onFailed?.Invoke();
+            return;
+        }
         long requestId = ++_rewardRequestSequence;
         if (_activeRewardRequestId != 0)
         {
@@ -268,8 +302,13 @@ public class AdManagerImpl : MonoBehaviour
 
         if (isTest)
         {
-            Debug.Log("[Ad] 激励视频 - 测试模式");
-            CompleteRewardRequest(requestId, true);
+            bool accepted = TestSimulator.ShowReward(ended =>
+            {
+                // 提前关闭和完整看完都重置插屏间隔，失败则不重置。
+                _lastFullscreenAdTime = Time.realtimeSinceStartup;
+                CompleteRewardRequest(requestId, ended);
+            }, () => CompleteRewardRequest(requestId, false), ReportAdShowReward);
+            if (!accepted) CompleteRewardRequest(requestId, false);
             return;
         }
 
@@ -290,6 +329,8 @@ public class AdManagerImpl : MonoBehaviour
 
     private void CreateRewardVideoAd()
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { TestSimulator?.PrepareReward(); return; }
 #if USE_DY_AD
         var param = new CreateRewardedVideoAdParam { AdUnitId = rewardVideoAdUnitId };
         TTRewardedVideoAd createdAd = TT.CreateRewardedVideoAd(param);
@@ -459,13 +500,8 @@ public class AdManagerImpl : MonoBehaviour
 
     public void ShowInterstitialAd(Action onClose = null)
     {
-        if (isTest)
-        {
-            Debug.Log("[Ad] 插屏广告 - 测试模式");
-            onClose?.Invoke();
-            return;
-        }
-
+        if (AdManager.NoAdsEnabled) { onClose?.Invoke(); return; }
+        // 测试和真机共用保护期、间隔及并发限制，不再提前模拟成功。
         // 抖音新规：本次运行前30秒禁止插屏，且全屏广告间隔只保存在会话内。
         float now = Time.realtimeSinceStartup;
         if (now < InterstitialStartupDelaySeconds)
@@ -486,6 +522,20 @@ public class AdManagerImpl : MonoBehaviour
             return;
         }
 
+        if (isTest)
+        {
+            if (!_isSDKInitialized || TestSimulator == null || TestSimulator.IsBusy) return;
+            _isInterstitialRequestInProgress = true;
+            bool accepted = TestSimulator.ShowInterstitial(() =>
+            {
+                MarkConfirmedInterstitialDisplay("测试");
+                _isInterstitialRequestInProgress = false;
+                onClose?.Invoke();
+            }, () => { _isInterstitialRequestInProgress = false; }, ReportAdShowInterstitial);
+            if (!accepted) _isInterstitialRequestInProgress = false;
+            return;
+        }
+
 #if UNITY_EDITOR
         Debug.Log("[Ad] 编辑器模式 - 模拟插屏广告展示");
         onClose?.Invoke();
@@ -503,7 +553,7 @@ public class AdManagerImpl : MonoBehaviour
                 _isInterstitialAdLoaded = false;
                 try
                 {
-                    _interstitialAd.Show();
+                    if (!TTInterstitialAdWrapper.TryShow(_interstitialAd.Show, CompleteSkippedInterstitial)) return;
                     ReportAdShowInterstitial();
                     Debug.Log("[Ad] 已调用插屏广告Show，等待关闭回调确认成功弹出");
                 }
@@ -531,8 +581,21 @@ public class AdManagerImpl : MonoBehaviour
 #endif
     }
 
+    /// <summary>异步加载期间转为无广告时，先清理等待状态再完成原继续回调。</summary>
+    private void CompleteSkippedInterstitial()
+    {
+        _isInterstitialRequestInProgress = false;
+        _isInterstitialAdLoading = false;
+        _isInterstitialAdLoaded = false;
+        Action callback = _interstitialCloseCallback;
+        _interstitialCloseCallback = null;
+        callback?.Invoke();
+    }
+
     private void CreateInterstitialAd()
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { TestSimulator?.PrepareInterstitial(); return; }
         if (_isIOS || _isInterstitialAdLoading || _isInterstitialAdLoaded || _isInterstitialRequestInProgress) return;
 
 #if USE_DY_AD
@@ -540,7 +603,7 @@ public class AdManagerImpl : MonoBehaviour
         _isInterstitialAdLoaded = false;
         _isInterstitialLoadFailed = false;
         var param = new CreateInterstitialAdParam { InterstitialAdId = interstitialAdUnitId };
-        TTInterstitialAd createdAd = TT.CreateInterstitialAd(param);
+        TTInterstitialAd createdAd = TTInterstitialAdWrapper.Create(() => TT.CreateInterstitialAd(param));
         _interstitialAd = createdAd;
 
         if (createdAd == null)
@@ -599,6 +662,7 @@ public class AdManagerImpl : MonoBehaviour
     /// </summary>
     private async void ShowInterstitialIOS(Action onClose)
     {
+        if (TTInterstitialAdWrapper.TrySkip(onClose)) return;
 #if USE_DY_AD
         if (_isInterstitialRequestInProgress) return;
         _isInterstitialRequestInProgress = true;
@@ -606,7 +670,7 @@ public class AdManagerImpl : MonoBehaviour
         _isInterstitialAdLoaded = false;
         _isInterstitialLoadFailed = false;
         var param = new CreateInterstitialAdParam { InterstitialAdId = interstitialAdUnitId };
-        TTInterstitialAd createdAd = TT.CreateInterstitialAd(param);
+        TTInterstitialAd createdAd = TTInterstitialAdWrapper.Create(() => TT.CreateInterstitialAd(param));
         _interstitialAd = createdAd;
 
         if (createdAd == null)
@@ -652,8 +716,11 @@ public class AdManagerImpl : MonoBehaviour
         float deadline = Time.realtimeSinceStartup + 10f;
         while (!_isInterstitialAdLoaded && !_isInterstitialLoadFailed && Time.realtimeSinceStartup < deadline)
         {
+            if (TTInterstitialAdWrapper.TrySkip(CompleteSkippedInterstitial)) return;
             await UniTask.Yield(PlayerLoopTiming.Update, this.GetCancellationTokenOnDestroy());
         }
+
+        if (TTInterstitialAdWrapper.TrySkip(CompleteSkippedInterstitial)) return;
 
         if (_interstitialAd == null || !_isInterstitialAdLoaded)
         {
@@ -668,7 +735,7 @@ public class AdManagerImpl : MonoBehaviour
         _isInterstitialAdLoaded = false;
         try
         {
-            createdAd.Show();
+            if (!TTInterstitialAdWrapper.TryShow(createdAd.Show, CompleteSkippedInterstitial)) return;
             ReportAdShowInterstitial();
             Debug.Log("[Ad] 已调用iOS插屏广告Show，等待关闭回调确认成功弹出");
         }
@@ -695,6 +762,7 @@ public class AdManagerImpl : MonoBehaviour
 
     private void ReportAdShowReward()
     {
+        if (isTest) { Debug.Log("[AdTest] 模拟激励展示与广告收益/关键行为上报"); return; }
         try
         {
 #if USE_DY_AD
@@ -707,6 +775,7 @@ public class AdManagerImpl : MonoBehaviour
 
     private void ReportAdShowInterstitial()
     {
+        if (isTest) { Debug.Log("[AdTest] 模拟插屏展示与广告收益上报"); return; }
         try
         {
 #if USE_DY_AD
@@ -718,6 +787,7 @@ public class AdManagerImpl : MonoBehaviour
 
     private void ReportAdComplete()
     {
+        if (isTest) { Debug.Log("[AdTest] 模拟 gain_resource 资源获得上报"); return; }
         try
         {
 #if USE_DY_AD
@@ -733,6 +803,8 @@ public class AdManagerImpl : MonoBehaviour
 
     public void InitOceanEngineTracker()
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟转化追踪初始化"); return; }
         try
         {
 #if USE_DY_AD
@@ -745,6 +817,13 @@ public class AdManagerImpl : MonoBehaviour
 
     public void ReportActive()
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest)
+        {
+            if (!_hasReportedActive) Debug.Log("[AdTest] 模拟 active 激活上报（本次运行仅一次）");
+            _hasReportedActive = true;
+            return;
+        }
         if (_hasReportedActive)
         {
             Debug.Log("[Ad] 激活上报已执行过，跳过重复上报");
@@ -785,6 +864,8 @@ public class AdManagerImpl : MonoBehaviour
 
     public void ReportGameAddiction()
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟 game_addiction 上报"); return; }
         try
         {
 #if USE_DY_AD
@@ -797,6 +878,8 @@ public class AdManagerImpl : MonoBehaviour
 
     public void ReportLtRoi()
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟 lt_roi 上报"); return; }
 #if UNITY_EDITOR
         Debug.Log("[Ad] 编辑器模式 - 模拟变现ROI上报");
         return;
@@ -828,6 +911,8 @@ public class AdManagerImpl : MonoBehaviour
 
     public void ReportLtvRoi7Day()
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟 ltv_roi_7d 检查"); return; }
         try
         {
 #if USE_DY_AD
@@ -840,6 +925,7 @@ public class AdManagerImpl : MonoBehaviour
 
     private IEnumerator ReportConversionCoroutine(string clickid, string eventType)
     {
+        if (AdManager.NoAdsEnabled) yield break;
         var dataObject = new
         {
             event_type = eventType,
@@ -871,6 +957,8 @@ public class AdManagerImpl : MonoBehaviour
 
     public void ReportLaunchScene()
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟启动场景上报"); return; }
 #if UNITY_EDITOR
         Debug.Log("[Ad] 编辑器模式 - 模拟启动场景数据上报");
         return;
@@ -899,6 +987,8 @@ public class AdManagerImpl : MonoBehaviour
 
     public void VibrateShort()
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟短震动"); return; }
 #if USE_DY_AD
         TT.VibrateShort(new VibrateShortParam());
 #endif
@@ -906,6 +996,7 @@ public class AdManagerImpl : MonoBehaviour
 
     public void Share(Action onSuccess = null, Action onFailed = null)
     {
+        if (AdManager.NoAdsEnabled) { onFailed?.Invoke(); return; }
         if (isTest)
         {
             Debug.Log("[Share] 测试模式 - 模拟分享成功");
@@ -933,6 +1024,7 @@ public class AdManagerImpl : MonoBehaviour
     public void AddToDesktop(Action<bool> onSuccess = null, Action<int, string> onFailed = null,
         Action onAlreadyAdded = null)
     {
+        if (AdManager.NoAdsEnabled) { onFailed?.Invoke(-1, "无广告模式不支持添加桌面"); return; }
         if (isTest)
         {
             bool alreadyAdded = GetTestState("ADS_Desktop_Added", false);
@@ -985,6 +1077,7 @@ public class AdManagerImpl : MonoBehaviour
     /// <summary>异步查询仅用于初始化或刷新状态；回调中不得发起添加桌面。</summary>
     public void CheckDesktopShortcut(Action<bool> onResult)
     {
+        if (AdManager.NoAdsEnabled) { onResult?.Invoke(false); return; }
         if (isTest)
         {
             bool added = GetTestState("ADS_Desktop_Added", false);
@@ -1019,6 +1112,8 @@ public class AdManagerImpl : MonoBehaviour
 
     public void CheckSideBarSupport(Action onSupported = null, Action onNotSupported = null)
     {
+        if (AdManager.NoAdsEnabled) { onNotSupported?.Invoke(); return; }
+        if (isTest) { Debug.Log("[AdTest] 模拟支持侧边栏"); onSupported?.Invoke(); return; }
         Debug.Log("[AdManagerImpl] 【CheckSideBarSupport】被调用");
 #if USE_DY_AD
         Debug.Log("[AdManagerImpl] 【CheckSideBarSupport】调用 TT.CheckScene(SideBar)");
@@ -1040,6 +1135,7 @@ public class AdManagerImpl : MonoBehaviour
 
     public void OpenSideBar(Action onSuccess = null, Action onFailed = null, Action onReturn = null)
     {
+        if (AdManager.NoAdsEnabled) { onFailed?.Invoke(); return; }
         if (isTest)
         {
             // 测试模式：模拟打开侧边栏成功，然后模拟从侧边栏返回，保存状态
@@ -1103,6 +1199,7 @@ public class AdManagerImpl : MonoBehaviour
 
     public void ClaimSideBarReward( Action onClaimed = null)
     {
+        if (AdManager.NoAdsEnabled) return;
         if (IsSideBarRewardClaimed)
         {
             Debug.Log("[SideBar] 奖励已领取");
@@ -1172,6 +1269,8 @@ public class AdManagerImpl : MonoBehaviour
     /// <param name="readyTimestampMs">就绪毫秒级时间戳</param>
     public void ReportFeedReadyStatus(int scene, string contentId, string readyTimestampMs)
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟推荐流就绪上报"); return; }
         var parm = new StoreFeedDataParam();
         parm.Scene = scene;
         parm.Status = 1;
@@ -1196,6 +1295,8 @@ public class AdManagerImpl : MonoBehaviour
     /// <param name="sceneId">推荐流场景</param>
     public void CheckFeedSubscription(FeedGameScene sceneId)
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟推荐流全场景订阅"); return; }
         Debug.Log($"[AdManagerImpl] 旧单场景入口 {sceneId} 已转为全场景订阅");
         FeedRecommendationManager.Instance.TryRequestFeedSubscribeAllSceneFromUserGesture();
     }
@@ -1209,7 +1310,8 @@ public class AdManagerImpl : MonoBehaviour
     /// </summary>
     public void RequestGameMessageSubscription()
     {
-        if (isTest) return;
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟游戏消息订阅成功"); return; }
 #if UNITY_EDITOR
         Debug.Log("[AdManagerImpl] 编辑器模式 - 模拟游戏消息订阅");
         return;
@@ -1231,6 +1333,8 @@ public class AdManagerImpl : MonoBehaviour
     /// <param name="score">分数</param>
     public void SubmitScoreToRank(int score)
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟提交排行榜分数"); return; }
 #if UNITY_EDITOR
         Debug.Log($"[AdManagerImpl] 编辑器模式 - 模拟提交分数到排行榜: {score}");
         return;
@@ -1265,6 +1369,8 @@ public class AdManagerImpl : MonoBehaviour
     /// </summary>
     public void ShowRank()
     {
+        if (AdManager.NoAdsEnabled) return;
+        if (isTest) { Debug.Log("[AdTest] 模拟显示排行榜"); return; }
 #if UNITY_EDITOR
         Debug.Log("[AdManagerImpl] 编辑器模式 - 模拟显示排行榜");
         return;
