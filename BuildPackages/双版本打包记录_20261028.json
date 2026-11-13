@@ -1,0 +1,43 @@
+{
+  "release": "DouyinAdEnergySystem_v1.0.17_20261028",
+  "sourceProject": "D:/UnityProj/抖音广告模板",
+  "sourceProjectVersionUnchanged": true,
+  "existingDirtySceneUnchanged": true,
+  "separateNativeEditorExports": true,
+  "notRenamedCopies": true,
+  "packages": [
+    {
+      "prefix": "2022版",
+      "file": "D:/UnityProj/抖音广告模板/BuildPackages/2022版DouyinAdEnergySystem_v1.0.17_20261028.unitypackage",
+      "editorVersion": "2022.3.62f1c1",
+      "sizeBytes": 15014899,
+      "sizeMiB": 14.32,
+      "sha256": "87b18c2ececc53216fef795b09d431b510d771425530d40033eda625139f603c",
+      "assetCount": 428
+    },
+    {
+      "prefix": "6000版",
+      "file": "D:/UnityProj/抖音广告模板/BuildPackages/6000版DouyinAdEnergySystem_v1.0.17_20261028.unitypackage",
+      "editorVersion": "6000.0.46f1",
+      "sizeBytes": 14298419,
+      "sizeMiB": 13.64,
+      "sha256": "a0a27949ba67f496594b489c108719cb26e282bed140a33dfe753500c1a2f2cf",
+      "assetCount": 428
+    }
+  ],
+  "guidMismatches": [],
+  "csDifferencesBetweenVersions": [],
+  "sdkDifferencesBetweenVersions": [],
+  "unity6000ReserializedDifferentAssets": [
+    "Assets/DouYinIconDemo/推荐流通用接入包/Resources/FeedRecommendationConfig.asset",
+    "Assets/DouYinIconDemo/Prefabs/AdTest/测试广告字体 SDF.asset",
+    "Assets/Font/DouyinSansBold SDF.asset"
+  ],
+  "actualUnity2022CompilationPassed": true,
+  "actualUnity6000CompilationPassed": true,
+  "functionalPrefabsCheckedPerVersion": 15,
+  "tmpTextsCheckedPerVersion": 41,
+  "fullSdkBuildVerified": false,
+  "playModeVerified": false,
+  "deviceVerified": false
+}

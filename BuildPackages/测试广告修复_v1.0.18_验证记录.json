@@ -1,0 +1,50 @@
+{
+  "release": "DouyinAdEnergySystem_v1.0.18_20261029",
+  "packages": [
+    {
+      "prefix": "2022版",
+      "file": "D:/UnityProj/抖音广告模板/BuildPackages/2022版DouyinAdEnergySystem_v1.0.18_20261029.unitypackage",
+      "sizeBytes": 15020817,
+      "sizeMiB": 14.32,
+      "sha256": "090db92e2f677164aa206d246814151e03098ee2b6749c33ddc2a6d6af9de269",
+      "assets": 429,
+      "editorVersion": "2022.3.62f1c1",
+      "checkedFunctionalPrefabs": 15,
+      "testPanelFontReferences": 11,
+      "sharedDouyinFontGuid": "ada9cdee84d16894a961647200899006",
+      "sceneSetupToolIncluded": true
+    },
+    {
+      "prefix": "6000版",
+      "file": "D:/UnityProj/抖音广告模板/BuildPackages/6000版DouyinAdEnergySystem_v1.0.18_20261029.unitypackage",
+      "sizeBytes": 14305010,
+      "sizeMiB": 13.64,
+      "sha256": "9f925939923ec9b5d8a3590def23710db78f09841d953974a6fedfdb6b93e480",
+      "assets": 429,
+      "editorVersion": "6000.0.46f1",
+      "checkedFunctionalPrefabs": 15,
+      "testPanelFontReferences": 11,
+      "sharedDouyinFontGuid": "ada9cdee84d16894a961647200899006",
+      "sceneSetupToolIncluded": true
+    }
+  ],
+  "unity2022McpConnected": true,
+  "unity2022EditorCompilationPassed": true,
+  "unity2022PlayModeProbe": {
+    "scenario": "existing manager without local simulator; separately preplaced/unwired panels initially disabled",
+    "passed": 16,
+    "failed": 0,
+    "sceneSetupToolPassed": true
+  },
+  "unity6000EditorCompilationPassed": true,
+  "unity6000PlayModeVerified": false,
+  "originalSceneFileUnchanged": true,
+  "originalSceneRestored": true,
+  "runtimeUiLoadingAdded": false,
+  "changedSdkBetweenPackages": [],
+  "changedCsBetweenPackages": [],
+  "guidDifferencesBetweenPackages": [],
+  "actualDestinationGameVerified": false,
+  "fullSdkBuildVerified": false,
+  "deviceVerified": false
+}

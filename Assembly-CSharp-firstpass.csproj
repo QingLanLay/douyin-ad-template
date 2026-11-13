@@ -41,30 +41,23 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <None Include="Assets\Plugins\ByteGame\com.bytedance.bgdt\package.json" />
-     <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\ttsdk.xml" />
-     <Folder Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\Icons" />
-     <None Include="Assets\Plugins\ByteGame\bgdt.txt" />
-     <Folder Include="Assets\Plugins\ByteGame" />
-     <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\package.json" />
-     <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\DefaultTemplate\project.config.json" />
-     <Folder Include="Assets\Plugins" />
-     <Folder Include="Assets\Plugins\ByteGame\com.bytedance.bgdt" />
-     <Folder Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\Resources" />
-     <Folder Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\DefaultTemplate" />
-     <Folder Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\DefaultTemplate\images" />
-     <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\Resources\ContainerConfig.json" />
-     <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\DefaultTemplate\game.json" />
-     <Folder Include="Assets\Plugins\ByteGame\com.bytedance.starksdk" />
-     <Reference Include="UnityEngine">
-     <HintPath>D:\WorkApp\Unity\2021.3.15f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEngine.CoreModule">
-     <HintPath>D:\WorkApp\Unity\2021.3.15f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEditor">
-     <HintPath>D:\WorkApp\Unity\2021.3.15f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
-     </Reference>
+    <None Include="Assets\Plugins\ByteGame\com.bytedance.bgdt\package.json" />
+    <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\ttsdk.xml" />
+    <None Include="Assets\Plugins\ByteGame\bgdt.txt" />
+    <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\package.json" />
+    <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\DefaultTemplate\project.config.json" />
+    <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\Resources\ContainerConfig.json" />
+    <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\DefaultTemplate\game.json" />
+    <None Include="Assets\Plugins\ByteGame\com.bytedance.starksdk\link.xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:\WorkApp\Unity\2022.3.62f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\WorkApp\Unity\2022.3.62f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:\WorkApp\Unity\2022.3.62f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

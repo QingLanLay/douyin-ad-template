@@ -1,0 +1,12 @@
+{
+    "packageName": "6000版DouyinAdEnergySystem_v1.0.17_20261028",
+    "editorVersion": "6000.0.46f1",
+    "targetUnity": "6000.0.46f1",
+    "uiPackage": "com.unity.ugui@2.0.0（内含TMP）",
+    "unity6000AutoCompatIncluded": true,
+    "checkedFunctionalPrefabs": 15,
+    "checkedTMPTexts": 41,
+    "reserializedAssets": 19,
+    "status": "passed",
+    "boundary": "Editor import/compilation and functional prefab reference checks; not PlayMode, full WebGL/SDK build or device acceptance."
+}

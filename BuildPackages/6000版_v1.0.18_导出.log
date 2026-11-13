@@ -1,0 +1,530 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to the License Client on channel: "LicenseClient-HXZ" at "2026-10-29T04:20:26.2781115Z"
+[Licensing::Client] Error: Code 10 while verifying Licensing Client signature (process Id: 24992, path: "D:/WorkApp/Unity/UnityHub/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: LicensingClient has failed validation; ignoring
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.16.2'. Current supported versions are: 1.0,1.1,1.2,1.3,1.4,1.4.1,1.5,1.6,1.7,1.8,1.9,1.10
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-HXZ"
+[Licensing::IpcConnector] License Client channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to the License Client on channel: "LicenseClient-HXZ-6000.0.46" at "2026-10-29T04:20:26.3589611Z"
+[Licensing::Client] Error: Code 10 while verifying Licensing Client signature (process Id: 28184, path: "D:/WorkApp/Unity/6000.0.46f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.16.2+bdef8f5
+  Session Id:              c844105b1f2648848fc46aeefe3bff27
+  Correlation Id:          8613f086b5cddebf34ef4bed910fcb37
+  External correlation Id: 940844396229954023
+  Machine Id:              6FbZld8b9pbs+h9YAIxf//218VI=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-HXZ-6000.0.46" (connect: 0.00s, validation: 0.01s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to the License Notification on channel: "LicenseClient-HXZ-6000.0.46-notifications" at "2026-10-29T04:20:26.3813335Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully updated license
+Built from '6000.0/release' branch; Version is '6000.0.46f1 (fb93bc360d3a) revision 16487356'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) 64bit Professional' Language: 'zh' Physical Memory: 32690 MB
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-8WUP-SFHJ-J5KJ-XWEZ-XXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+[Licensing::Client] Successfully resolved entitlement details
+
+COMMAND LINE ARGUMENTS:
+D:\WorkApp\Unity\6000.0.46f1\Editor\Unity.exe
+-batchmode
+-nographics
+-quit
+-accept-apiupdate
+-disableManagedDebugger
+-job-worker-count
+1
+-buildTarget
+WebGL
+-projectPath
+D:\UnityProj\抖音广告模板\.artifacts\PackageWork\Unity6000
+-executeMethod
+ExportDouyinAdEnergyPackage.Export6000
+-douyinPackageOutput
+D:\UnityProj\抖音广告模板\BuildPackages
+-logFile
+D:\UnityProj\抖音广告模板\BuildPackages\6000版_v1.0.18_导出.log
+Successfully changed project path to: D:\UnityProj\抖音广告模板\.artifacts\PackageWork\Unity6000
+D:/UnityProj/抖音广告模板/.artifacts/PackageWork/Unity6000
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [134788]  Target information:
+
+Player connection [134788]  * "[IP] 169.254.83.107 [Port] 55509 [Flags] 2 [Guid] 2980772907 [EditorId] 2980772907 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-L5TVKOT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [134788]  * "[IP] 192.168.3.116 [Port] 55509 [Flags] 2 [Guid] 2980772907 [EditorId] 2980772907 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-L5TVKOT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [134788] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [134788] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 1
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-135808" after 0.3 seconds.
+Library Redirect Path: Library/
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 34 packages:
+  Built-in packages:
+    com.unity.modules.ai@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr)
+    com.unity.ugui@2.0.0 (location: D:\UnityProj\抖音广告模板\.artifacts\PackageWork\Unity6000\Library\PackageCache\com.unity.ugui@f3fac7af1578)
+    com.unity.modules.subsystems@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.hierarchycore)
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.12 seconds
+Artifact Garbage Collection - Removed 1 unused hashed content filesTargeting platform: WebGL
+Refreshing native plugins compatible for Editor in 5.01 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.46f1 (fb93bc360d3a)
+[Subsystems] Discovering subsystems at path D:/WorkApp/Unity/6000.0.46f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/UnityProj/抖音广告模板/.artifacts/PackageWork/Unity6000/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+[Licensing::Client] Successfully resolved entitlement details
+Initialize mono
+Mono path[0] = 'D:/WorkApp/Unity/6000.0.46f1/Editor/Data/Managed'
+Mono path[1] = 'D:/WorkApp/Unity/6000.0.46f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/WorkApp/Unity/6000.0.46f1/Editor/Data/MonoBleedingEdge/etc'
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/WorkApp/Unity/6000.0.46f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/WorkApp/Unity/6000.0.46f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: D:/WorkApp/Unity/6000.0.46f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.028861 seconds.
+- Loaded All Assemblies, in  0.524 seconds
+Native extension for Android target not found
+Multiple ADB server instances found, the following ADB server instance have been terminated due to being run from another SDK. Process paths: 
+D:\WorkApp\Unity\2022.3.62f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\SDK\platform-tools\adb.exe
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.Android.AndroidDeploymentTargetsExtension:GetKnownTargets (UnityEditor.DeploymentTargets.IDeploymentTargetsMainThreadContext,UnityEditor.ProgressHandler) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/DeploymentTargets/AndroidDeploymentTargetsExtension.cs:348)
+UnityEditor.Android.TargetScanWorker:ScanSync () (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/TargetScanWorker.cs:164)
+UnityEditor.Android.TargetExtension:OnUsbDevicesChanged (UnityEditor.Hardware.UsbDevice[]) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:106)
+UnityEditor.Android.TargetExtension:OnLoad () (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:67)
+UnityEditor.Modules.ModuleManager:InitializePlatformSupportModules ()
+
+(Filename: /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/DeploymentTargets/AndroidDeploymentTargetsExtension.cs Line: 348)
+
+Android Extension - Scanning For ADB Devices 2501 ms
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.842 seconds
+Domain Reload Profiling: 3357ms
+	BeginReloadAssembly (202ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (89ms)
+	LoadAllAssembliesAndSetupDomain (176ms)
+		LoadAssemblies (196ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (171ms)
+			TypeCache.Refresh (169ms)
+				TypeCache.ScanAssembly (155ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (2843ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2809ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2590ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (45ms)
+			ProcessInitializeOnLoadAttributes (110ms)
+			ProcessInitializeOnLoadMethodAttributes (61ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/2000b0aEDbg.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: D:/UnityProj/抖音广告模板/.artifacts/PackageWork/Unity6000
+DisplayProgressbar: Compiling Scripts
+ExitCode: 4 Duration: 1s630ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/2000b0aEDbg-inputdata.json
+[252/258    1s] Csc Library/Bee/artifacts/2000b0aEDbg.dag/Assembly-CSharp.dll (+2 others)
+Assets\DouYinIconDemo\ADSScripts\MyHelper.cs(13,19): warning CS0618: 'Object.FindObjectOfType(Type)' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+
+Assets\DouYinIconDemo\ADSScripts\AdManagerImpl.cs(42,51): warning CS0618: 'Object.FindObjectsOfType<T>(bool)' is obsolete: 'Object.FindObjectsOfType has been deprecated. Use Object.FindObjectsByType instead which lets you decide whether you need the results sorted or not.  FindObjectsOfType sorts the results by InstanceID but if you do not need this using FindObjectSortMode.None is considerably faster.'
+
+Assets\DouYinIconDemo\ADSScripts\AdTest\AdTestSimulator.cs(40,39): warning CS0618: 'Object.FindObjectsOfType<T>(bool)' is obsolete: 'Object.FindObjectsOfType has been deprecated. Use Object.FindObjectsByType instead which lets you decide whether you need the results sorted or not.  FindObjectsOfType sorts the results by InstanceID but if you do not need this using FindObjectSortMode.None is considerably faster.'
+
+Assets\DouYinIconDemo\ADSScripts\MyHelper.cs(66,37): warning CS0618: 'TimeZone' is obsolete: 'System.TimeZone has been deprecated.  Please investigate the use of System.TimeZoneInfo instead.'
+
+Assets\DouYinIconDemo\ADSScripts\OceanEngineTracker.cs(158,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\OceanEngineTracker.cs(204,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\MyHelper.cs(80,37): warning CS0618: 'TimeZone' is obsolete: 'System.TimeZone has been deprecated.  Please investigate the use of System.TimeZoneInfo instead.'
+
+Assets\DouYinIconDemo\ADSScripts\OceanEngineTracker.cs(230,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\AdManagerImpl.cs(249,38): warning CS0618: 'TimeZone' is obsolete: 'System.TimeZone has been deprecated.  Please investigate the use of System.TimeZoneInfo instead.'
+
+Assets\DouYinIconDemo\ADSScripts\AdManagerImpl.cs(302,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\AdManagerImpl.cs(588,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\OceanEngineTracker.cs(437,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\AdManagerImpl.cs(881,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\AdManagerImpl.cs(930,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\AdManagerImpl.cs(1009,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\AdManagerImpl.cs(1362,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\AdManagerImpl.cs(1385,9): warning CS0162: Unreachable code detected
+
+Assets\DouYinIconDemo\ADSScripts\AdManagerImpl.cs(1421,9): warning CS0162: Unreachable code detected
+*** Tundra requires additional run (1.58 seconds), 1 items updated, 251 evaluated
+Starting: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Tools\netcorerun\netcorerun.exe "D:\WorkApp\Unity\6000.0.46f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/2000b0aEDbg.dag.json" "Library/Bee/2000b0aEDbg-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: D:/UnityProj/抖音广告模板/.artifacts/PackageWork/Unity6000
+ExitCode: 0 Duration: 0s303ms
+Starting: D:\WorkApp\Unity\6000.0.46f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/2000b0aEDbg.dag" --continue-on-failure --dagfilejson="Library\Bee\2000b0aEDbg.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: D:/UnityProj/抖音广告模板/.artifacts/PackageWork/Unity6000
+ExitCode: 0 Duration: 0s566ms
+Finished compiling graph: 261 nodes, 2756 flattened edges (2564 ToBuild, 32 ToUse), maximum node priority 134
+[190/258    0s] WriteText Library/Bee/artifacts/2000b0aEDbg.dag/Assembly-CSharp-Editor.rsp
+[253/258    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[254/258    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+[255/258    0s] Csc Library/Bee/artifacts/2000b0aEDbg.dag/Assembly-CSharp-Editor.dll (+2 others)
+Assets\Editor\AdTestLifecyclePrefabBuilder.cs(85,50): warning CS0618: 'Object.FindObjectsOfType<T>(bool)' is obsolete: 'Object.FindObjectsOfType has been deprecated. Use Object.FindObjectsByType instead which lets you decide whether you need the results sorted or not.  FindObjectsOfType sorts the results by InstanceID but if you do not need this using FindObjectSortMode.None is considerably faster.'
+
+Assets\Editor\AdTestLifecyclePrefabBuilder.cs(92,51): warning CS0618: 'Object.FindObjectsOfType<T>(bool)' is obsolete: 'Object.FindObjectsOfType has been deprecated. Use Object.FindObjectsByType instead which lets you decide whether you need the results sorted or not.  FindObjectsOfType sorts the results by InstanceID but if you do not need this using FindObjectSortMode.None is considerably faster.'
+[256/258    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[257/258    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (0.53 seconds), 6 items updated, 258 evaluated
+Assets\Editor\AdTestLifecyclePrefabBuilder.cs(85,50): warning CS0618: 'Object.FindObjectsOfType<T>(bool)' is obsolete: 'Object.FindObjectsOfType has been deprecated. Use Object.FindObjectsByType instead which lets you decide whether you need the results sorted or not.  FindObjectsOfType sorts the results by InstanceID but if you do not need this using FindObjectSortMode.None is considerably faster.'
+Assets\Editor\AdTestLifecyclePrefabBuilder.cs(92,51): warning CS0618: 'Object.FindObjectsOfType<T>(bool)' is obsolete: 'Object.FindObjectsOfType has been deprecated. Use Object.FindObjectsByType instead which lets you decide whether you need the results sorted or not.  FindObjectsOfType sorts the results by InstanceID but if you do not need this using FindObjectSortMode.None is considerably faster.'
+AssetDatabase: script compilation time: 2.963566s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.817 seconds
+Refreshing native plugins compatible for Editor in 3.07 ms, found 0 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.432 seconds
+Domain Reload Profiling: 1238ms
+	BeginReloadAssembly (385ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (61ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (149ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (338ms)
+		LoadAssemblies (397ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (68ms)
+			TypeCache.Refresh (56ms)
+				TypeCache.ScanAssembly (49ms)
+			BuildScriptInfoCaches (7ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (433ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (319ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (38ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (114ms)
+			ProcessInitializeOnLoadAttributes (116ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (15ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Start importing Assets/DouYinIconDemo/版本与导入说明.txt using Guid(20c0725e40c34201a8e19b3f2c5cd312) (TextScriptImporter) -> (artifact id: 'eeeeb3beedf35a9dc498327bb2fb78a5') in 0.0115129 seconds
+Start importing Assets/DouYinIconDemo/ADSScripts/AdTest/README.md using Guid(45b1b5c8e1256404fa61bfaba258fc6c) (TextScriptImporter) -> (artifact id: '3b74cdd738fe2e5138da04c6ec366141') in 0.00314 seconds
+Start importing Assets/DouYinIconDemo/DouyinAdEnergySystem_README.md using Guid(3eed031571250454fa5ac1b3fb7671a0) (TextScriptImporter) -> (artifact id: 'a7b8d25b18257c7612726d369106c904') in 0.0028352 seconds
+Start importing Assets/DouYinIconDemo/Prefabs/AdTest/激励广告测试.prefab using Guid(f1e6ba53cec07404a97b22cc064a2683) (PrefabImporter) -> (artifact id: 'a76a30ee9bbb34b464262a276b8a9cf7') in 0.0484581 seconds
+Start importing Assets/DouYinIconDemo/Prefabs/AdTest/插屏广告测试.prefab using Guid(62f232f16e8e572488a44f09c96b8914) (PrefabImporter) -> (artifact id: '29d086eeb2b9b48e2603cdf9dedc82cc') in 0.0072566 seconds
+Start importing Assets/DouYinIconDemo/Prefabs/Systems/DouyinAdSystem.prefab using Guid(7c4c75b4c1b82d9429e995660c056bb0) (PrefabImporter) -> (artifact id: '6156372062947bf53a07dae212fdcdb3') in 0.0126827 seconds
+Refreshing native plugins compatible for Editor in 3.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=488dab31e73499b47818cc625d67bd92): Total: 4.641 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=6 (actual=6, local cache=0, cache server=0)
+		Asset DB Process Time: managed=2 ms, native=757 ms
+		Asset DB Callback time: managed=59 ms, native=8 ms
+		Scripting: domain reloads=1, domain reload time=817 ms, compile time=2965 ms, other=30 ms
+		Project Asset Count: scripts=258, non-scripts=209
+		Asset File Changes: new=1, changed=9, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 4.063ms
+	ApplyChangesToAssetFolders: 0.654ms
+	Scan: 96.287ms
+	OnSourceAssetsModified: 0.764ms
+	CategorizeAssetsWithTransientArtifact: 8.574ms
+	ProcessAssetsWithTransientArtifactChanges: 10.459ms
+	CategorizeAssets: 3.708ms
+	ImportOutOfDateAssets: 532.592ms (-2523.476ms without children)
+		ImportManagerImport: 90.695ms (3.323ms without children)
+			ImportInProcess: 87.334ms
+			UpdateCategorizedAssets: 0.038ms
+		CompileScripts: 2965.055ms
+		ReloadNativeAssets: 0.001ms
+		UnloadImportedAssets: 0.101ms
+		ReloadImportedAssets: 0.002ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.059ms
+		InitializingProgressBar: 0.009ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.147ms
+	PostProcessAllAssets: 61.464ms
+	Hotreload: 4.423ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.001ms
+	UnloadStreamsBegin: 0.500ms
+	PersistCurrentRevisions: 0.061ms
+	UnloadStreamsEnd: 0.000ms
+	GenerateScriptTypeHashes: 0.921ms
+	Untracked: 3917.474ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 34.181ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlement details
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Unity6000
+Found 2 interfaces on host : 0) 169.254.83.107 1) 192.168.3.116
+Player connection [134788]  Target information:
+
+Player connection [134788]  * "[IP] 169.254.83.107 [Port] 55001 [Flags] 2 [Guid] 2019801453 [EditorId] 0 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-L5TVKOT) [Debug] 0 [PackageName] WindowsEditor [ProjectName] Unity6000" 
+
+Player connection [134788]  * "[IP] 192.168.3.116 [Port] 55001 [Flags] 2 [Guid] 2019801453 [EditorId] 0 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-L5TVKOT) [Debug] 0 [PackageName] WindowsEditor [ProjectName] Unity6000" 
+
+Started UDP target info broadcast (2) on [169.254.255.255:54997].
+Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 624 unused Assets / (1.9 MB). Loaded Objects now: 1122.
+Memory consumption went from 90.9 MB to 89.1 MB.
+Total: 6.403700 ms (FindLiveObjects: 0.203800 ms CreateObjectMapping: 0.035700 ms MarkObjects: 5.343000 ms  DeleteObjects: 0.820300 ms)
+
+[导出检查] 多宿主直玩场景识别：10 项通过。
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ExportDouyinAdEnergyPackage:ValidateDirectPlayScenes () (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:140)
+ExportDouyinAdEnergyPackage:ExportVersion (bool) (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:61)
+ExportDouyinAdEnergyPackage:Export6000 () (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:53)
+
+(Filename: Assets/Editor/ExportDouyinAdEnergyPackage.cs Line: 140)
+
+Font Asset [DouyinSansBold SDF] Units Per EM set to 1000. Please commit the newly serialized value.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+TMPro.TMP_FontAsset:ReadFontAssetDefinition () (at ./Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/TMP/TMP_FontAsset.cs:819)
+TMPro.TMP_FontAsset:OnValidate () (at ./Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/TMP/TMP_FontAsset.cs:757)
+UnityEditor.AssetDatabase:LoadMainAssetAtPath (string)
+ExportDouyinAdEnergyPackage:ExportVersion (bool) (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:63)
+ExportDouyinAdEnergyPackage:Export6000 () (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:53)
+
+(Filename: ./Library/PackageCache/com.unity.ugui@f3fac7af1578/Runtime/TMP/TMP_FontAsset.cs Line: 819)
+
+Start importing Assets/DouYinIconDemo/版本与导入说明.txt using Guid(20c0725e40c34201a8e19b3f2c5cd312) (TextScriptImporter) -> (artifact id: '93928e6383229a50a712346a5aa83268') in 0.0031795 seconds
+Refreshing native plugins compatible for Editor in 2.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=301f2226c9eaa4c40a5f019abb20b067): Total: 0.056 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Starting new worker id: 0 with log in D:/UnityProj/抖音广告模板/.artifacts/PackageWork/Unity6000/Logs/AssetImportWorker0.log
+Starting new worker id: 1 with log in D:/UnityProj/抖音广告模板/.artifacts/PackageWork/Unity6000/Logs/AssetImportWorker1.log
+Worker ready: AssetImportWorker1 1
+Worker ready: AssetImportWorker0 0
+[Worker1] Start importing Assets/DouYinIconDemo/Prefabs/AdTest/插屏广告测试.prefab using Guid(62f232f16e8e572488a44f09c96b8914) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker1] (PreviewImporter)
+[Worker1]  -> (artifact id: 'be74dd2c7d58f3c55fe98c091ad1aed1') in 0.0665968 seconds
+[Worker1] Start importing Assets/DouYinIconDemo/Prefabs/AdTest/激励广告测试.prefab using Guid(f1e6ba53cec07404a97b22cc064a2683) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker1] (PreviewImporter)
+[Worker1]  -> (artifact id: '4edee14c3d61755f8ab516cb8b3c014c') in 0.0167186 seconds
+[Worker1] Start importing Assets/DouYinIconDemo/版本与导入说明.txt using Guid(20c0725e40c34201a8e19b3f2c5cd312) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker1] (PreviewImporter)
+[Worker1]  -> (artifact id: 'c8250494077ddd518bcbe8953a33c38b') in 0.0014471 seconds
+[Worker1] Start importing Assets/DouYinIconDemo/ADSScripts/AdTest/AdTestSimulator.cs using Guid(536ec596c217afb4b820711950602599) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker1] (PreviewImporter)
+[Worker1]  -> (artifact id: 'e83e461bdaf80982157a19da3674b6eb') in 0.0006267 seconds
+[Worker1] Start importing Assets/DouYinIconDemo/推荐流通用接入包/Resources/FeedRecommendationConfig.asset using Guid(4938c379d4cf4ab98d753c3b5a6101ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker1] (PreviewImporter)
+[Worker1]  -> (artifact id: '00000000000000000000000000000000') in 0.0019773 seconds
+[Worker1]   ERROR: Build asset version error: assets/douyinicondemo/推荐流通用接入包/resources/feedrecommendationconfig.asset in SourceAssetDB has modification time of '2026-10-23T09:56:41.7105682Z' while content on disk has modification time of '2026-10-29T04:20:55.0640238Z'
+[Worker1] Import Error Code:(4)
+Message: Build asset version error: assets/douyinicondemo/推荐流通用接入包/resources/feedrecommendationconfig.asset in SourceAssetDB has modification time of '2026-10-23T09:56:41.7105682Z' while content on disk has modification time of '2026-10-29T04:20:55.0640238Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ExportPackage (string[],string,UnityEditor.ExportPackageOptions)
+ExportDouyinAdEnergyPackage:ExportVersion (bool) (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:91)
+ExportDouyinAdEnergyPackage:Export6000 () (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:53)
+
+[Assets/Editor/ExportDouyinAdEnergyPackage.cs line 91]
+
+[Worker1] Start importing Assets/Editor/AdTestLifecyclePrefabBuilder.cs using Guid(dfa1a70b26cf1db48b0df7d4298fd73c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker1] (PreviewImporter)
+[Worker1]  -> (artifact id: 'e1c29b62141c72bbe4c0a30f53770043') in 0.0006803 seconds
+[Worker0] Start importing Assets/DouYinIconDemo/Prefabs/Systems/DouyinAdSystem.prefab using Guid(7c4c75b4c1b82d9429e995660c056bb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker0] (PreviewImporter)
+[Worker0]  -> (artifact id: 'cbe872807bc9e3617b842434ea0a10e4') in 0.0605568 seconds
+[Worker0] Start importing Assets/DouYinIconDemo/Prefabs/AdTest/测试广告字体 SDF.asset using Guid(6d84d07219d038942ab4a54c88b3f3e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker0] (PreviewImporter)
+[Worker0]  -> (artifact id: '00000000000000000000000000000000') in 0.0340741 seconds
+[Worker0]   ERROR: Build asset version error: assets/douyinicondemo/prefabs/adtest/测试广告字体 sdf.asset in SourceAssetDB has modification time of '2026-10-26T02:32:09.4938653Z' while content on disk has modification time of '2026-10-29T04:20:55.0605024Z'
+[Worker0] Import Error Code:(4)
+Message: Build asset version error: assets/douyinicondemo/prefabs/adtest/测试广告字体 sdf.asset in SourceAssetDB has modification time of '2026-10-26T02:32:09.4938653Z' while content on disk has modification time of '2026-10-29T04:20:55.0605024Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ExportPackage (string[],string,UnityEditor.ExportPackageOptions)
+ExportDouyinAdEnergyPackage:ExportVersion (bool) (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:91)
+ExportDouyinAdEnergyPackage:Export6000 () (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:53)
+
+[Assets/Editor/ExportDouyinAdEnergyPackage.cs line 91]
+
+[Worker0] Start importing Assets/DouYinIconDemo/ADSScripts/AdTest/README.md using Guid(45b1b5c8e1256404fa61bfaba258fc6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker0] (PreviewImporter)
+[Worker0]  -> (artifact id: '292b46b5186d4b6e6a438a7f691b0684') in 0.0013047 seconds
+[Worker0] Start importing Assets/DouYinIconDemo/DouyinAdEnergySystem_README.md using Guid(3eed031571250454fa5ac1b3fb7671a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker0] (PreviewImporter)
+[Worker0]  -> (artifact id: '0244d6181ce6183ae52dd7716379a7e3') in 0.0011189 seconds
+[Worker0] Start importing Assets/Font/DouyinSansBold SDF.asset using Guid(ada9cdee84d16894a961647200899006) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker0] (PreviewImporter)
+[Worker0]  -> (artifact id: '00000000000000000000000000000000') in 0.0161654 seconds
+[Worker0]   ERROR: Build asset version error: assets/font/douyinsansbold sdf.asset in SourceAssetDB has modification time of '2026-10-29T04:19:12.6415972Z' while content on disk has modification time of '2026-10-29T04:20:55.0833414Z'
+[Worker0] Import Error Code:(4)
+Message: Build asset version error: assets/font/douyinsansbold sdf.asset in SourceAssetDB has modification time of '2026-10-29T04:19:12.6415972Z' while content on disk has modification time of '2026-10-29T04:20:55.0833414Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ExportPackage (string[],string,UnityEditor.ExportPackageOptions)
+ExportDouyinAdEnergyPackage:ExportVersion (bool) (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:91)
+ExportDouyinAdEnergyPackage:Export6000 () (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:53)
+
+[Assets/Editor/ExportDouyinAdEnergyPackage.cs line 91]
+
+[Worker0] Start importing Assets/DouYinIconDemo/ADSScripts/AdManagerImpl.cs using Guid(a93442378ebed584ebf403cd94a5e54a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+[Worker0] (PreviewImporter)
+[Worker0]  -> (artifact id: 'a5ca87425e2d5168e0783582d9e351cb') in 0.0007981 seconds
+[版本导出完成] D:\UnityProj\抖音广告模板\BuildPackages\6000版DouyinAdEnergySystem_v1.0.18_20261029.unitypackage | Unity 6000.0.46f1 | {"packageName":"6000版DouyinAdEnergySystem_v1.0.18_20261029","editorVersion":"6000.0.46f1","targetUnity":"6000.0.46f1","uiPackage":"com.unity.ugui@2.0.0（内含TMP）","unity6000AutoCompatIncluded":true,"checkedFunctionalPrefabs":15,"checkedTMPTexts":41,"reserializedAssets":19,"status":"passed","boundary":"Editor import/compilation and functional prefab reference checks; not PlayMode, full WebGL/SDK build or device acceptance."}
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+ExportDouyinAdEnergyPackage:ExportVersion (bool) (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:94)
+ExportDouyinAdEnergyPackage:Export6000 () (at Assets/Editor/ExportDouyinAdEnergyPackage.cs:53)
+
+(Filename: Assets/Editor/ExportDouyinAdEnergyPackage.cs Line: 94)
+
+Batchmode quit successfully invoked - shutting down!
+Killing ADB server in 0.0750811 seconds.
+[Physics::Module] Cleanup current backned.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] License Notification channel disconnected successfully.
+[Licensing::IpcConnector] License Client channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+PlayerConnection::CleanupExiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

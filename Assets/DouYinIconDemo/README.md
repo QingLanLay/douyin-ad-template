@@ -35,10 +35,12 @@ DouYinIconDemo/
 
 `Prefabs/AtomicButtons` 提供四个可直接放入任意 Canvas、任意场景的按钮：
 
-- `01_添加桌面.prefab`：添加桌面，完成后默认隐藏自身
-- `02_侧边栏.prefab`：直接打开抖音侧边栏
-- `03_分享.prefab`：分享
-- `04_排行榜.prefab`：打开排行榜
+- `01_添加桌面.prefab`：添加桌面，成功后执行 `onSuccess`
+- `02_侧边栏.prefab`：打开场景中的侧边栏教学面板，完成后执行 `onPanelOpened`
+- `03_分享.prefab`：分享，成功后执行 `onSuccess`
+- `04_排行榜.prefab`：请求显示排行榜，执行 `onRequested`
+
+`noAds` 模式保留这四个按钮，点击直接执行上述事件，可继续绑定原有奖励业务；侧边栏教学面板和抖音平台调用均跳过。
 
 也可以只把同名脚本添加到现有 `UnityEngine.UI.Button`。按钮在点击时调用
 常驻 `AdManager`，自身随场景销毁不会影响广告系统。按钮的成功、失败、返回

@@ -1,4 +1,5 @@
 using System;
+using Douyin.Feed;
 using System.Collections;
 using System.Collections.Generic;
 using TTSDK;
@@ -37,6 +38,8 @@ public sealed class FeedRecommendationManager : MonoBehaviour
     private int launchVersion;
     private bool isAppVisible;
     private bool configurationResolving;
+    private string launchRoute;
+    [Serializable] private sealed class ExtraRoute { public string route; }
     private bool resourcesReadyObserved;
     private UnityWebRequest activeLaunchRequest;
     private readonly List<FeedLifecycleRecord> lifecycleHistory = new List<FeedLifecycleRecord>();
@@ -91,6 +94,20 @@ public sealed class FeedRecommendationManager : MonoBehaviour
 
     /// <summary>当前已解析的推荐流启动上下文；尚未解析完成时为 null。</summary>
     public FeedLaunchContext CurrentContext => context;
+    public FeedPlaybackController Playback { get; private set; }
+    public void AttachPlayback(FeedPlaybackController playback)
+    {
+        if (Playback == playback) return;
+        Playback?.Dispose();
+        Playback = playback;
+    }
+    private void Update()
+    {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        Douyin.Feed.FeedDouyinAudio.CleanupRetired();
+#endif
+        Playback?.Tick(Time.realtimeSinceStartupAsDouble);
+    }
     public static FeedRecommendationManager ExistingInstance => instance;
     public int LaunchVersion => launchVersion;
     public bool IsDirectPlay => isDirectPlay;
@@ -372,6 +389,11 @@ public sealed class FeedRecommendationManager : MonoBehaviour
             }
 
             string contentId = content.contentId.Trim();
+            if (IsSimulationId(contentId))
+            {
+                Debug.Log("[推荐流复访] 占位未提交：" + contentId);
+                continue;
+            }
             if (fallbackContentId == null) fallbackContentId = contentId;
             if (!sceneContentIds.ContainsKey(content.returnSceneId))
             {
@@ -448,8 +470,11 @@ public sealed class FeedRecommendationManager : MonoBehaviour
         }
     }
 
+    public static bool IsSimulationId(string value) => !string.IsNullOrEmpty(value) && value.StartsWith("SIM_", StringComparison.OrdinalIgnoreCase);
+    public void CancelCurrentCardToHome() { ResetState(); }
     private static void StoreReturnSceneReady(int sceneId, string contentId, string readyTimestamp)
     {
+        if (IsSimulationId(contentId)) { Debug.Log("[推荐流复访] 占位未提交：" + contentId); return; }
         // RightValue 使用当前毫秒时间戳，表示该复访内容从现在开始已经可以被平台召回。
 #if UNITY_EDITOR
         Debug.Log($"[推荐流复访测试] 模拟 StoreFeedData：scene={sceneId}, contentId={contentId}, readyTime={readyTimestamp}");
@@ -485,6 +510,7 @@ public sealed class FeedRecommendationManager : MonoBehaviour
         {
             if (activeLaunchRequest != null) AbortNativeRequest(activeLaunchRequest);
             activeLaunchRequest = null;
+            Playback?.Dispose();
             if (isDirectPlay) SessionEnded?.Invoke(context);
             instance = null;
         }
@@ -527,6 +553,13 @@ public sealed class FeedRecommendationManager : MonoBehaviour
 
         int sceneId;
         int.TryParse(Query(options, SceneKey), out sceneId);
+        launchRoute = null;
+        string extra = Query(options, "feed_game_extra");
+        if (!string.IsNullOrWhiteSpace(extra))
+        {
+            try { launchRoute = JsonUtility.FromJson<ExtraRoute>(extra)?.route; }
+            catch (Exception e) { Debug.LogWarning("[推荐流] extra 忽略无效 JSON：" + e.Message); }
+        }
         isDirectPlay = true;
         // 先监听卡片可见性和完整游戏进出，再异步解析配置，避免快速回调造成事件丢失。
         RegisterPlatformListeners();
@@ -560,43 +593,56 @@ public sealed class FeedRecommendationManager : MonoBehaviour
                scene.EndsWith(FeedSceneCode, StringComparison.Ordinal);
     }
 
-    private void ReportSceneReadyInternal(int platformSceneId)
+    /// <summary>由统一控制器在首画面准备完成后调用，支持有界重试。</summary>
+    public void ReportPlaybackSceneReady(int version, bool fallback, Action<bool, string> completed)
     {
-        if (!isDirectPlay || readyReported) return;
+        if (!IsCurrentSession(version)) { completed?.Invoke(false, "推荐流会话已结束。"); return; }
+        if (!fallback && context == null) { completed?.Invoke(false, "推荐流上下文尚未准备完成。"); return; }
+        ReportSceneReadyInternal(7001, completed, true);
+    }
+
+    private void ReportSceneReadyInternal(int platformSceneId, Action<bool, string> completed = null, bool retry = false)
+    {
+        if (!isDirectPlay || (readyReported && !retry)) return;
         if (!resourcesReadyObserved)
         {
             resourcesReadyObserved = true;
-            RecordLifecycle(FeedLifecycleStage.ResourcesReady, "资源 / 可展示首帧已就绪");
+            RecordLifecycle(FeedLifecycleStage.ResourcesReady, "资源与可展示首画面已准备完成");
         }
 #if UNITY_EDITOR
         if (editorPreview && !debugAutoSceneReady)
         {
-            if (!debugReadinessPending) RecordLifecycle(FeedLifecycleStage.ResourcesReady, "资源/首帧就绪，等待手动上报 7001");
+            if (!debugReadinessPending) RecordLifecycle(FeedLifecycleStage.ResourcesReady, "首画面已准备完成，等待手动上报 7001");
             debugReadinessPending = true;
             debugPendingSceneId = platformSceneId;
+            completed?.Invoke(true, null);
             return;
         }
         debugReadinessPending = false;
 #endif
-        // 7001 上报适用于平台开放的各宿主，不得增加 hostName/IsDouyin 前置拦截。
-        // 在调用入口处统一防重，确保一次启动只上报一次场景就绪。
-      readyReported = true;
-      RecordLifecycle(FeedLifecycleStage.SceneReady, "ReportScene(" + platformSceneId + ")，本次启动防重");
-      int cost = Mathf.Max(1, Mathf.RoundToInt((Time.realtimeSinceStartup - launchStartedAt) * 1000f));
+        bool firstRequest = !readyReported;
+        readyReported = true;
+        if (firstRequest) RecordLifecycle(FeedLifecycleStage.SceneReady, "ReportScene(" + platformSceneId + ")");
+        int version = launchVersion;
+        int cost = Mathf.Max(1, Mathf.RoundToInt((Time.realtimeSinceStartup - launchStartedAt) * 1000f));
 #if UNITY_EDITOR
-      Debug.Log($"[推荐流调试] 模拟 ReportScene：sceneId={platformSceneId}, costTime={cost}");
+        Debug.Log($"[推荐流调试] 模拟 ReportScene：sceneId={platformSceneId}, costTime={cost}");
+        completed?.Invoke(true, null);
 #else
-      var parameters = new JsonData { ["sceneId"] = platformSceneId, ["costTime"] = cost };
-
-        TT.ReportScene(parameters,
-            _ => Debug.Log($"[推荐流] ReportScene 成功，costTime={cost}"),
-          (code, message) => Debug.LogError($"[推荐流] ReportScene 失败：{code} {message}"),
-          null);
+        var parameters = new JsonData { ["sceneId"] = platformSceneId, ["costTime"] = cost };
+        try
+        {
+            TT.ReportScene(parameters,
+                _ => { if (!IsCurrentSession(version)) return; Debug.Log($"[推荐流] ReportScene 成功，costTime={cost}"); completed?.Invoke(true, null); },
+                (code, message) => { if (!IsCurrentSession(version)) return; Debug.LogError($"[推荐流] ReportScene 失败：{code} {message}"); completed?.Invoke(false, message); },
+                null);
+        }
+        catch (Exception exception) { completed?.Invoke(false, exception.Message); }
 #endif
+        if (!IsCurrentSession(version)) return;
         if (enterPending) DispatchEnter();
         else DispatchCardShownIfReady();
-  }
-
+    }
     private IEnumerator ResolveConfig(FeedUserChannel channel, string contentId, int sceneId, int version)
     {
         configurationResolving = true;
@@ -612,9 +658,12 @@ public sealed class FeedRecommendationManager : MonoBehaviour
 #endif
         if (local == null) local = LoadLocalConfig();
         FeedContentConfig selected = null;
+        // route 必须在同渠道本地白名单，未知值不得作为路径/场景名直接消费。
+        if (local != null && !string.IsNullOrWhiteSpace(launchRoute))
+            selected = local.FindRoute(channel, launchRoute);
 
         // 优先读取远程配置，便于不发版动态调整推荐内容。
-        if (useRemote && local != null && !string.IsNullOrWhiteSpace(local.RemoteConfigUrl))
+        if (selected == null && useRemote && local != null && !string.IsNullOrWhiteSpace(local.RemoteConfigUrl))
         {
             yield return RequestRemote(local.RemoteConfigUrl, local.RemoteTimeoutSeconds,
                 channel, contentId, value => selected = value);
@@ -870,8 +919,10 @@ public sealed class FeedRecommendationManager : MonoBehaviour
             RecordLifecycle(FeedLifecycleStage.SessionEnded, "结束旧内容，清理体验资源");
             SessionEnded?.Invoke(context);
         }
+        Playback?.EndSession();
         launchVersion++;
         configurationResolving = false;
+        launchRoute = null;
         resourcesReadyObserved = false;
         isAppVisible = false;
         LastConfigurationFailure = null;

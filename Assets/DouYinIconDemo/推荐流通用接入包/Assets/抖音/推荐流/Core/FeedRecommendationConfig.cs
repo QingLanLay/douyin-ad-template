@@ -146,6 +146,12 @@ public sealed class FeedRecommendationConfig : ScriptableObject
     }
 
     /// <summary>返回指定渠道的首条有效配置，供未知 ContentID 安全兜底。</summary>
+    public FeedContentConfig FindRoute(FeedUserChannel channel, string route)
+    {
+        return contents.Find(item => item != null && item.channel == channel &&
+            string.Equals(item.payload, route, StringComparison.Ordinal));
+    }
+
     public FeedContentConfig FindFirst(FeedUserChannel channel)
     {
         if (channel == FeedUserChannel.Unknown) return null;

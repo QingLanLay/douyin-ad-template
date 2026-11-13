@@ -1,5 +1,4 @@
 ﻿#define USE_DY_AD     // 定义此宏启用抖音广告SDK (发布前取消注释)
-// #define USE_TEST_MODE // 定义此宏启用测试模式 (仅模拟回调，不实际调用SDK)
 
 using System;
 using System.Collections;
@@ -30,8 +29,32 @@ public class AdManagerImpl : MonoBehaviour
 
     [Header("测试广告生命周期")]
     [SerializeField] private AdTestSimulator testSimulator;
-    private AdTestSimulator TestSimulator => testSimulator != null
-        ? testSimulator : (testSimulator = GetComponent<AdTestSimulator>());
+    private bool _testSdkInitializing;
+    private AdTestSimulator TestSimulator
+    {
+        get
+        {
+            if (testSimulator != null) return testSimulator;
+            testSimulator = GetComponent<AdTestSimulator>() ?? GetComponentInChildren<AdTestSimulator>(true);
+            if (testSimulator != null) return testSimulator;
+            AdTestSimulator found = null;
+            foreach (AdTestSimulator candidate in UnityEngine.Object.FindObjectsOfType<AdTestSimulator>(true))
+            {
+                if (!candidate.gameObject.scene.IsValid() || !candidate.gameObject.scene.isLoaded) continue;
+                AdManager owner = candidate.GetComponentInParent<AdManager>();
+                if (owner != null && owner != AdManager.Instance) continue;
+                if (found != null) return null;
+                found = candidate;
+            }
+            return testSimulator = found;
+        }
+    }
+
+    private void BeginTestSdkInitialization()
+    {
+        if (!_isSDKInitialized && !_testSdkInitializing && isActiveAndEnabled)
+            StartCoroutine(InitializeTestSdk());
+    }
 
     // 回调
     private Action _rewardCallback;
@@ -109,85 +132,99 @@ public class AdManagerImpl : MonoBehaviour
 
         if (isTest)
         {
-            StartCoroutine(InitializeTestSdk());
+            BeginTestSdkInitialization();
             return;
         }
 
-        Debug.Log($"[AdManagerImpl] 非isTest模式，开始 TT.InitSDK");
-        Debug.Log($"[AdManagerImpl] 【侧边栏初始化】IsFromSideBarImpl={IsFromSideBarImpl}, _isFromSideBar={_isFromSideBar}");
-#if USE_DY_AD
+        BeginRealSdkInitialization();
+    }
+
+    private bool _realSdkInitializing;
+
+    /// <summary>真实广告只在 SDK 成功回调后创建；登录、推荐流和上报失败不能阻断广告准备。</summary>
+    private void BeginRealSdkInitialization()
+    {
+        if (AdManager.NoAdsEnabled || isTest || _isSDKInitialized || _realSdkInitializing) return;
+        _realSdkInitializing = true;
+        Debug.Log("[Ad] 正式模式：开始 TT.InitSDK；激励位=" + rewardVideoAdUnitId + "，插屏位=" + interstitialAdUnitId, this);
         try
         {
-            Debug.Log($"[AdManagerImpl] 【侧边栏初始化】TT.s_ContainerEnv.GetLaunchFrom()={TT.s_ContainerEnv?.GetLaunchFrom()}");
-            Debug.Log($"[AdManagerImpl] 【侧边栏初始化】TT.s_ContainerEnv.GetLocation()={TT.s_ContainerEnv?.GetLocation()}");
-        }
-        catch { }
-#endif
-
+            TT.InitSDK((code, env) =>
+            {
+                if (this == null) return;
+                _realSdkInitializing = false;
+                if (AdManager.NoAdsEnabled || isTest) return;
+                if (code != 0)
+                {
+                    Debug.LogError("[Ad] TT.InitSDK 失败 code=" + code + "；未创建或展示广告，下次业务请求可重试。", this);
+                    return;
+                }
+                _isSDKInitialized = true;
+                Debug.Log("[Ad] TT.InitSDK 成功；开始创建并预加载真实广告。", this);
 #if UNITY_WEBGL
-        var sysInfo = TT.GetSystemInfo();
-        if (sysInfo != null)
-        {
-            _isIOS = sysInfo.platform.ToLower().Equals("ios");
-        }
-        else
-        {
-            Debug.LogWarning("[AdManagerImpl] TT.GetSystemInfo() 返回 null，默认作为非iOS平台");
-            _isIOS = false;
-        }
+                RunOptionalPlatformStep("读取平台信息", () =>
+                {
+                    var info = TT.GetSystemInfo();
+                    _isIOS = info != null && string.Equals(info.platform, "ios", StringComparison.OrdinalIgnoreCase);
+                });
 #endif
-
-        TT.InitSDK((code, env) =>
+                // 必需广告链路优先，且两类广告相互独立；任何可选接入异常均不能阻断它们。
+                RunOptionalPlatformStep("激励广告创建", CreateRewardVideoAd);
+                RunOptionalPlatformStep("插屏广告创建", CreateInterstitialAd);
+                RunOptionalPlatformStep("推荐流启动解析", () =>
+                {
+                    LaunchOption launchOption = TT.GetLaunchOptionsSync();
+                    FeedRecommendationProjectAdapter.Register();
+                    _isFeedLaunch = FeedRecommendationManager.Instance.HandleLaunchOptions(launchOption);
+                });
+                if (!_isFeedLaunch)
+                {
+                    RunOptionalPlatformStep("普通启动上报", ReportLaunchScene);
+                    RunOptionalPlatformStep("登录和平台入口初始化", BeginPostSdkInitialization);
+                }
+                else Debug.Log("[AdManagerImpl] 推荐流预加载：延后登录和激活上报至首次 FeedEnter");
+                RunOptionalPlatformStep("转化追踪初始化", InitOceanEngineTracker);
+                RunOptionalPlatformStep("LTV 上报", ReportLtvRoi7Day);
+            });
+        }
+        catch (Exception exception)
         {
-            if (AdManager.NoAdsEnabled) return;
-            _isSDKInitialized = true;
-            Debug.Log($"[AdManagerImpl] SDK初始化完成 code:{code}");
+            _realSdkInitializing = false;
+            Debug.LogError("[Ad] TT.InitSDK 调用失败：" + exception + "；请确认当前运行于正确的抖音 SDK 容器。", this);
+        }
+    }
 
-            LaunchOption launchOption = TT.GetLaunchOptionsSync();
-            FeedRecommendationProjectAdapter.Register();
-            _isFeedLaunch = FeedRecommendationManager.Instance.HandleLaunchOptions(launchOption);
-
-            if (!_isFeedLaunch)
-            {
-                // 普通启动维持原有上报、登录和平台初始化流程。
-                ReportLaunchScene();
-                BeginPostSdkInitialization();
-            }
-            else
-            {
-                // 推荐流预启动不强制登录、不上报正式激活，等待首次 FeedEnter。
-                Debug.Log("[AdManagerImpl] 推荐流预加载：延后登录和激活上报至首次 FeedEnter");
-            }
-
-            // 创建广告实例
-            CreateInterstitialAd();
-            CreateRewardVideoAd();
-
-            // 巨量引擎转化追踪初始化
-            InitOceanEngineTracker();
-
-            Debug.Log("Unity message init sdk callback");
-            Debug.Log("Unity message code: " + code);
-            Debug.Log("Unity message HostEnum: " + env.m_HostEnum);
-        });
+    private void RunOptionalPlatformStep(string step, Action action)
+    {
+        try { action(); }
+        catch (Exception exception) { Debug.LogWarning("[Ad] " + step + "失败，不阻断其他广告准备：" + exception, this); }
     }
 
     private IEnumerator InitializeTestSdk()
     {
-        Debug.Log("[AdTest] InitSDK：开始异步模拟初始化（不会请求平台）");
-        if (TestSimulator == null)
+        if (_testSdkInitializing) yield break;
+        _testSdkInitializing = true;
+        try
         {
-            Debug.LogError("[AdTest] 缺少 AdTestSimulator，请使用已配置测试广告子预制体的 DouyinAdSystem。");
-            yield break;
+            Debug.Log("[AdTest] InitSDK：开始异步模拟初始化（不会请求平台）");
+            // Awake期间其他场景对象尚未完成加载；等一帧后再查找独立放置的测试节点。
+            yield return null;
+            AdTestSimulator simulator = TestSimulator;
+            if (simulator == null || (simulator.RewardPanel == null && simulator.InterstitialPanel == null))
+            {
+                Debug.LogError("[AdTest] 未找到已放置的测试广告界面。请退出Play，在菜单“抖音/测试广告/补齐当前场景已有广告节点”接线；或直接放入完整DouyinAdSystem预制体。不会运行时临时创建UI。");
+                yield break;
+            }
+            yield return new WaitForSecondsRealtime(Mathf.Max(0f, simulator.initializationSeconds));
+            _isSDKInitialized = true;
+            Debug.Log("[AdTest] InitSDK 回调成功 → 模拟普通启动/登录/激活 → 创建广告并预加载");
+            BeginPostSdkInitialization();
+            CreateRewardVideoAd();
+            CreateInterstitialAd();
+            InitOceanEngineTracker();
+            ReportLtvRoi7Day();
         }
-        yield return new WaitForSecondsRealtime(Mathf.Max(0f, TestSimulator.initializationSeconds));
-        _isSDKInitialized = true;
-        Debug.Log("[AdTest] InitSDK 回调成功 → 模拟普通启动/登录/激活 → 创建广告并预加载");
-        BeginPostSdkInitialization();
-        CreateRewardVideoAd();
-        CreateInterstitialAd();
-        InitOceanEngineTracker();
-        ReportLtvRoi7Day();
+        finally { _testSdkInitializing = false; }
     }
 
     /// <summary>
@@ -241,13 +278,7 @@ public class AdManagerImpl : MonoBehaviour
     private void Start()
     {
         if (AdManager.NoAdsEnabled) return;
-        if (!isTest && !_isSDKInitialized)
-        {
-            CreateRewardVideoAd();
-            CreateInterstitialAd();
-        }
-
-        if (!isTest) ReportLtvRoi7Day();
+        if (!isTest) BeginRealSdkInitialization();
     }
 
     // ============================================================
@@ -284,12 +315,29 @@ public class AdManagerImpl : MonoBehaviour
     {
         if (AdManager.NoAdsEnabled) { onComplete?.Invoke(); return; }
         // 模拟广告期间拒绝并发请求，不能覆盖正在播放的那次奖励回调。
-        if (isTest && (!_isSDKInitialized || TestSimulator == null || TestSimulator.IsBusy))
+        if (isTest)
         {
-            Debug.Log("[AdTest] 激励请求失败：SDK 未就绪、未配置预制体或已有全屏广告");
+            if (!_isSDKInitialized) BeginTestSdkInitialization(); // 补齐面板后允许重新初始化，不永久卡死。
+            AdTestSimulator simulator = TestSimulator;
+            string reason = simulator == null ? "缺少测试调度器；请执行“抖音/测试广告/补齐当前场景已有广告节点”"
+                : simulator.RewardPanel == null ? "缺少已放置的激励测试面板或存在多个未接线面板"
+                : !_isSDKInitialized ? "测试SDK仍在初始化，请稍后重试"
+                : simulator.IsBusy ? "已有全屏测试广告，不能并发展示" : null;
+            if (reason != null)
+            {
+                Debug.LogWarning("[AdTest] 激励请求失败：" + reason, this);
+                onFailed?.Invoke();
+                return;
+            }
+        }
+        if (!isTest && !_isSDKInitialized)
+        {
+            BeginRealSdkInitialization();
+            Debug.LogWarning("[Ad] 激励请求未展示：真实 SDK 尚未初始化成功，请查看 TT.InitSDK 日志。", this);
             onFailed?.Invoke();
             return;
         }
+        if (!isTest && _rewardVideoAd == null) CreateRewardVideoAd();
         long requestId = ++_rewardRequestSequence;
         if (_activeRewardRequestId != 0)
         {
@@ -312,9 +360,9 @@ public class AdManagerImpl : MonoBehaviour
             return;
         }
 
-#if USE_TEST_MODE || UNITY_EDITOR
-        Debug.Log("[Ad] 测试模式 - 模拟激励视频");
-        CompleteRewardRequest(requestId, true);
+#if UNITY_EDITOR
+        Debug.LogWarning("[Ad] 当前是 Unity 编辑器，正式广告不能在这里验证。请使用抖音容器，或勾选 isTest 预览测试广告；本次不伪造观看成功。", this);
+        CompleteRewardRequest(requestId, false);
 #elif USE_DY_AD && UNITY_WEBGL
         ShowRewardVideoWebGL(requestId);
 #elif USE_DY_AD && UNITY_ANDROID
@@ -331,17 +379,36 @@ public class AdManagerImpl : MonoBehaviour
     {
         if (AdManager.NoAdsEnabled) return;
         if (isTest) { TestSimulator?.PrepareReward(); return; }
+        if (!_isSDKInitialized || _rewardVideoAd != null) return;
+        if (string.IsNullOrWhiteSpace(rewardVideoAdUnitId)) { Debug.LogError("[Ad] 激励广告位 ID 为空，请填写当前游戏自己的广告位。", this); return; }
 #if USE_DY_AD
-        var param = new CreateRewardedVideoAdParam { AdUnitId = rewardVideoAdUnitId };
-        TTRewardedVideoAd createdAd = TT.CreateRewardedVideoAd(param);
-        _rewardVideoAd = createdAd;
-
-        if (createdAd == null)
+        TTRewardedVideoAd createdAd = null;
+        try
         {
-            Debug.LogWarning("[Ad] 创建激励视频实例失败，后续点击仍会重新尝试");
-            return;
+            createdAd = TT.CreateRewardedVideoAd(new CreateRewardedVideoAdParam { AdUnitId = rewardVideoAdUnitId });
+            _rewardVideoAd = createdAd;
+            if (createdAd == null) { Debug.LogError("[Ad] 创建激励广告返回 null，广告位=" + rewardVideoAdUnitId, this); return; }
+            createdAd.OnLoad += () =>
+            {
+                if (ReferenceEquals(createdAd, _rewardVideoAd)) Debug.Log("[Ad] 激励广告预加载成功，广告位=" + rewardVideoAdUnitId, this);
+            };
+            createdAd.OnError += (code, message) =>
+            {
+                if (!ReferenceEquals(createdAd, _rewardVideoAd)) return;
+                Debug.LogError("[Ad] 激励广告加载/展示失败 code=" + code + "，广告位=" + rewardVideoAdUnitId + "，msg=" + message, this);
+                _rewardVideoAd = null;
+                if (_activeRewardRequestId != 0) CompleteRewardRequest(_activeRewardRequestId, false);
+                createdAd.Destroy();
+            };
+            // 先绑定回调再主动加载，不能只创建实例却一直等待 OnLoad。
+            createdAd.Load();
         }
-
+        catch (Exception exception)
+        {
+            _rewardVideoAd = null;
+            Debug.LogError("[Ad] 激励广告创建/预加载异常，广告位=" + rewardVideoAdUnitId + "：" + exception, this);
+            if (createdAd != null) RunOptionalPlatformStep("清理激励实例", createdAd.Destroy);
+        }
 #endif
     }
 
@@ -501,6 +568,12 @@ public class AdManagerImpl : MonoBehaviour
     public void ShowInterstitialAd(Action onClose = null)
     {
         if (AdManager.NoAdsEnabled) { onClose?.Invoke(); return; }
+        if (!isTest && !_isSDKInitialized)
+        {
+            BeginRealSdkInitialization();
+            Debug.LogWarning("[Ad] 插屏请求未展示：真实 SDK 尚未初始化成功，请查看 TT.InitSDK 日志。", this);
+            return;
+        }
         // 测试和真机共用保护期、间隔及并发限制，不再提前模拟成功。
         // 抖音新规：本次运行前30秒禁止插屏，且全屏广告间隔只保存在会话内。
         float now = Time.realtimeSinceStartup;
@@ -537,7 +610,7 @@ public class AdManagerImpl : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        Debug.Log("[Ad] 编辑器模式 - 模拟插屏广告展示");
+        Debug.LogWarning("[Ad] Unity 编辑器不能验证正式插屏；请使用抖音容器，或勾选 isTest。未调用真实展示。", this);
         onClose?.Invoke();
         return;
 #endif
@@ -596,14 +669,22 @@ public class AdManagerImpl : MonoBehaviour
     {
         if (AdManager.NoAdsEnabled) return;
         if (isTest) { TestSimulator?.PrepareInterstitial(); return; }
+        if (!_isSDKInitialized) return;
+        if (string.IsNullOrWhiteSpace(interstitialAdUnitId)) { Debug.LogError("[Ad] 插屏广告位 ID 为空，请填写当前游戏自己的广告位。", this); return; }
         if (_isIOS || _isInterstitialAdLoading || _isInterstitialAdLoaded || _isInterstitialRequestInProgress) return;
 
 #if USE_DY_AD
         _isInterstitialAdLoading = true;
         _isInterstitialAdLoaded = false;
         _isInterstitialLoadFailed = false;
-        var param = new CreateInterstitialAdParam { InterstitialAdId = interstitialAdUnitId };
-        TTInterstitialAd createdAd = TTInterstitialAdWrapper.Create(() => TT.CreateInterstitialAd(param));
+        TTInterstitialAd createdAd;
+        try { createdAd = TTInterstitialAdWrapper.Create(() => TT.CreateInterstitialAd(new CreateInterstitialAdParam { InterstitialAdId = interstitialAdUnitId })); }
+        catch (Exception exception)
+        {
+            _isInterstitialAdLoading = false; _isInterstitialLoadFailed = true;
+            Debug.LogError("[Ad] 插屏创建异常，广告位=" + interstitialAdUnitId + "：" + exception, this);
+            return;
+        }
         _interstitialAd = createdAd;
 
         if (createdAd == null)
@@ -651,6 +732,13 @@ public class AdManagerImpl : MonoBehaviour
             _interstitialAd = null;
             Debug.Log("[Ad] 插屏失败后停止自动申请，等待下次业务主动请求");
         };
+        try { createdAd.Load(); }
+        catch (Exception exception)
+        {
+            _isInterstitialAdLoading = false; _isInterstitialLoadFailed = true; _interstitialAd = null;
+            Debug.LogError("[Ad] 插屏预加载异常，广告位=" + interstitialAdUnitId + "：" + exception, this);
+            RunOptionalPlatformStep("清理插屏实例", createdAd.Destroy);
+        }
 #endif
     }
 
@@ -711,6 +799,15 @@ public class AdManagerImpl : MonoBehaviour
             _interstitialCloseCallback = null;
             Debug.LogError($"[Ad] iOS插屏错误 code:{code} msg:{msg}");
         };
+
+        try { createdAd.Load(); }
+        catch (Exception exception)
+        {
+            _isInterstitialRequestInProgress = false; _isInterstitialLoadFailed = true; _interstitialCloseCallback = null; _interstitialAd = null;
+            Debug.LogError("[Ad] iOS插屏预加载异常：" + exception, this);
+            RunOptionalPlatformStep("清理iOS插屏实例", createdAd.Destroy);
+            return;
+        }
 
         // 等待广告加载完成，最多10秒，避免网络异常时永久挂起
         float deadline = Time.realtimeSinceStartup + 10f;
@@ -996,7 +1093,7 @@ public class AdManagerImpl : MonoBehaviour
 
     public void Share(Action onSuccess = null, Action onFailed = null)
     {
-        if (AdManager.NoAdsEnabled) { onFailed?.Invoke(); return; }
+        if (AdManager.NoAdsEnabled) { onSuccess?.Invoke(); return; }
         if (isTest)
         {
             Debug.Log("[Share] 测试模式 - 模拟分享成功");
@@ -1024,7 +1121,7 @@ public class AdManagerImpl : MonoBehaviour
     public void AddToDesktop(Action<bool> onSuccess = null, Action<int, string> onFailed = null,
         Action onAlreadyAdded = null)
     {
-        if (AdManager.NoAdsEnabled) { onFailed?.Invoke(-1, "无广告模式不支持添加桌面"); return; }
+        if (AdManager.NoAdsEnabled) { onSuccess?.Invoke(true); return; }
         if (isTest)
         {
             bool alreadyAdded = GetTestState("ADS_Desktop_Added", false);
@@ -1112,7 +1209,7 @@ public class AdManagerImpl : MonoBehaviour
 
     public void CheckSideBarSupport(Action onSupported = null, Action onNotSupported = null)
     {
-        if (AdManager.NoAdsEnabled) { onNotSupported?.Invoke(); return; }
+        if (AdManager.NoAdsEnabled) { onSupported?.Invoke(); return; }
         if (isTest) { Debug.Log("[AdTest] 模拟支持侧边栏"); onSupported?.Invoke(); return; }
         Debug.Log("[AdManagerImpl] 【CheckSideBarSupport】被调用");
 #if USE_DY_AD
@@ -1135,7 +1232,12 @@ public class AdManagerImpl : MonoBehaviour
 
     public void OpenSideBar(Action onSuccess = null, Action onFailed = null, Action onReturn = null)
     {
-        if (AdManager.NoAdsEnabled) { onFailed?.Invoke(); return; }
+        if (AdManager.NoAdsEnabled)
+        {
+            onSuccess?.Invoke();
+            onReturn?.Invoke();
+            return;
+        }
         if (isTest)
         {
             // 测试模式：模拟打开侧边栏成功，然后模拟从侧边栏返回，保存状态
@@ -1199,7 +1301,7 @@ public class AdManagerImpl : MonoBehaviour
 
     public void ClaimSideBarReward( Action onClaimed = null)
     {
-        if (AdManager.NoAdsEnabled) return;
+        if (AdManager.NoAdsEnabled) { onClaimed?.Invoke(); return; }
         if (IsSideBarRewardClaimed)
         {
             Debug.Log("[SideBar] 奖励已领取");

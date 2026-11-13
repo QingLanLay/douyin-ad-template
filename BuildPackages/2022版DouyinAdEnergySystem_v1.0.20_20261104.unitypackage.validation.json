@@ -1,0 +1,12 @@
+{
+    "packageName": "2022版DouyinAdEnergySystem_v1.0.20_20261104",
+    "editorVersion": "2022.3.62f1c1",
+    "targetUnity": "2022.3.62f1（含c1）",
+    "uiPackage": "com.unity.ugui@1.0.0 + com.unity.textmeshpro@3.0.7",
+    "unity6000AutoCompatIncluded": true,
+    "checkedFunctionalPrefabs": 15,
+    "checkedTMPTexts": 19,
+    "reserializedAssets": 0,
+    "status": "passed",
+    "boundary": "Editor import/compilation and functional prefab reference checks; not PlayMode, full WebGL/SDK build or device acceptance."
+}

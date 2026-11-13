@@ -13,10 +13,10 @@ public class AdManager : MonoBehaviour
     public static AdManager Instance { get; private set; }
 
     [Header("无广告链接模式")]
-    [Tooltip("勾选后使用 Unity PlayerPrefs / 本地 JSON，不初始化抖音 SDK，激励直接成功，并隐藏平台专用入口。发布前设置，切换后重新运行。")]
+    [Tooltip("勾选后使用 Unity PlayerPrefs / 本地 JSON，不初始化抖音 SDK，激励直接成功，保留四个按钮并直接执行成功回调。发布前设置，切换后重新运行。")]
     public bool noAds;
 
-    [Tooltip("可选：额外需要在无广告模式隐藏的抖音专用场景对象。不要放入玩法、体力或 AdManager 自身。")]
+    [Tooltip("可选：额外需要在无广告模式隐藏的抖音专用场景对象。不要放入四个按钮及其父对象、玩法、体力或 AdManager 自身。")]
     public GameObject[] noAdsHideObjects = Array.Empty<GameObject>();
 
     [Serializable]
@@ -43,10 +43,10 @@ public class AdManager : MonoBehaviour
     }
 
     [Header("广告位ID")]
-    [Tooltip("激励视频广告位ID")]
+    [Tooltip("填写当前游戏在抖音平台申请的激励广告位ID，其他游戏不能直接复用模板广告位")]
     public string rewardVideoAdUnitId = "j9p6hj29jm6dfnlym1";
 
-    [Tooltip("插屏广告广告位ID")]
+    [Tooltip("填写当前游戏在抖音平台申请的插屏广告位ID，其他游戏不能直接复用模板广告位")]
     public string interstitialAdUnitId = "23nbcefbl3iha3bihk";
 
     [Header("测试模式")]
@@ -89,13 +89,11 @@ public class AdManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) => ApplyNoAdsVisibility();
 
-    /// <summary>收集已加载场景的抖音专用对象，不包含体力、激励和玩法 UI。</summary>
+    /// <summary>收集侧边栏面板、额外隐藏对象及已记录的显隐状态。</summary>
     public List<GameObject> GetNoAdsPlatformObjects()
     {
         var targets = new List<GameObject>();
         if (!gameObject.scene.IsValid()) return targets; // 选中预制体资产时不修改当前场景。
-        foreach (DouyinAtomicButtonBase button in Resources.FindObjectsOfTypeAll<DouyinAtomicButtonBase>())
-            AddPlatformTarget(targets, button.gameObject);
         foreach (SideBarManager panel in Resources.FindObjectsOfTypeAll<SideBarManager>())
             AddPlatformTarget(targets, panel.gameObject);
         if (noAdsHideObjects != null)
@@ -116,7 +114,7 @@ public class AdManager : MonoBehaviour
         targets.Add(target);
     }
 
-    /// <summary>隐藏或恢复平台专用预制体，保留原来未激活的对象状态。</summary>
+    /// <summary>保留四个按钮，隐藏或恢复其他平台专用对象，并保持原有激活状态。</summary>
     public void ApplyNoAdsVisibility()
     {
         if (!noAds)
@@ -129,7 +127,7 @@ public class AdManager : MonoBehaviour
         foreach (GameObject target in GetNoAdsPlatformObjects()) HideNoAdsPlatformObject(target);
     }
 
-    /// <summary>动态实例化的平台专用对象同样不显示，不创建替代 UI。</summary>
+    /// <summary>隐藏平台专用对象；四个按钮及其父对象保持可用。</summary>
     public static void HideNoAdsPlatformObject(GameObject target)
     {
         if (!NoAdsEnabled || target == null) return;
@@ -138,6 +136,16 @@ public class AdManager : MonoBehaviour
             foreach (AdManager candidate in Resources.FindObjectsOfTypeAll<AdManager>())
                 if (candidate.gameObject.scene.IsValid() && candidate.gameObject.scene.isLoaded) { manager = candidate; break; }
         if (manager == null || manager.transform.IsChildOf(target.transform)) return;
+        if (target.GetComponentInChildren<DouyinAtomicButtonBase>(true) != null)
+        {
+            PlatformObjectState savedState = manager.platformObjectStates.Find(state => state.target == target);
+            if (savedState != null)
+            {
+                manager.platformObjectStates.Remove(savedState);
+                target.SetActive(savedState.active);
+            }
+            return;
+        }
         if (!manager.platformObjectStates.Exists(state => state.target == target))
             manager.platformObjectStates.Add(new PlatformObjectState { target = target, active = target.activeSelf });
         if (target.activeSelf) target.SetActive(false);
@@ -255,7 +263,7 @@ public class AdManager : MonoBehaviour
     /// <summary>分享</summary>
     public void Share(Action onSuccess, Action onFailed = null)
     {
-        if (noAds) { onFailed?.Invoke(); return; }
+        if (noAds) { onSuccess?.Invoke(); return; }
         AdManagerImpl.Instance.Share(onSuccess, onFailed);
     }
 
@@ -267,7 +275,7 @@ public class AdManager : MonoBehaviour
     public void AddToDesktop(Action<bool> onSuccess, Action<int, string> onFailed = null,
         Action onAlreadyAdded = null)
     {
-        if (noAds) { onFailed?.Invoke(-1, "无广告模式不支持添加桌面"); return; }
+        if (noAds) { onSuccess?.Invoke(true); return; }
         AdManagerImpl.Instance.AddToDesktop(onSuccess, onFailed, onAlreadyAdded);
     }
 
@@ -285,7 +293,7 @@ public class AdManager : MonoBehaviour
     /// <summary>检测设备是否支持抖音侧边栏功能</summary>
     public void CheckSideBarSupport(Action onSupported = null, Action onNotSupported = null)
     {
-        if (noAds) { onNotSupported?.Invoke(); return; }
+        if (noAds) { onSupported?.Invoke(); return; }
         if (AdManagerImpl.Instance == null)
         {
             onNotSupported?.Invoke();
@@ -299,7 +307,12 @@ public class AdManager : MonoBehaviour
     /// <summary>打开抖音侧边栏（onReturn 时 SideBarManager 会切换按钮）</summary>
     public void OpenSideBar(Action onSuccess = null, Action onFailed = null, Action onReturn = null)
     {
-        if (noAds) { onFailed?.Invoke(); return; }
+        if (noAds)
+        {
+            onSuccess?.Invoke();
+            onReturn?.Invoke();
+            return;
+        }
         if (AdManagerImpl.Instance == null)
         {
             Debug.LogWarning("[AdManager] AdManagerImpl.Instance 为空，无法打开侧边栏");
@@ -324,7 +337,7 @@ public class AdManager : MonoBehaviour
     /// <summary>领取侧边栏奖励；场景UI由按钮或面板组件自行处理</summary>
     public void ClaimSideBarReward(Action onClaimed = null)
     {
-        if (noAds) return;
+        if (noAds) { onClaimed?.Invoke(); return; }
         if (AdManagerImpl.Instance == null)
         {
             Debug.LogWarning("[AdManager] AdManagerImpl.Instance 为空，无法领取侧边栏奖励");

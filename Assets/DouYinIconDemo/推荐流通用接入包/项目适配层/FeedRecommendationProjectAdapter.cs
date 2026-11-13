@@ -1,185 +1,126 @@
+using System;
 using System.Collections;
+using Douyin.Feed;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-/// <summary>
-/// 当前模板项目的推荐流适配层。具体游戏接入时可按 payload 替换为真实关卡加载逻辑。
-/// </summary>
+/// <summary>将模板首页及平台事件连接到统一推荐流播放器。</summary>
 public static class FeedRecommendationProjectAdapter
 {
-    private static bool registered;
-    private static FeedVideoPlayerController video;
-    private static float timeScaleBeforePause = 1f;
-    private static bool audioPausedBeforePause;
-    private static bool experiencePaused;
+    private static FeedRecommendationManager manager;
+    private static TemplateHost host;
+    private static FeedLaunchContext context;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetRegistration() { manager = null; host = null; context = null; }
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    private static void RegisterAfterSceneLoad()
-    {
-        Register();
-    }
+    private static void RegisterAfterSceneLoad() => Register();
 
-    /// <summary>注册当前项目的推荐流业务事件，重复调用安全。</summary>
     public static void Register()
     {
         if (AdManager.NoAdsEnabled) return;
-        if (registered) return;
-        registered = true;
-
-        FeedRecommendationManager manager = FeedRecommendationManager.Instance;
+        var current = FeedRecommendationManager.Instance;
+        if (manager == current && current.Playback != null) return;
+        manager = current;
+        host = new TemplateHost();
+        manager.AttachPlayback(new FeedPlaybackController(host, () => Time.realtimeSinceStartupAsDouble));
         manager.SchemePrepared += OnPrepared;
-        manager.CardShown += OnCardShown;
-        manager.CardHidden += OnCardHidden;
+        manager.CardShown += OnShown;
+        manager.CardHidden += OnHidden;
         manager.SchemeEntered += OnEntered;
         manager.FeedEntered += OnFeedEntered;
         manager.FeedExited += OnExited;
-        manager.ConfigurationFailed += OnConfigurationFailed;
         manager.FullGameHidden += OnFullGameHidden;
         manager.FullGameShown += OnFullGameShown;
         manager.SessionEnded += OnSessionEnded;
+        manager.ConfigurationFailed += OnConfigurationFailed;
+        if (manager.IsDirectPlay && manager.CurrentContext != null) OnPrepared(manager.CurrentContext);
     }
-
-    private static void OnPrepared(FeedLaunchContext context)
+    private static void OnPrepared(FeedLaunchContext launch)
     {
-        CloseVideo();
-        Debug.Log("[推荐流适配] 预加载方案：" + context);
-        PauseExperience(context, "隐藏预加载");
-        if (context.Scheme == FeedExperienceScheme.Video)
-        {
-            PrepareVideo(context.Payload);
-            return;
-        }
-
-        // 当前仓库是广告模板，没有业务关卡。现有 SampleScene 即安全预览页，
-        // 等待一帧确保场景 UI 已渲染后再通知平台就绪。
-        FeedRecommendationManager.Instance.StartCoroutine(ReportCurrentSceneAfterFrame());
+        context = launch;
+        host.EnsureView();
+        string key = string.IsNullOrWhiteSpace(launch?.Payload) ? "home" : launch.Payload;
+        manager.Playback.Begin(manager.LaunchVersion, key, Time.realtimeSinceStartupAsDouble);
     }
-
-    private static IEnumerator ReportCurrentSceneAfterFrame()
+    private static void OnShown(FeedLaunchContext _) => manager.Playback.Show();
+    private static void OnHidden(FeedLaunchContext _) => manager.Playback.Hide();
+    private static void OnFeedEntered(FeedLaunchContext _) => manager.Playback.EnterGame();
+    private static void OnExited(FeedLaunchContext _) => manager.Playback.ExitGame();
+    private static void OnFullGameHidden(FeedLaunchContext _) => manager.Playback.SetFullGameVisible(false);
+    private static void OnFullGameShown(FeedLaunchContext _) => manager.Playback.SetFullGameVisible(true);
+    private static void OnSessionEnded(FeedLaunchContext _) => manager.Playback.EndSession();
+    private static void OnConfigurationFailed(string _) => OnPrepared(manager.CurrentContext);
+    private static void OnEntered(FeedLaunchContext _)
     {
-        FeedRecommendationManager manager = FeedRecommendationManager.Instance;
-        int version = manager.LaunchVersion;
-        yield return new WaitForEndOfFrame();
-        if (manager.IsCurrentSession(version)) manager.ReportSceneReady();
-    }
-
-    private static void OnEntered(FeedLaunchContext context)
-    {
-        if (video != null)
-        {
-            video.Close();
-            video = null;
-        }
-
-        // 编辑器预览不会写每日存档，也不会启动正式 SDK 后置初始化。
-        if (FeedRecommendationManager.Instance.IsEditorPreview)
-        {
-            Debug.Log("[推荐流适配] 编辑器完整游戏模拟，不写业务存档");
-            return;
-        }
+        if (manager.IsEditorPreview) return;
         AdManagerImpl.Instance?.BeginPostSdkInitialization();
-
-        bool isNewDay = DayCheckManager.IsNewDay();
-        if (isNewDay) DayCheckManager.SaveCurrentDate();
-        Debug.Log("[推荐流适配] 玩家已正式进入，开放交互：" + context);
+        if (DayCheckManager.IsNewDay()) DayCheckManager.SaveCurrentDate();
     }
-
-    private static void OnFeedEntered(FeedLaunchContext context)
+    private sealed class TemplateHost : FeedPlaybackController.IHost
     {
-        ResumeExperience(context, "进入完整小游戏");
-    }
-
-    private static void OnCardShown(FeedLaunchContext context)
-    {
-        ResumeExperience(context, "卡片 OnShow");
-        if (video != null) video.SetCardVisible(true);
-        Debug.Log("[推荐流适配] 卡片可见，开始或恢复卡片体验：" + context);
-    }
-
-    private static void OnCardHidden(FeedLaunchContext context)
-    {
-        if (video != null) video.SetCardVisible(false);
-        PauseExperience(context, "卡片 OnHide");
-    }
-
-    private static void OnExited(FeedLaunchContext context)
-    {
-        PauseExperience(context, "退出完整小游戏");
-    }
-
-    private static void OnFullGameHidden(FeedLaunchContext context) => PauseExperience(context, "完整游戏后台");
-    private static void OnFullGameShown(FeedLaunchContext context) => ResumeExperience(context, "完整游戏前台恢复");
-
-    private static void CloseVideo()
-    {
-        if (video == null) return;
-        FeedVideoPlayerController previous = video;
-        video = null;
-        previous.Close();
-    }
-
-    private static void OnSessionEnded(FeedLaunchContext context)
-    {
-        CloseVideo();
-        ResumeExperience(context, "结束上一内容，释放该体验的暂停状态");
-    }
-
-    private static void PauseExperience(FeedLaunchContext context, string reason)
-    {
-        if (!experiencePaused)
+        private FeedPlaybackView view;
+        private FeedVideoPlayerController video;
+        private bool ownsPause, audioBeforePause;
+        private float scaleBeforePause;
+        public bool Available => view != null && view.isActiveAndEnabled && view.PresentationReady && SceneManager.GetActiveScene().isLoaded;
+        public bool Current(int version) => manager != null && manager.IsCurrentSession(version);
+        public bool AudioSuspended => AudioListener.pause;
+        public bool Muted => view == null || view.Muted;
+        public void EnsureView()
         {
-            timeScaleBeforePause = Time.timeScale;
-            audioPausedBeforePause = AudioListener.pause;
-            experiencePaused = true;
+            view = FeedPlaybackView.Existing;
+            if (view != null) return;
+            var prefab = Resources.Load<FeedPlaybackView>("FeedPlayback");
+            if (prefab == null) throw new InvalidOperationException("缺少 FeedPlayback 预制体。");
+            view = UnityEngine.Object.Instantiate(prefab);
+            view.name = "FeedPlayback";
         }
-        Time.timeScale = 0f;
-        AudioListener.pause = true;
-        Debug.Log($"[推荐流适配] {reason}，已暂停计时和声音：{context}");
-    }
-
-    private static void ResumeExperience(FeedLaunchContext context, string reason)
-    {
-        if (experiencePaused)
+        public IEnumerator Prepare(FeedPlaybackController.Preparation request)
         {
-            Time.timeScale = timeScaleBeforePause;
-            AudioListener.pause = audioPausedBeforePause;
-            experiencePaused = false;
+            if (context == null) { request.Fail("推荐流配置暂时无法使用，请重试。"); yield break; }
+            if (context.Scheme != FeedExperienceScheme.Video) { yield return view.Prepare(request); yield break; }
+            bool ready = false;
+            string error = null;
+            video = FeedVideoPlayerController.Create();
+            video.Ready += () => { if (request.IsCurrent) ready = true; };
+            video.Failed += value => { if (request.IsCurrent) error = value; };
+            video.PrepareAndPlay(context.Payload);
+            while (!ready && error == null && request.IsCurrent) yield return null;
+            if (!request.IsCurrent) yield break;
+            if (error != null) { request.Fail(error); yield break; }
+            request.Complete(new FeedPlaybackController.Media { Key = request.Key, Silent = true });
         }
-        Debug.Log($"[推荐流适配] {reason}，已恢复体验：{context}");
-    }
-
-    private static void PrepareVideo(string url)
-    {
-        CloseVideo();
-        FeedRecommendationManager manager = FeedRecommendationManager.Instance;
-        int version = manager.LaunchVersion;
-        FeedVideoPlayerController current = FeedVideoPlayerController.Create();
-        video = current;
-        current.Ready += () =>
+        public void PresentContent() => view.PresentContent();
+        public void PresentFallback(string message, Action retry) => view.PresentFallback(message, retry);
+        public bool FlushPresentation(bool fallback) => view != null && view.FlushPresentation(fallback);
+        public void ReleaseContent()
         {
-            if (manager.IsCurrentSession(version) && video == current) manager.ReportSceneReady();
-        };
-        current.Failed += message =>
+            if (video != null) video.Close();
+            video = null;
+            if (view != null) view.ReleaseContent();
+        }
+        public void SetCardVisible(bool visible) { if (video != null) video.SetCardVisible(visible); }
+        public void SetSubtitle(string text, bool visible) { if (view != null) view.SetSubtitle(text, visible); }
+        public void SetDucking(bool enabled) { if (view != null) view.SetDucking(enabled); }
+        public void PauseGame()
         {
-            if (!manager.IsCurrentSession(version) || video != current) return;
-            Debug.LogWarning("[推荐流适配] 视频准备失败，回退当前场景：" + message);
-            CloseVideo();
-            manager.StartCoroutine(ReportFallbackAfterFrame());
-        };
-        current.PrepareAndPlay(url);
-    }
-
-    private static void OnConfigurationFailed(string reason)
-    {
-        PauseExperience(FeedRecommendationManager.Instance.CurrentContext, "安全兜底隐藏预加载");
-        Debug.LogWarning("[推荐流适配] 配置未命中，使用当前场景兜底：" + reason);
-        FeedRecommendationManager.Instance.StartCoroutine(ReportFallbackAfterFrame());
-    }
-
-    private static IEnumerator ReportFallbackAfterFrame()
-    {
-        FeedRecommendationManager manager = FeedRecommendationManager.Instance;
-        int version = manager.LaunchVersion;
-        yield return new WaitForEndOfFrame();
-        if (manager.IsCurrentSession(version)) manager.ReportFallbackSceneReady();
+            if (!ownsPause) { scaleBeforePause = Time.timeScale; audioBeforePause = AudioListener.pause; ownsPause = true; }
+            Time.timeScale = 0;
+            AudioListener.pause = true;
+        }
+        public void ResumeCardAudio() { if (ownsPause) AudioListener.pause = audioBeforePause; }
+        public void EnterGame() { if (video != null) video.Close(); video = null; ReleasePause(); }
+        public void ExitGame() => PauseGame();
+        public void SetFullGameVisible(bool visible) { if (visible) ReleasePause(); else PauseGame(); }
+        public void ReleasePause()
+        {
+            if (!ownsPause) return;
+            Time.timeScale = scaleBeforePause;
+            AudioListener.pause = audioBeforePause;
+            ownsPause = false;
+        }
+        public void ReportSceneReady(int version, bool fallback, Action<bool, string> completed) => manager.ReportPlaybackSceneReady(version, fallback, completed);
+        public void Diagnostic(string message) => Debug.Log("[推荐流播放器] " + message);
     }
 }

@@ -28,7 +28,6 @@ public abstract class DouyinAtomicButtonBase : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        if (AdManager.NoAdsEnabled) { AdManager.HideNoAdsPlatformObject(gameObject); return; }
         RefreshDailyRedDot();
     }
 
@@ -59,7 +58,6 @@ public abstract class DouyinAtomicButtonBase : MonoBehaviour
 
     private void HandleClick()
     {
-        if (AdManager.NoAdsEnabled) return;
         // 以点击为准消除红点，不等待业务成功；保持加桌 API 位于同步用户手势调用链内。
         MarkDailyRedDotClicked();
         Execute();

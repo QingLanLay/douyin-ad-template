@@ -1,6 +1,5 @@
-﻿using System;
+using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,8 +17,15 @@ public sealed class AdTestPanel : MonoBehaviour
     [SerializeField] private bool failNextShow;
     [Header("已序列化的界面")]
     [SerializeField] private GameObject presentation;
-    [SerializeField] private TMP_Text statusText;
-    [SerializeField] private TMP_Text closeText;
+    [SerializeField] private Image statusImage;
+    [SerializeField] private Image closeImage;
+    [SerializeField] private Sprite playingStatusSprite;
+    [SerializeField] private Sprite completedStatusSprite;
+    [SerializeField] private Sprite interstitialStatusSprite;
+    [SerializeField] private Sprite closeAdSprite;
+    [SerializeField] private Sprite closeRewardSprite;
+    [SerializeField] private Sprite[] digitSprites = new Sprite[10];
+    [SerializeField] private Image[] countdownImages = Array.Empty<Image>();
     [SerializeField] private Image progressFill;
     [SerializeField] private Button closeButton;
     [SerializeField] private Button finishButton;
@@ -101,6 +107,14 @@ public sealed class AdTestPanel : MonoBehaviour
         UpdatePresentation();
     }
 
+    /// <summary>测试广告的“立即下载”：快速完成观看并关闭，沿既有关闭链只发放一次奖励，不打开外链。</summary>
+    public void QuickClaim()
+    {
+        if (!rewarded || !IsShowing) return;
+        if (State == AdState.Showing) CompleteImmediately();
+        CloseAd();
+    }
+
     public void CloseAd()
     {
         if (!IsShowing) return;
@@ -134,12 +148,10 @@ public sealed class AdTestPanel : MonoBehaviour
     private void UpdatePresentation()
     {
         bool completed = State == AdState.Completed;
-        if (statusText != null)
-            statusText.text = !rewarded ? "插屏广告展示中\n关闭后继续游戏，不发放激励奖励"
-                : completed ? "已完整观看\n关闭广告后领取奖励"
-                : "模拟播放中 · 剩余 " + Mathf.CeilToInt(Mathf.Max(0f, watchSeconds - watchedSeconds))
-                    + " 秒\n提前关闭不会获得奖励";
-        if (closeText != null) closeText.text = rewarded && completed ? "关闭并领取奖励" : "关闭广告";
+        if (statusImage != null)
+            statusImage.sprite = !rewarded ? interstitialStatusSprite : completed ? completedStatusSprite : playingStatusSprite;
+        if (closeImage != null) closeImage.sprite = rewarded && completed ? closeRewardSprite : closeAdSprite;
+        UpdateCountdown(rewarded && !completed);
         if (progressFill != null)
         {
             float progress = rewarded ? Mathf.Clamp01(watchedSeconds / Mathf.Max(0.1f, watchSeconds)) : 1f;
@@ -147,7 +159,22 @@ public sealed class AdTestPanel : MonoBehaviour
             // 无 Sprite 的纯色 Image 不处理 Filled 网格，直接调整已序列化进度条的锚点。
             progressFill.rectTransform.anchorMax = new Vector2(progress, 1f);
         }
-        if (finishButton != null) finishButton.interactable = rewarded && !completed;
+        if (finishButton != null) finishButton.interactable = rewarded && IsShowing;
+    }
+
+    // 倒计时也使用预置数字图片；不创建 UI，不访问 TMP 字体、材质或动态字库。
+    private void UpdateCountdown(bool visible)
+    {
+        string value = Mathf.CeilToInt(Mathf.Max(0f, watchSeconds - watchedSeconds)).ToString(System.Globalization.CultureInfo.InvariantCulture);
+        for (int i = 0; i < countdownImages.Length; i++)
+        {
+            Image image = countdownImages[i];
+            if (image == null) continue;
+            bool show = visible && i < value.Length;
+            if (image.gameObject.activeSelf != show) image.gameObject.SetActive(show);
+            if (show && digitSprites != null && digitSprites.Length == 10)
+                image.sprite = digitSprites[value[i] - '0'];
+        }
     }
 
     private void OnApplicationPause(bool paused) { applicationPaused = paused; }

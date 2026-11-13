@@ -1,0 +1,14 @@
+2022版完整抖音广告模板
+包名：2022版DouyinAdEnergySystem_v1.0.22_20261112
+目标Unity：2022.3.62f1（含c1）
+实际导出编辑器：2022.3.62f1c1
+依赖：com.unity.ugui@1.0.0 + com.unity.textmeshpro@3.0.7
+请从对应Unity版本导入TMP Essential Resources。包不携带TMP默认资源或ProjectSettings。
+6000自动兼容插件随包保留，在2022不运行；SDK构建或仅转换后等待Console兼容完成提示。
+不要把6000版回导到2022。两个包是同一模板的不同Unity版本，请择一导入，不要叠加导入。
+历史Image/Share.prefab是原有缺少Spine依赖的旧示例；请使用Prefabs/AtomicButtons中的现用分享按钮。
+v1.0.22：推荐流配音使用抖音播放器。原生服务能力可用时使用TTAudioManager，覆盖异步音源创建、有效显示请求、同位置恢复和字幕同步。保留嵌套字幕预制体、独立字体及7001有限重试。
+激励/插屏测试面板（含倒计时）为AI生成图片，不含TMP组件；其他体力等界面仍按上述TMP依赖导入。
+真实广告使用noAds=false、isTest=false，并填写当前游戏自己的激励/插屏广告位；Unity编辑器不伪造真实观看成功。
+插屏保留启动30秒保护、全屏广告60秒间隔。
+本包不代表抖音平台或真机已验收。

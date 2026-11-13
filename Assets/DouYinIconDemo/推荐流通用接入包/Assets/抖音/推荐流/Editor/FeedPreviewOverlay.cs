@@ -27,7 +27,13 @@ internal static class FeedPreviewOverlay
         {
             Rect game = phone;
             if (!fullGame && !portrait) game = Fit(phone, 2556f / 1179f);
-            GUI.DrawTexture(game, frame, ScaleMode.ScaleToFit, false);
+            // 与 GameView 本身保持一致：顶部为 UV 原点的图形后端需要翻转合成 RT。
+            // 只翻转游戏画面，不影响宿主遮挡层，也不修改相机、Canvas 或源纹理。
+            game = Fit(game, (float)frame.width / frame.height);
+            Rect uv = frame is RenderTexture && SystemInfo.graphicsUVStartsAtTop
+                ? new Rect(0f, 1f, 1f, -1f)
+                : new Rect(0f, 0f, 1f, 1f);
+            GUI.DrawTextureWithTexCoords(game, frame, uv, false);
         }
         else Label(phone, .12f, .4f, .76f, .15f, "等待 GameView 实时画面\n请启动预览", scale, 15, TextAnchor.MiddleCenter);
 

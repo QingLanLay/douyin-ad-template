@@ -30,7 +30,7 @@ public sealed class AdManagerEditor : Editor
         }
         if (manager.noAds)
         {
-            EditorGUILayout.HelpBox("无广告模式：激励入口直接成功，插屏直接继续；标量使用 Unity PlayerPrefs，JSON 存到 persistentDataPath/noads-local.json。平台专用按钮/侧边栏自动隐藏。保留体力和原奖励业务。\n设置后重新运行；发布普通链接请使用 Unity WebGL Build，不使用抖音 SDK 导出器。", MessageType.Info);
+            EditorGUILayout.HelpBox("无广告模式：激励入口直接成功，插屏直接继续；标量使用 Unity PlayerPrefs，JSON 存到 persistentDataPath/noads-local.json。保留添加桌面、侧边栏、分享、排行榜四个按钮，点击直接执行成功或完成回调。侧边栏教学面板保持隐藏。保留体力和原奖励业务。\n设置后重新运行；发布普通链接请使用 Unity WebGL Build，不使用抖音 SDK 导出器。", MessageType.Info);
         }
     }
 }

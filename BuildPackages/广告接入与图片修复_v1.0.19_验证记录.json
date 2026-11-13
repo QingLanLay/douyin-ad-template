@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-30",
+  "status": "passed",
+  "packages": [
+    {
+      "package": "D:\\UnityProj\\抖音广告模板\\BuildPackages\\2022版DouyinAdEnergySystem_v1.0.19_20261030.unitypackage",
+      "editor": "2022.3.62f1c1",
+      "bytes": 16206155,
+      "MiB": 15.46,
+      "sha256": "61a5b915d2b9cefc4493a8a91b7ed22ae92060a5d9235a74a4dadd7fe5f9f01f",
+      "assets": 450,
+      "AI_PNG_sprites": 20,
+      "testAdTMPComponents": 0
+    },
+    {
+      "package": "D:\\UnityProj\\抖音广告模板\\BuildPackages\\6000版DouyinAdEnergySystem_v1.0.19_20261030.unitypackage",
+      "editor": "6000.0.46f1",
+      "bytes": 15487910,
+      "MiB": 14.77,
+      "sha256": "16debddeb233de216b595daf2e68a863513005e1fadf2409e16960c2efec3f8d",
+      "assets": 450,
+      "AI_PNG_sprites": 20,
+      "testAdTMPComponents": 0
+    }
+  ],
+  "sameBusinessCSharpFiles": 237,
+  "sameSdkDlls": 4,
+  "sameSerializedScriptReferences": 199,
+  "originalSampleSceneUnchanged": true,
+  "Unity2022PlayMode": "21 passed, 0 failed; image UI, rewards, failures, pause/resume, real-mode initialization gating",
+  "Unity6000": "Editor import/compilation/export and functional prefab checks only",
+  "nativeDouyinAds": "NOT VERIFIED in user game/developer tool/device",
+  "WebGLBuild": "NOT RUN",
+  "imageGeneration": "gpt-image-2.5 via image25-ui-api skill; 20 cropped AI PNGs; no credentials included"
+}
